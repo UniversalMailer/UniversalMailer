@@ -23,13 +23,44 @@ Universal Mailer is a Mail.app plugin that solves some issues when sending email
     <li>Your sent emails are hard to read because they are displayed with a small font by some email clients</li>
    </ul>
 
+<h3>License</h3>
+<p>
+   Copyright (C) 2012 noware
+ 
+   Permission is hereby granted, free of charge, to any person obtaining a copy of this software and
+   associated documentation files (the "Software"), to deal in the Software without restriction,
+   including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense,
+   and/or sell copies of the Software, and to permit persons to whom the Software is furnished to do so,
+   subject to the following conditions:
+  
+   The above copyright notice and this permission notice shall be included in all copies or substantial
+   portions of the Software.
+
+   THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED,
+   INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE
+   AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM,
+   DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+   OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
+
+</p>
+
 <h3>FAQ</h3>
    <p>When using the plugin you may encounter situations where it simply doesn't work. Below are a few common questions that may
    help you if you're in trouble.</p>
 
    <h4>Q: After I installed the plugin nothing happens. The plugin is not working</h4>
    <p>A: Check if you have other Mail.app plugins installed. Similar plugins may interfere with Universal Mailer and vice-versa. Consider removing
-   all of them and keeping only the one you're using.</p>
+   all of them and keeping only the one you're using.
+   It might also be that the installer failed to correctly install the plugin. You can try running the following commands in Terminal app (/Applications/Utilities), they might ask you for your login password:
+
+<ul>
+<li>defaults write com.apple.mail EnableBundles -bool YES</li>
+<li>defaults write com.apple.mail BundleCompatibilityVersion -int 3</li>
+<li>sudo defaults write com.apple.mail EnableBundles -bool YES</li>
+<li>sudo defaults write com.apple.mail BundleCompatibilityVersion -int 3</li>
+</ul>
+After this if you go to Mail.app's Preferences you should see a '>>' symbol on the top right, which discovers Universal Mailer preference panel.
+</p>
 
    <h4>Q: I installed the plugin and I think it loads correctly. Why doesn't it do what it should?</h4>
    <p>A: Check if your Mail.app's settings match those listed on 'Installation &amp; Usage' section. Also, always include an HTML signature,
