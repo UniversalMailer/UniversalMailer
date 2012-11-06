@@ -1,0 +1,7 @@
+xcuserdata
+*.xcuserdata
+*.xcuserdatad
+.libs
+.deps
+*.a
+.DS_STORE

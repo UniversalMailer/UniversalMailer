@@ -1,0 +1,703 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		81118019140C191300AA1B1C /* UMPreferences.m in Sources */ = {isa = PBXBuildFile; fileRef = 81118018140C191300AA1B1C /* UMPreferences.m */; };
+		81118021140C1CBD00AA1B1C /* UMPreferences+UMExtensions.m in Sources */ = {isa = PBXBuildFile; fileRef = 81118020140C1CBC00AA1B1C /* UMPreferences+UMExtensions.m */; };
+		8116952A14044C9B008DF389 /* UMString.m in Sources */ = {isa = PBXBuildFile; fileRef = 8116952914044C9B008DF389 /* UMString.m */; };
+		811695F61404557C008DF389 /* body.cxx in Sources */ = {isa = PBXBuildFile; fileRef = 811695321404557C008DF389 /* body.cxx */; };
+		811695FE1404557C008DF389 /* base64.cxx in Sources */ = {isa = PBXBuildFile; fileRef = 8116953F1404557C008DF389 /* base64.cxx */; };
+		811696051404557C008DF389 /* qp.cxx in Sources */ = {isa = PBXBuildFile; fileRef = 8116954C1404557C008DF389 /* qp.cxx */; };
+		811696081404557C008DF389 /* config_win32.h.in in Resources */ = {isa = PBXBuildFile; fileRef = 811695511404557C008DF389 /* config_win32.h.in */; };
+		811696091404557C008DF389 /* config.h.in in Resources */ = {isa = PBXBuildFile; fileRef = 811695531404557C008DF389 /* config.h.in */; };
+		8116960A1404557C008DF389 /* contentdescription.cxx in Sources */ = {isa = PBXBuildFile; fileRef = 811695541404557C008DF389 /* contentdescription.cxx */; };
+		8116960B1404557C008DF389 /* contentdisposition.cxx in Sources */ = {isa = PBXBuildFile; fileRef = 811695561404557C008DF389 /* contentdisposition.cxx */; };
+		8116960C1404557C008DF389 /* contentid.cxx in Sources */ = {isa = PBXBuildFile; fileRef = 811695581404557C008DF389 /* contentid.cxx */; };
+		8116960D1404557C008DF389 /* contenttransferencoding.cxx in Sources */ = {isa = PBXBuildFile; fileRef = 8116955A1404557C008DF389 /* contenttransferencoding.cxx */; };
+		8116960E1404557C008DF389 /* contenttype.cxx in Sources */ = {isa = PBXBuildFile; fileRef = 8116955C1404557C008DF389 /* contenttype.cxx */; };
+		8116960F1404557C008DF389 /* fieldparam.cxx in Sources */ = {isa = PBXBuildFile; fileRef = 8116955E1404557C008DF389 /* fieldparam.cxx */; };
+		811696101404557C008DF389 /* header.cxx in Sources */ = {isa = PBXBuildFile; fileRef = 811695601404557C008DF389 /* header.cxx */; };
+		811696151404557C008DF389 /* message.cxx in Sources */ = {isa = PBXBuildFile; fileRef = 811695671404557C008DF389 /* message.cxx */; };
+		811696161404557C008DF389 /* mimeentity.cxx in Sources */ = {isa = PBXBuildFile; fileRef = 811695691404557C008DF389 /* mimeentity.cxx */; };
+		811696171404557C008DF389 /* mimeversion.cxx in Sources */ = {isa = PBXBuildFile; fileRef = 8116956D1404557C008DF389 /* mimeversion.cxx */; };
+		811696241404557C008DF389 /* file_iterator.cxx in Sources */ = {isa = PBXBuildFile; fileRef = 811695801404557C008DF389 /* file_iterator.cxx */; };
+		811696271404557C008DF389 /* fileop.cxx in Sources */ = {isa = PBXBuildFile; fileRef = 811695841404557C008DF389 /* fileop.cxx */; };
+		8116962E1404557C008DF389 /* mmfile.cxx in Sources */ = {isa = PBXBuildFile; fileRef = 8116958C1404557C008DF389 /* mmfile.cxx */; };
+		811696311404557C008DF389 /* stdfile.cxx in Sources */ = {isa = PBXBuildFile; fileRef = 811695911404557C008DF389 /* stdfile.cxx */; };
+		811696341404557C008DF389 /* utils.cxx in Sources */ = {isa = PBXBuildFile; fileRef = 811695951404557C008DF389 /* utils.cxx */; };
+		811696521404557C008DF389 /* address.cxx in Sources */ = {isa = PBXBuildFile; fileRef = 811695BA1404557C008DF389 /* address.cxx */; };
+		811696551404557C008DF389 /* addresslist.cxx in Sources */ = {isa = PBXBuildFile; fileRef = 811695BE1404557C008DF389 /* addresslist.cxx */; };
+		811696581404557C008DF389 /* datetime.cxx in Sources */ = {isa = PBXBuildFile; fileRef = 811695C31404557C008DF389 /* datetime.cxx */; };
+		8116965B1404557C008DF389 /* field.cxx in Sources */ = {isa = PBXBuildFile; fileRef = 811695C71404557C008DF389 /* field.cxx */; };
+		8116965E1404557C008DF389 /* fieldvalue.cxx in Sources */ = {isa = PBXBuildFile; fileRef = 811695CB1404557C008DF389 /* fieldvalue.cxx */; };
+		811696611404557C008DF389 /* group.cxx in Sources */ = {isa = PBXBuildFile; fileRef = 811695CF1404557C008DF389 /* group.cxx */; };
+		811696641404557C008DF389 /* header.cxx in Sources */ = {isa = PBXBuildFile; fileRef = 811695D31404557C008DF389 /* header.cxx */; };
+		811696681404557C008DF389 /* mailbox.cxx in Sources */ = {isa = PBXBuildFile; fileRef = 811695D81404557C008DF389 /* mailbox.cxx */; };
+		8116966B1404557C008DF389 /* mailboxlist.cxx in Sources */ = {isa = PBXBuildFile; fileRef = 811695DC1404557C008DF389 /* mailboxlist.cxx */; };
+		811696711404557C008DF389 /* message.cxx in Sources */ = {isa = PBXBuildFile; fileRef = 811695E31404557C008DF389 /* message.cxx */; };
+		811696741404557C008DF389 /* messageid.cxx in Sources */ = {isa = PBXBuildFile; fileRef = 811695E71404557C008DF389 /* messageid.cxx */; };
+		811696771404557C008DF389 /* stamp-h1 in Resources */ = {isa = PBXBuildFile; fileRef = 811695EC1404557C008DF389 /* stamp-h1 */; };
+		811696781404557C008DF389 /* strutils.cxx in Sources */ = {isa = PBXBuildFile; fileRef = 811695EE1404557C008DF389 /* strutils.cxx */; };
+		811696791404557C008DF389 /* utils.cxx in Sources */ = {isa = PBXBuildFile; fileRef = 811695F21404557C008DF389 /* utils.cxx */; };
+		8116967A1404557C008DF389 /* version.cxx in Sources */ = {isa = PBXBuildFile; fileRef = 811695F41404557C008DF389 /* version.cxx */; };
+		811E7170144A090100B39EC9 /* NSData+UMExtensions.m in Sources */ = {isa = PBXBuildFile; fileRef = 811E716F144A090100B39EC9 /* NSData+UMExtensions.m */; };
+		811E7174144A0F8900B39EC9 /* NSString+UMExtensions.m in Sources */ = {isa = PBXBuildFile; fileRef = 811E7173144A0F8900B39EC9 /* NSString+UMExtensions.m */; };
+		81302C821424E6DC0036290D /* btn_donate_SM.gif in Resources */ = {isa = PBXBuildFile; fileRef = 81302C811424E6DC0036290D /* btn_donate_SM.gif */; };
+		814C55E21426082B004EB0C4 /* UniversalMailerIcon.png in Resources */ = {isa = PBXBuildFile; fileRef = 814C55E11426082B004EB0C4 /* UniversalMailerIcon.png */; };
+		8177A44514168E2F008DA26F /* UMPreferencePane.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8177A44414168E2F008DA26F /* UMPreferencePane.xib */; };
+		817BF8F6141A1364004EC886 /* UniversalMailer.icns in Resources */ = {isa = PBXBuildFile; fileRef = 817BF8F5141A1364004EC886 /* UniversalMailer.icns */; };
+		81F2C43C13E867CE00E61F50 /* CoreFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 81F2C43B13E867CE00E61F50 /* CoreFoundation.framework */; };
+		81F2C44213E867CE00E61F50 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 81F2C44013E867CE00E61F50 /* InfoPlist.strings */; };
+		81F2C44C13E8688100E61F50 /* UniversalMailer.m in Sources */ = {isa = PBXBuildFile; fileRef = 81F2C44B13E8688100E61F50 /* UniversalMailer.m */; };
+		81F2C44F13E86B1200E61F50 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 81F2C44E13E86B1200E61F50 /* Foundation.framework */; };
+		81F2C45113E86B1600E61F50 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 81F2C45013E86B1600E61F50 /* Cocoa.framework */; };
+		81F2C45313E86B1C00E61F50 /* AppKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 81F2C45213E86B1C00E61F50 /* AppKit.framework */; };
+		81F2C46213E881D500E61F50 /* UMMessageWriter.mm in Sources */ = {isa = PBXBuildFile; fileRef = 81F2C46113E881D500E61F50 /* UMMessageWriter.mm */; };
+		81F2C46F13E8A81800E61F50 /* MessageBeautifier.m in Sources */ = {isa = PBXBuildFile; fileRef = 81F2C46C13E8A81800E61F50 /* MessageBeautifier.m */; };
+		81F2C47013E8A81800E61F50 /* UMParser.m in Sources */ = {isa = PBXBuildFile; fileRef = 81F2C46E13E8A81800E61F50 /* UMParser.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		81118017140C191300AA1B1C /* UMPreferences.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UMPreferences.h; sourceTree = "<group>"; };
+		81118018140C191300AA1B1C /* UMPreferences.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UMPreferences.m; sourceTree = "<group>"; };
+		8111801A140C198A00AA1B1C /* Constants.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Constants.h; sourceTree = "<group>"; };
+		8111801E140C1C1400AA1B1C /* NSPreferences.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NSPreferences.h; sourceTree = "<group>"; };
+		8111801F140C1CBC00AA1B1C /* UMPreferences+UMExtensions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UMPreferences+UMExtensions.h"; sourceTree = "<group>"; };
+		81118020140C1CBC00AA1B1C /* UMPreferences+UMExtensions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UMPreferences+UMExtensions.m"; sourceTree = "<group>"; };
+		8116952614044BE6008DF389 /* CommonHeaders.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CommonHeaders.h; sourceTree = "<group>"; };
+		8116952814044C9B008DF389 /* UMString.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UMString.h; sourceTree = "<group>"; };
+		8116952914044C9B008DF389 /* UMString.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UMString.m; sourceTree = "<group>"; };
+		811695321404557C008DF389 /* body.cxx */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = body.cxx; path = mimetic/mimetic/body.cxx; sourceTree = SOURCE_ROOT; };
+		811695331404557C008DF389 /* body.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = body.h; path = mimetic/mimetic/body.h; sourceTree = SOURCE_ROOT; };
+		811695341404557C008DF389 /* circular_buffer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = circular_buffer.h; path = mimetic/mimetic/circular_buffer.h; sourceTree = SOURCE_ROOT; };
+		8116953F1404557C008DF389 /* base64.cxx */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = base64.cxx; sourceTree = "<group>"; };
+		811695401404557C008DF389 /* base64.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = base64.h; sourceTree = "<group>"; };
+		811695431404557C008DF389 /* code.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = code.h; sourceTree = "<group>"; };
+		811695441404557C008DF389 /* codec.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = codec.h; sourceTree = "<group>"; };
+		811695451404557C008DF389 /* codec_base.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = codec_base.h; sourceTree = "<group>"; };
+		811695461404557C008DF389 /* codec_chain.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = codec_chain.h; sourceTree = "<group>"; };
+		8116954B1404557C008DF389 /* other_codecs.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = other_codecs.h; sourceTree = "<group>"; };
+		8116954C1404557C008DF389 /* qp.cxx */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = qp.cxx; sourceTree = "<group>"; };
+		8116954D1404557C008DF389 /* qp.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = qp.h; sourceTree = "<group>"; };
+		811695501404557C008DF389 /* config_win32.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = config_win32.h; path = mimetic/mimetic/config_win32.h; sourceTree = SOURCE_ROOT; };
+		811695511404557C008DF389 /* config_win32.h.in */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = config_win32.h.in; path = mimetic/mimetic/config_win32.h.in; sourceTree = SOURCE_ROOT; };
+		811695521404557C008DF389 /* config.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = config.h; path = mimetic/mimetic/config.h; sourceTree = SOURCE_ROOT; };
+		811695531404557C008DF389 /* config.h.in */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = config.h.in; path = mimetic/mimetic/config.h.in; sourceTree = SOURCE_ROOT; };
+		811695541404557C008DF389 /* contentdescription.cxx */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = contentdescription.cxx; path = mimetic/mimetic/contentdescription.cxx; sourceTree = SOURCE_ROOT; };
+		811695551404557C008DF389 /* contentdescription.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = contentdescription.h; path = mimetic/mimetic/contentdescription.h; sourceTree = SOURCE_ROOT; };
+		811695561404557C008DF389 /* contentdisposition.cxx */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = contentdisposition.cxx; path = mimetic/mimetic/contentdisposition.cxx; sourceTree = SOURCE_ROOT; };
+		811695571404557C008DF389 /* contentdisposition.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = contentdisposition.h; path = mimetic/mimetic/contentdisposition.h; sourceTree = SOURCE_ROOT; };
+		811695581404557C008DF389 /* contentid.cxx */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = contentid.cxx; path = mimetic/mimetic/contentid.cxx; sourceTree = SOURCE_ROOT; };
+		811695591404557C008DF389 /* contentid.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = contentid.h; path = mimetic/mimetic/contentid.h; sourceTree = SOURCE_ROOT; };
+		8116955A1404557C008DF389 /* contenttransferencoding.cxx */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = contenttransferencoding.cxx; path = mimetic/mimetic/contenttransferencoding.cxx; sourceTree = SOURCE_ROOT; };
+		8116955B1404557C008DF389 /* contenttransferencoding.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = contenttransferencoding.h; path = mimetic/mimetic/contenttransferencoding.h; sourceTree = SOURCE_ROOT; };
+		8116955C1404557C008DF389 /* contenttype.cxx */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = contenttype.cxx; path = mimetic/mimetic/contenttype.cxx; sourceTree = SOURCE_ROOT; };
+		8116955D1404557C008DF389 /* contenttype.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = contenttype.h; path = mimetic/mimetic/contenttype.h; sourceTree = SOURCE_ROOT; };
+		8116955E1404557C008DF389 /* fieldparam.cxx */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = fieldparam.cxx; path = mimetic/mimetic/fieldparam.cxx; sourceTree = SOURCE_ROOT; };
+		8116955F1404557C008DF389 /* fieldparam.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = fieldparam.h; path = mimetic/mimetic/fieldparam.h; sourceTree = SOURCE_ROOT; };
+		811695601404557C008DF389 /* header.cxx */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = header.cxx; path = mimetic/mimetic/header.cxx; sourceTree = SOURCE_ROOT; };
+		811695611404557C008DF389 /* header.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = header.h; path = mimetic/mimetic/header.h; sourceTree = SOURCE_ROOT; };
+		811695621404557C008DF389 /* libconfig.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = libconfig.h; path = mimetic/mimetic/libconfig.h; sourceTree = SOURCE_ROOT; };
+		811695671404557C008DF389 /* message.cxx */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = message.cxx; path = mimetic/mimetic/message.cxx; sourceTree = SOURCE_ROOT; };
+		811695681404557C008DF389 /* message.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = message.h; path = mimetic/mimetic/message.h; sourceTree = SOURCE_ROOT; };
+		811695691404557C008DF389 /* mimeentity.cxx */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = mimeentity.cxx; path = mimetic/mimetic/mimeentity.cxx; sourceTree = SOURCE_ROOT; };
+		8116956A1404557C008DF389 /* mimeentity.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = mimeentity.h; path = mimetic/mimetic/mimeentity.h; sourceTree = SOURCE_ROOT; };
+		8116956B1404557C008DF389 /* mimeentitylist.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = mimeentitylist.h; path = mimetic/mimetic/mimeentitylist.h; sourceTree = SOURCE_ROOT; };
+		8116956C1404557C008DF389 /* mimetic.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = mimetic.h; path = mimetic/mimetic/mimetic.h; sourceTree = SOURCE_ROOT; };
+		8116956D1404557C008DF389 /* mimeversion.cxx */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = mimeversion.cxx; path = mimetic/mimetic/mimeversion.cxx; sourceTree = SOURCE_ROOT; };
+		8116956E1404557C008DF389 /* mimeversion.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = mimeversion.h; path = mimetic/mimetic/mimeversion.h; sourceTree = SOURCE_ROOT; };
+		8116957E1404557C008DF389 /* directory.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = directory.h; sourceTree = "<group>"; };
+		8116957F1404557C008DF389 /* file.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = file.h; sourceTree = "<group>"; };
+		811695801404557C008DF389 /* file_iterator.cxx */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = file_iterator.cxx; sourceTree = "<group>"; };
+		811695811404557C008DF389 /* file_iterator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = file_iterator.h; sourceTree = "<group>"; };
+		811695841404557C008DF389 /* fileop.cxx */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = fileop.cxx; sourceTree = "<group>"; };
+		811695851404557C008DF389 /* fileop.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = fileop.h; sourceTree = "<group>"; };
+		8116958C1404557C008DF389 /* mmfile.cxx */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = mmfile.cxx; sourceTree = "<group>"; };
+		8116958D1404557C008DF389 /* mmfile.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = mmfile.h; sourceTree = "<group>"; };
+		811695901404557C008DF389 /* os.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = os.h; sourceTree = "<group>"; };
+		811695911404557C008DF389 /* stdfile.cxx */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = stdfile.cxx; sourceTree = "<group>"; };
+		811695921404557C008DF389 /* stdfile.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = stdfile.h; sourceTree = "<group>"; };
+		811695951404557C008DF389 /* utils.cxx */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = utils.cxx; sourceTree = "<group>"; };
+		811695961404557C008DF389 /* utils.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = utils.h; sourceTree = "<group>"; };
+		8116959A1404557C008DF389 /* itparser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = itparser.h; sourceTree = "<group>"; };
+		8116959B1404557C008DF389 /* itparserdecl.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = itparserdecl.h; sourceTree = "<group>"; };
+		811695BA1404557C008DF389 /* address.cxx */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = address.cxx; sourceTree = "<group>"; };
+		811695BB1404557C008DF389 /* address.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = address.h; sourceTree = "<group>"; };
+		811695BE1404557C008DF389 /* addresslist.cxx */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = addresslist.cxx; sourceTree = "<group>"; };
+		811695BF1404557C008DF389 /* addresslist.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = addresslist.h; sourceTree = "<group>"; };
+		811695C21404557C008DF389 /* body.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = body.h; sourceTree = "<group>"; };
+		811695C31404557C008DF389 /* datetime.cxx */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = datetime.cxx; sourceTree = "<group>"; };
+		811695C41404557C008DF389 /* datetime.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = datetime.h; sourceTree = "<group>"; };
+		811695C71404557C008DF389 /* field.cxx */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = field.cxx; sourceTree = "<group>"; };
+		811695C81404557C008DF389 /* field.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = field.h; sourceTree = "<group>"; };
+		811695CB1404557C008DF389 /* fieldvalue.cxx */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = fieldvalue.cxx; sourceTree = "<group>"; };
+		811695CC1404557C008DF389 /* fieldvalue.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = fieldvalue.h; sourceTree = "<group>"; };
+		811695CF1404557C008DF389 /* group.cxx */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = group.cxx; sourceTree = "<group>"; };
+		811695D01404557C008DF389 /* group.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = group.h; sourceTree = "<group>"; };
+		811695D31404557C008DF389 /* header.cxx */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = header.cxx; sourceTree = "<group>"; };
+		811695D41404557C008DF389 /* header.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = header.h; sourceTree = "<group>"; };
+		811695D81404557C008DF389 /* mailbox.cxx */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = mailbox.cxx; sourceTree = "<group>"; };
+		811695D91404557C008DF389 /* mailbox.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = mailbox.h; sourceTree = "<group>"; };
+		811695DC1404557C008DF389 /* mailboxlist.cxx */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = mailboxlist.cxx; sourceTree = "<group>"; };
+		811695DD1404557C008DF389 /* mailboxlist.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = mailboxlist.h; sourceTree = "<group>"; };
+		811695E31404557C008DF389 /* message.cxx */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = message.cxx; sourceTree = "<group>"; };
+		811695E41404557C008DF389 /* message.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = message.h; sourceTree = "<group>"; };
+		811695E71404557C008DF389 /* messageid.cxx */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = messageid.cxx; sourceTree = "<group>"; };
+		811695E81404557C008DF389 /* messageid.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = messageid.h; sourceTree = "<group>"; };
+		811695EB1404557C008DF389 /* rfc822.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = rfc822.h; sourceTree = "<group>"; };
+		811695EC1404557C008DF389 /* stamp-h1 */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = "stamp-h1"; path = "mimetic/mimetic/stamp-h1"; sourceTree = SOURCE_ROOT; };
+		811695ED1404557C008DF389 /* streambufs.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = streambufs.h; path = mimetic/mimetic/streambufs.h; sourceTree = SOURCE_ROOT; };
+		811695EE1404557C008DF389 /* strutils.cxx */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = strutils.cxx; path = mimetic/mimetic/strutils.cxx; sourceTree = SOURCE_ROOT; };
+		811695EF1404557C008DF389 /* strutils.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = strutils.h; path = mimetic/mimetic/strutils.h; sourceTree = SOURCE_ROOT; };
+		811695F01404557C008DF389 /* tokenizer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = tokenizer.h; path = mimetic/mimetic/tokenizer.h; sourceTree = SOURCE_ROOT; };
+		811695F11404557C008DF389 /* tree.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = tree.h; path = mimetic/mimetic/tree.h; sourceTree = SOURCE_ROOT; };
+		811695F21404557C008DF389 /* utils.cxx */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = utils.cxx; path = mimetic/mimetic/utils.cxx; sourceTree = SOURCE_ROOT; };
+		811695F31404557C008DF389 /* utils.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = utils.h; path = mimetic/mimetic/utils.h; sourceTree = SOURCE_ROOT; };
+		811695F41404557C008DF389 /* version.cxx */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = version.cxx; path = mimetic/mimetic/version.cxx; sourceTree = SOURCE_ROOT; };
+		811695F51404557C008DF389 /* version.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = version.h; path = mimetic/mimetic/version.h; sourceTree = SOURCE_ROOT; };
+		811E716E144A090100B39EC9 /* NSData+UMExtensions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSData+UMExtensions.h"; sourceTree = "<group>"; };
+		811E716F144A090100B39EC9 /* NSData+UMExtensions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSData+UMExtensions.m"; sourceTree = "<group>"; };
+		811E7172144A0F8900B39EC9 /* NSString+UMExtensions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+UMExtensions.h"; sourceTree = "<group>"; };
+		811E7173144A0F8900B39EC9 /* NSString+UMExtensions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+UMExtensions.m"; sourceTree = "<group>"; };
+		81302C811424E6DC0036290D /* btn_donate_SM.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = btn_donate_SM.gif; sourceTree = "<group>"; };
+		814C55E11426082B004EB0C4 /* UniversalMailerIcon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = UniversalMailerIcon.png; sourceTree = "<group>"; };
+		8177A44414168E2F008DA26F /* UMPreferencePane.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = UMPreferencePane.xib; sourceTree = "<group>"; };
+		817BF8F5141A1364004EC886 /* UniversalMailer.icns */ = {isa = PBXFileReference; lastKnownFileType = image.icns; path = UniversalMailer.icns; sourceTree = "<group>"; };
+		81F2C43813E867CE00E61F50 /* UniversalMailer.mailbundle */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = UniversalMailer.mailbundle; sourceTree = BUILT_PRODUCTS_DIR; };
+		81F2C43B13E867CE00E61F50 /* CoreFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreFoundation.framework; path = System/Library/Frameworks/CoreFoundation.framework; sourceTree = SDKROOT; };
+		81F2C43F13E867CE00E61F50 /* UniversalMailer-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "UniversalMailer-Info.plist"; sourceTree = "<group>"; };
+		81F2C44113E867CE00E61F50 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		81F2C44313E867CE00E61F50 /* UniversalMailer-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UniversalMailer-Prefix.pch"; sourceTree = "<group>"; };
+		81F2C44A13E8688100E61F50 /* UniversalMailer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UniversalMailer.h; sourceTree = "<group>"; };
+		81F2C44B13E8688100E61F50 /* UniversalMailer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UniversalMailer.m; sourceTree = "<group>"; };
+		81F2C44E13E86B1200E61F50 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		81F2C45013E86B1600E61F50 /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = System/Library/Frameworks/Cocoa.framework; sourceTree = SDKROOT; };
+		81F2C45213E86B1C00E61F50 /* AppKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AppKit.framework; path = System/Library/Frameworks/AppKit.framework; sourceTree = SDKROOT; };
+		81F2C46013E881D500E61F50 /* UMMessageWriter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UMMessageWriter.h; sourceTree = "<group>"; };
+		81F2C46113E881D500E61F50 /* UMMessageWriter.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = UMMessageWriter.mm; sourceTree = "<group>"; };
+		81F2C46A13E8A81800E61F50 /* Macros.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Macros.h; sourceTree = "<group>"; };
+		81F2C46B13E8A81800E61F50 /* MessageBeautifier.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MessageBeautifier.h; sourceTree = "<group>"; };
+		81F2C46C13E8A81800E61F50 /* MessageBeautifier.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MessageBeautifier.m; sourceTree = "<group>"; };
+		81F2C46D13E8A81800E61F50 /* UMParser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UMParser.h; sourceTree = "<group>"; };
+		81F2C46E13E8A81800E61F50 /* UMParser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UMParser.m; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		81F2C43513E867CE00E61F50 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				81F2C45313E86B1C00E61F50 /* AppKit.framework in Frameworks */,
+				81F2C45113E86B1600E61F50 /* Cocoa.framework in Frameworks */,
+				81F2C44F13E86B1200E61F50 /* Foundation.framework in Frameworks */,
+				81F2C43C13E867CE00E61F50 /* CoreFoundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		81118016140C188400AA1B1C /* Preferences */ = {
+			isa = PBXGroup;
+			children = (
+				8111801E140C1C1400AA1B1C /* NSPreferences.h */,
+				81118017140C191300AA1B1C /* UMPreferences.h */,
+				81118018140C191300AA1B1C /* UMPreferences.m */,
+				8177A44414168E2F008DA26F /* UMPreferencePane.xib */,
+				8111801F140C1CBC00AA1B1C /* UMPreferences+UMExtensions.h */,
+				81118020140C1CBC00AA1B1C /* UMPreferences+UMExtensions.m */,
+			);
+			name = Preferences;
+			sourceTree = "<group>";
+		};
+		811695311404554A008DF389 /* mimetic */ = {
+			isa = PBXGroup;
+			children = (
+				811695321404557C008DF389 /* body.cxx */,
+				811695331404557C008DF389 /* body.h */,
+				811695341404557C008DF389 /* circular_buffer.h */,
+				811695351404557C008DF389 /* codec */,
+				811695501404557C008DF389 /* config_win32.h */,
+				811695511404557C008DF389 /* config_win32.h.in */,
+				811695521404557C008DF389 /* config.h */,
+				811695531404557C008DF389 /* config.h.in */,
+				811695541404557C008DF389 /* contentdescription.cxx */,
+				811695551404557C008DF389 /* contentdescription.h */,
+				811695561404557C008DF389 /* contentdisposition.cxx */,
+				811695571404557C008DF389 /* contentdisposition.h */,
+				811695581404557C008DF389 /* contentid.cxx */,
+				811695591404557C008DF389 /* contentid.h */,
+				8116955A1404557C008DF389 /* contenttransferencoding.cxx */,
+				8116955B1404557C008DF389 /* contenttransferencoding.h */,
+				8116955C1404557C008DF389 /* contenttype.cxx */,
+				8116955D1404557C008DF389 /* contenttype.h */,
+				8116955E1404557C008DF389 /* fieldparam.cxx */,
+				8116955F1404557C008DF389 /* fieldparam.h */,
+				811695601404557C008DF389 /* header.cxx */,
+				811695611404557C008DF389 /* header.h */,
+				811695621404557C008DF389 /* libconfig.h */,
+				811695671404557C008DF389 /* message.cxx */,
+				811695681404557C008DF389 /* message.h */,
+				811695691404557C008DF389 /* mimeentity.cxx */,
+				8116956A1404557C008DF389 /* mimeentity.h */,
+				8116956B1404557C008DF389 /* mimeentitylist.h */,
+				8116956C1404557C008DF389 /* mimetic.h */,
+				8116956D1404557C008DF389 /* mimeversion.cxx */,
+				8116956E1404557C008DF389 /* mimeversion.h */,
+				8116956F1404557C008DF389 /* os */,
+				811695991404557C008DF389 /* parser */,
+				8116959F1404557C008DF389 /* rfc822 */,
+				811695EC1404557C008DF389 /* stamp-h1 */,
+				811695ED1404557C008DF389 /* streambufs.h */,
+				811695EE1404557C008DF389 /* strutils.cxx */,
+				811695EF1404557C008DF389 /* strutils.h */,
+				811695F01404557C008DF389 /* tokenizer.h */,
+				811695F11404557C008DF389 /* tree.h */,
+				811695F21404557C008DF389 /* utils.cxx */,
+				811695F31404557C008DF389 /* utils.h */,
+				811695F41404557C008DF389 /* version.cxx */,
+				811695F51404557C008DF389 /* version.h */,
+			);
+			name = mimetic;
+			sourceTree = "<group>";
+		};
+		811695351404557C008DF389 /* codec */ = {
+			isa = PBXGroup;
+			children = (
+				8116953F1404557C008DF389 /* base64.cxx */,
+				811695401404557C008DF389 /* base64.h */,
+				811695431404557C008DF389 /* code.h */,
+				811695441404557C008DF389 /* codec.h */,
+				811695451404557C008DF389 /* codec_base.h */,
+				811695461404557C008DF389 /* codec_chain.h */,
+				8116954B1404557C008DF389 /* other_codecs.h */,
+				8116954C1404557C008DF389 /* qp.cxx */,
+				8116954D1404557C008DF389 /* qp.h */,
+			);
+			name = codec;
+			path = mimetic/mimetic/codec;
+			sourceTree = SOURCE_ROOT;
+		};
+		8116956F1404557C008DF389 /* os */ = {
+			isa = PBXGroup;
+			children = (
+				8116957E1404557C008DF389 /* directory.h */,
+				8116957F1404557C008DF389 /* file.h */,
+				811695801404557C008DF389 /* file_iterator.cxx */,
+				811695811404557C008DF389 /* file_iterator.h */,
+				811695841404557C008DF389 /* fileop.cxx */,
+				811695851404557C008DF389 /* fileop.h */,
+				8116958C1404557C008DF389 /* mmfile.cxx */,
+				8116958D1404557C008DF389 /* mmfile.h */,
+				811695901404557C008DF389 /* os.h */,
+				811695911404557C008DF389 /* stdfile.cxx */,
+				811695921404557C008DF389 /* stdfile.h */,
+				811695951404557C008DF389 /* utils.cxx */,
+				811695961404557C008DF389 /* utils.h */,
+			);
+			name = os;
+			path = mimetic/mimetic/os;
+			sourceTree = SOURCE_ROOT;
+		};
+		811695991404557C008DF389 /* parser */ = {
+			isa = PBXGroup;
+			children = (
+				8116959A1404557C008DF389 /* itparser.h */,
+				8116959B1404557C008DF389 /* itparserdecl.h */,
+			);
+			name = parser;
+			path = mimetic/mimetic/parser;
+			sourceTree = SOURCE_ROOT;
+		};
+		8116959F1404557C008DF389 /* rfc822 */ = {
+			isa = PBXGroup;
+			children = (
+				811695BA1404557C008DF389 /* address.cxx */,
+				811695BB1404557C008DF389 /* address.h */,
+				811695BE1404557C008DF389 /* addresslist.cxx */,
+				811695BF1404557C008DF389 /* addresslist.h */,
+				811695C21404557C008DF389 /* body.h */,
+				811695C31404557C008DF389 /* datetime.cxx */,
+				811695C41404557C008DF389 /* datetime.h */,
+				811695C71404557C008DF389 /* field.cxx */,
+				811695C81404557C008DF389 /* field.h */,
+				811695CB1404557C008DF389 /* fieldvalue.cxx */,
+				811695CC1404557C008DF389 /* fieldvalue.h */,
+				811695CF1404557C008DF389 /* group.cxx */,
+				811695D01404557C008DF389 /* group.h */,
+				811695D31404557C008DF389 /* header.cxx */,
+				811695D41404557C008DF389 /* header.h */,
+				811695D81404557C008DF389 /* mailbox.cxx */,
+				811695D91404557C008DF389 /* mailbox.h */,
+				811695DC1404557C008DF389 /* mailboxlist.cxx */,
+				811695DD1404557C008DF389 /* mailboxlist.h */,
+				811695E31404557C008DF389 /* message.cxx */,
+				811695E41404557C008DF389 /* message.h */,
+				811695E71404557C008DF389 /* messageid.cxx */,
+				811695E81404557C008DF389 /* messageid.h */,
+				811695EB1404557C008DF389 /* rfc822.h */,
+			);
+			name = rfc822;
+			path = mimetic/mimetic/rfc822;
+			sourceTree = SOURCE_ROOT;
+		};
+		81F2C42D13E867CE00E61F50 = {
+			isa = PBXGroup;
+			children = (
+				81F2C43D13E867CE00E61F50 /* UniversalMailer */,
+				81F2C43A13E867CE00E61F50 /* Frameworks */,
+				81F2C43913E867CE00E61F50 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		81F2C43913E867CE00E61F50 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				81F2C43813E867CE00E61F50 /* UniversalMailer.mailbundle */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		81F2C43A13E867CE00E61F50 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				81F2C45213E86B1C00E61F50 /* AppKit.framework */,
+				81F2C45013E86B1600E61F50 /* Cocoa.framework */,
+				81F2C44E13E86B1200E61F50 /* Foundation.framework */,
+				81F2C43B13E867CE00E61F50 /* CoreFoundation.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		81F2C43D13E867CE00E61F50 /* UniversalMailer */ = {
+			isa = PBXGroup;
+			children = (
+				8111801A140C198A00AA1B1C /* Constants.h */,
+				81F2C44A13E8688100E61F50 /* UniversalMailer.h */,
+				81F2C44B13E8688100E61F50 /* UniversalMailer.m */,
+				81118016140C188400AA1B1C /* Preferences */,
+				811695311404554A008DF389 /* mimetic */,
+				81F2C46913E8A7FF00E61F50 /* Classes */,
+				81F2C45F13E881B100E61F50 /* Swizzled methods */,
+				81F2C43E13E867CE00E61F50 /* Supporting Files */,
+			);
+			path = UniversalMailer;
+			sourceTree = "<group>";
+		};
+		81F2C43E13E867CE00E61F50 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				814C55E11426082B004EB0C4 /* UniversalMailerIcon.png */,
+				81302C811424E6DC0036290D /* btn_donate_SM.gif */,
+				817BF8F5141A1364004EC886 /* UniversalMailer.icns */,
+				8116952614044BE6008DF389 /* CommonHeaders.h */,
+				81F2C43F13E867CE00E61F50 /* UniversalMailer-Info.plist */,
+				81F2C44013E867CE00E61F50 /* InfoPlist.strings */,
+				81F2C44313E867CE00E61F50 /* UniversalMailer-Prefix.pch */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		81F2C45F13E881B100E61F50 /* Swizzled methods */ = {
+			isa = PBXGroup;
+			children = (
+				81F2C46013E881D500E61F50 /* UMMessageWriter.h */,
+				81F2C46113E881D500E61F50 /* UMMessageWriter.mm */,
+			);
+			name = "Swizzled methods";
+			sourceTree = "<group>";
+		};
+		81F2C46913E8A7FF00E61F50 /* Classes */ = {
+			isa = PBXGroup;
+			children = (
+				81F2C46A13E8A81800E61F50 /* Macros.h */,
+				81F2C46D13E8A81800E61F50 /* UMParser.h */,
+				81F2C46E13E8A81800E61F50 /* UMParser.m */,
+				8116952814044C9B008DF389 /* UMString.h */,
+				8116952914044C9B008DF389 /* UMString.m */,
+				81F2C46B13E8A81800E61F50 /* MessageBeautifier.h */,
+				81F2C46C13E8A81800E61F50 /* MessageBeautifier.m */,
+				811E7172144A0F8900B39EC9 /* NSString+UMExtensions.h */,
+				811E7173144A0F8900B39EC9 /* NSString+UMExtensions.m */,
+				811E716E144A090100B39EC9 /* NSData+UMExtensions.h */,
+				811E716F144A090100B39EC9 /* NSData+UMExtensions.m */,
+			);
+			name = Classes;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		81F2C43713E867CE00E61F50 /* UniversalMailer */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 81F2C44613E867CE00E61F50 /* Build configuration list for PBXNativeTarget "UniversalMailer" */;
+			buildPhases = (
+				81F2C43413E867CE00E61F50 /* Sources */,
+				81F2C43513E867CE00E61F50 /* Frameworks */,
+				81F2C43613E867CE00E61F50 /* Resources */,
+				81F2C47713E922FC00E61F50 /* Bundle packaging */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = UniversalMailer;
+			productName = UniversalMailer;
+			productReference = 81F2C43813E867CE00E61F50 /* UniversalMailer.mailbundle */;
+			productType = "com.apple.product-type.bundle";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		81F2C42F13E867CE00E61F50 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0420;
+			};
+			buildConfigurationList = 81F2C43213E867CE00E61F50 /* Build configuration list for PBXProject "UniversalMailer" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = 81F2C42D13E867CE00E61F50;
+			productRefGroup = 81F2C43913E867CE00E61F50 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				81F2C43713E867CE00E61F50 /* UniversalMailer */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		81F2C43613E867CE00E61F50 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				81F2C44213E867CE00E61F50 /* InfoPlist.strings in Resources */,
+				811696081404557C008DF389 /* config_win32.h.in in Resources */,
+				811696091404557C008DF389 /* config.h.in in Resources */,
+				811696771404557C008DF389 /* stamp-h1 in Resources */,
+				8177A44514168E2F008DA26F /* UMPreferencePane.xib in Resources */,
+				817BF8F6141A1364004EC886 /* UniversalMailer.icns in Resources */,
+				81302C821424E6DC0036290D /* btn_donate_SM.gif in Resources */,
+				814C55E21426082B004EB0C4 /* UniversalMailerIcon.png in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		81F2C47713E922FC00E61F50 /* Bundle packaging */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Bundle packaging";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/bash;
+			shellScript = "target_path=\"$TARGET_BUILD_DIR/$PRODUCT_NAME.$WRAPPER_EXTENSION\"\nicon_filename=\"$(perl -e 'print \"Icon\\r\"')\"\n\ntouch \"$target_path/$icon_filename\"\n\ncp \"$SRCROOT/UniversalMailer.icns\" \"$TARGET_BUILD_DIR\"\nsips -i \"$TARGET_BUILD_DIR/UniversalMailer.icns\"\n/Applications/Xcode.app/Contents/Developer/Tools/DeRez -only icns \"$TARGET_BUILD_DIR/UniversalMailer.icns\" > \"$TARGET_BUILD_DIR/UniversalMailer.icns.r\"\n/Applications/Xcode.app/Contents/Developer/Tools/Rez -append \"$TARGET_BUILD_DIR/UniversalMailer.icns.r\" -o \"$target_path/$icon_filename\"\n\nrm \"$TARGET_BUILD_DIR/UniversalMailer.icns\"\nrm \"$TARGET_BUILD_DIR/UniversalMailer.icns.r\"\n\n# and set the custom icon bit of the folder\n/Applications/Xcode.app/Contents/Developer/Tools/SetFile -a C \"$target_path\"\n\n/Applications/Xcode.app/Contents/Developer/Tools/SetFile -a B \"$TARGET_BUILD_DIR/$TARGET_NAME.$WRAPPER_EXTENSION\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		81F2C43413E867CE00E61F50 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				81F2C44C13E8688100E61F50 /* UniversalMailer.m in Sources */,
+				81F2C46213E881D500E61F50 /* UMMessageWriter.mm in Sources */,
+				81F2C46F13E8A81800E61F50 /* MessageBeautifier.m in Sources */,
+				81F2C47013E8A81800E61F50 /* UMParser.m in Sources */,
+				8116952A14044C9B008DF389 /* UMString.m in Sources */,
+				811695F61404557C008DF389 /* body.cxx in Sources */,
+				811695FE1404557C008DF389 /* base64.cxx in Sources */,
+				811696051404557C008DF389 /* qp.cxx in Sources */,
+				8116960A1404557C008DF389 /* contentdescription.cxx in Sources */,
+				8116960B1404557C008DF389 /* contentdisposition.cxx in Sources */,
+				8116960C1404557C008DF389 /* contentid.cxx in Sources */,
+				8116960D1404557C008DF389 /* contenttransferencoding.cxx in Sources */,
+				8116960E1404557C008DF389 /* contenttype.cxx in Sources */,
+				8116960F1404557C008DF389 /* fieldparam.cxx in Sources */,
+				811696101404557C008DF389 /* header.cxx in Sources */,
+				811696151404557C008DF389 /* message.cxx in Sources */,
+				811696161404557C008DF389 /* mimeentity.cxx in Sources */,
+				811696171404557C008DF389 /* mimeversion.cxx in Sources */,
+				811696241404557C008DF389 /* file_iterator.cxx in Sources */,
+				811696271404557C008DF389 /* fileop.cxx in Sources */,
+				8116962E1404557C008DF389 /* mmfile.cxx in Sources */,
+				811696311404557C008DF389 /* stdfile.cxx in Sources */,
+				811696341404557C008DF389 /* utils.cxx in Sources */,
+				811696521404557C008DF389 /* address.cxx in Sources */,
+				811696551404557C008DF389 /* addresslist.cxx in Sources */,
+				811696581404557C008DF389 /* datetime.cxx in Sources */,
+				8116965B1404557C008DF389 /* field.cxx in Sources */,
+				8116965E1404557C008DF389 /* fieldvalue.cxx in Sources */,
+				811696611404557C008DF389 /* group.cxx in Sources */,
+				811696641404557C008DF389 /* header.cxx in Sources */,
+				811696681404557C008DF389 /* mailbox.cxx in Sources */,
+				8116966B1404557C008DF389 /* mailboxlist.cxx in Sources */,
+				811696711404557C008DF389 /* message.cxx in Sources */,
+				811696741404557C008DF389 /* messageid.cxx in Sources */,
+				811696781404557C008DF389 /* strutils.cxx in Sources */,
+				811696791404557C008DF389 /* utils.cxx in Sources */,
+				8116967A1404557C008DF389 /* version.cxx in Sources */,
+				81118019140C191300AA1B1C /* UMPreferences.m in Sources */,
+				81118021140C1CBD00AA1B1C /* UMPreferences+UMExtensions.m in Sources */,
+				811E7170144A090100B39EC9 /* NSData+UMExtensions.m in Sources */,
+				811E7174144A0F8900B39EC9 /* NSString+UMExtensions.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		81F2C44013E867CE00E61F50 /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				81F2C44113E867CE00E61F50 /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		81D9DE2F14360C9C00D5763A /* Full Version Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = YES;
+				ARCHS = "$(ARCHS_STANDARD_64_BIT)";
+				COPY_PHASE_STRIP = YES;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_ENABLE_OBJC_EXCEPTIONS = YES;
+				GCC_VERSION = com.apple.compilers.llvmgcc42;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_MISSING_PROTOTYPES = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				HEADER_SEARCH_PATHS = "";
+				MACOSX_DEPLOYMENT_TARGET = 10.6;
+				OTHER_CFLAGS = "-DHAVE_MIMETIC_CONFIG";
+				OTHER_LDFLAGS = (
+					"-undefined",
+					dynamic_lookup,
+				);
+				SDKROOT = macosx;
+			};
+			name = "Full Version Release";
+		};
+		81D9DE3014360C9C00D5763A /* Full Version Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "UniversalMailer/UniversalMailer-Prefix.pch";
+				HEADER_SEARCH_PATHS = "\"$(PROJECT_DIR)/mimetic/include/\"/**";
+				INFOPLIST_FILE = "UniversalMailer/UniversalMailer-Info.plist";
+				INSTALL_PATH = "$(HOME)/Library/Mail/Bundles";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"$(SRCROOT)/mimetic/lib\"",
+					"\"$(SRCROOT)/mimetic/mimetic/codec/.libs\"",
+					"\"$(SRCROOT)/mimetic/mimetic/os/.libs\"",
+					"\"$(SRCROOT)/mimetic/mimetic/rfc822/.libs\"",
+				);
+				OTHER_CFLAGS = (
+					"-DRELEASE_VERSION",
+					"-DHAVE_MIMETIC_CONFIG",
+				);
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = mailbundle;
+			};
+			name = "Full Version Release";
+		};
+		81F2C44413E867CE00E61F50 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = YES;
+				ARCHS = "$(ARCHS_STANDARD_64_BIT)";
+				COPY_PHASE_STRIP = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_ENABLE_OBJC_EXCEPTIONS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_VERSION = com.apple.compilers.llvmgcc42;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_MISSING_PROTOTYPES = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				HEADER_SEARCH_PATHS = "";
+				MACOSX_DEPLOYMENT_TARGET = 10.6;
+				ONLY_ACTIVE_ARCH = YES;
+				OTHER_CFLAGS = "-DHAVE_MIMETIC_CONFIG";
+				OTHER_LDFLAGS = (
+					"-undefined",
+					dynamic_lookup,
+				);
+				SDKROOT = macosx;
+			};
+			name = Debug;
+		};
+		81F2C44713E867CE00E61F50 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "UniversalMailer/UniversalMailer-Prefix.pch";
+				HEADER_SEARCH_PATHS = "\"$(PROJECT_DIR)/mimetic/include/\"/**";
+				INFOPLIST_FILE = "UniversalMailer/UniversalMailer-Info.plist";
+				INSTALL_PATH = "$(HOME)/Library/Mail/Bundles";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"$(SRCROOT)/mimetic/lib\"",
+					"\"$(SRCROOT)/mimetic/mimetic/codec/.libs\"",
+					"\"$(SRCROOT)/mimetic/mimetic/os/.libs\"",
+					"\"$(SRCROOT)/mimetic/mimetic/rfc822/.libs\"",
+				);
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = mailbundle;
+			};
+			name = Debug;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		81F2C43213E867CE00E61F50 /* Build configuration list for PBXProject "UniversalMailer" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				81F2C44413E867CE00E61F50 /* Debug */,
+				81D9DE2F14360C9C00D5763A /* Full Version Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = "Full Version Release";
+		};
+		81F2C44613E867CE00E61F50 /* Build configuration list for PBXNativeTarget "UniversalMailer" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				81F2C44713E867CE00E61F50 /* Debug */,
+				81D9DE3014360C9C00D5763A /* Full Version Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = "Full Version Release";
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 81F2C42F13E867CE00E61F50 /* Project object */;
+}
