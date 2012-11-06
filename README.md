@@ -25,6 +25,10 @@ Universal Mailer is a Mail.app plugin that solves some issues when sending email
 
 <h3>License</h3>
 <p>
+This project is release under MIT license (see below), except for mimetic library which follows a GPLv2 license
+(you can find the original copyright and disclaimer in mimetic source files).
+</p>
+<p>
    Copyright (C) 2012 noware
  
    Permission is hereby granted, free of charge, to any person obtaining a copy of this software and
