@@ -1,4 +1,4 @@
-// Copyright (C) 2012 noware
+// Copyright (C) 2012-2013 noware
 //
 // Permission is hereby granted, free of charge, to any person obtaining a copy of this software and
 // associated documentation files (the "Software"), to deal in the Software without restriction,
@@ -21,7 +21,7 @@
 #import "Macros.h"
 #import "UniversalMailer.h"
 
-#define _kFullVersionCopyright @"Copyright © 2012 noware. All rights reserved. This program comes with no warranties. Use at your own risk."
+#define _kFullVersionCopyright @"Copyright © 2012-2013 noware. All rights reserved. This program comes with no warranties. Use at your own risk."
 
 @implementation UMPreferences
 

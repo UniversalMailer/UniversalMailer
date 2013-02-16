@@ -1,4 +1,4 @@
-// Copyright (C) 2012 noware
+// Copyright (C) 2012-2013 noware
 //
 // Permission is hereby granted, free of charge, to any person obtaining a copy of this software and
 // associated documentation files (the "Software"), to deal in the Software without restriction,
@@ -46,6 +46,7 @@ using namespace mimetic;
 [NSNumber numberWithLong: CFStringConvertEncodingToNSStringEncoding(kCFStringEncodingISOLatin3)], @"iso-8859-3",\
 [NSNumber numberWithLong: CFStringConvertEncodingToNSStringEncoding(kCFStringEncodingISOLatin4)], @"iso-8859-4",\
 [NSNumber numberWithLong: CFStringConvertEncodingToNSStringEncoding(kCFStringEncodingISOLatinCyrillic)], @"iso-8859-5",\
+[NSNumber numberWithLong: CFStringConvertEncodingToNSStringEncoding(kCFStringEncodingISOLatinCyrillic)], @"koi8-r",\
 [NSNumber numberWithLong: CFStringConvertEncodingToNSStringEncoding(kCFStringEncodingISOLatinArabic)], @"iso-8859-6",\
 [NSNumber numberWithLong: CFStringConvertEncodingToNSStringEncoding(kCFStringEncodingISOLatinGreek)], @"iso-8859-7",\
 [NSNumber numberWithLong: CFStringConvertEncodingToNSStringEncoding(kCFStringEncodingISOLatinHebrew)], @"iso-8859-8",\
