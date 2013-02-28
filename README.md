@@ -87,4 +87,7 @@ After this if you go to Mail.app's Preferences you should see a '>>' symbol on t
 
    <h4>Q: I'm trying to install the plugin on Mountain Lion but the system tells me the software comes from an unidentified developer</h4>
    <p>A: This software is not signed, so you have to force the system to load it, in case it refuses to launch it. To temporary change the security policy and install the plugin go to System Preferences, select 'Security &amp; Privacy' and set 'Allow applications downloaded from' to 'Anywhere'. You can then launch the installer and once it completes switch back to your previous setting (Mac App Store or Mac App Store and identified developers).</p>
+   
+   <h4>Q: How do I unistall the plugin?</h4>
+   <p>A: To uninstall the plugin remove ~/Library/Mail/Bundles/UniversalMailer.mailbundle and restart Mail.app</p>
 
