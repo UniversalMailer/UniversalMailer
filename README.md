@@ -29,7 +29,7 @@ This project is release under MIT license (see below), except for mimetic librar
 (you can find the original copyright and disclaimer in mimetic source files).
 </p>
 <p>
-   Copyright (C) 2012 noware
+   Copyright (C) 2012-2013 noware
 </p>
  
    <p>Permission is hereby granted, free of charge, to any person obtaining a copy of this software and
