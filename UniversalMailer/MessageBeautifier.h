@@ -24,5 +24,6 @@
 + (NSString*)stringByChangingForwardHeaderStyle: (NSString*)htmlMessage withFontName: (NSString*)fontName andFontSize: (NSString*)fontSize fontColor: (NSColor*)color;
 + (NSString*)stringWithFontStyleForHTML: (NSString*)htmlMessage;
 + (NSString*)stringByReplacingClosingTagWithTag: (NSString*)newTag withHTML: (NSString*)htmlMessage;
++ (NSString*)stringByAddingBlockquoteStyle: (NSString*)htmlMessage styleString: (NSString*)style;
 
 @end
