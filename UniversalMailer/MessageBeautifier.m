@@ -94,6 +94,12 @@ nil]
     return htmlMessage;
 }
 
++ (NSString*)stringByAddingBlockquoteStyle: (NSString*)htmlMessage styleString: (NSString*)style {
+    htmlMessage = [htmlMessage stringByReplacingOccurrencesOfString: @"<blockquote type=\"cite\">"
+                                                         withString: [NSString stringWithFormat: @"<blockquote type=\"cite\" %@\">", style]];
+    return htmlMessage;
+}
+
 + (NSString*)stringWithFontStyleForHTML: (NSString*)htmlMessage {
     NSRange font = [htmlMessage rangeOfString: @"<font"];
     while( font.location != NSNotFound ){

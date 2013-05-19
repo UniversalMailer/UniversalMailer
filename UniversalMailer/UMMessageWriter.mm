@@ -377,6 +377,7 @@ NSData *umMimeFilter( NSData *inData ) {
             
             completeHTML = [MessageBeautifier stringByAddingBodyFontStyleToHTML: completeHTML withFontName: font andFontSize: fontSize fontColor: color];
             completeHTML = [MessageBeautifier stringByChangingForwardHeaderStyle: completeHTML withFontName: font andFontSize: fontSize fontColor: color];
+            completeHTML = [MessageBeautifier stringByAddingBlockquoteStyle: completeHTML styleString: @"style=\"border-left: 2px solid blue; margin-left: 0; padding-left: 1em; color: blue\""];
     	}
         MimeEntity *textEntity = new MimeEntity;
         textEntity->body().assign( [completeHTML cStringUsingEncoding: [[_kEncondingsDictionary objectForKey: [NSString stringWithCString: charset encoding: NSASCIIStringEncoding]] intValue]] );
@@ -480,6 +481,7 @@ NSData *umMimeFilter( NSData *inData ) {
                 color = [[NSUnarchiver unarchiveObjectWithData: colorData] colorUsingColorSpaceName: NSCalibratedRGBColorSpace];
             arg1 = [MessageBeautifier stringByAddingBodyFontStyleToHTML: arg1 withFontName: font andFontSize: fontSize fontColor: color];
             arg1 = [MessageBeautifier stringByChangingForwardHeaderStyle: arg1 withFontName: font andFontSize: fontSize fontColor: color];
+            arg1 = [MessageBeautifier stringByAddingBlockquoteStyle: arg1 styleString: @"style=\"border-left: 2px solid blue; margin-left: 0; padding-left: 1em; color: blue\""];
         }
     }
     OutgoingMessage *message = [self umNewMessageWithHtmlString: arg1 attachments: arg2 headers: arg3];
@@ -518,6 +520,7 @@ NSData *umMimeFilter( NSData *inData ) {
                 color = [[NSUnarchiver unarchiveObjectWithData: colorData] colorUsingColorSpaceName: NSCalibratedRGBColorSpace];
             arg1 = [MessageBeautifier stringByAddingBodyFontStyleToHTML: arg1 withFontName: font andFontSize: fontSize fontColor: color];
             arg1 = [MessageBeautifier stringByChangingForwardHeaderStyle: arg1 withFontName: font andFontSize: fontSize fontColor: color];
+            arg1 = [MessageBeautifier stringByAddingBlockquoteStyle: arg1 styleString: @"style=\"border-left: 2px solid blue; margin-left: 0; padding-left: 1em; color: blue\""];
         }
     }
     OutgoingMessage *message = [self umNewMessageWithHtmlString: arg1 plainTextAlternative: arg2 otherHtmlStringsAndAttachments: arg3 headers: arg4];    
