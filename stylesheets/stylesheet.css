@@ -305,6 +305,21 @@ Full-Width Styles
   padding: 50px 10px 30px 10px;
 }
 
+.noshadow {
+	-webkit-box-shadow: none;
+	-moz-box-shadow: none;
+	box-shadow: none;
+	border: 0px;
+}
+
+#project_logo {
+	top: 10px;
+	left: -150px;
+	width: 128px;
+	height: 128px;
+	position: absolute;
+}
+
 #project_title {
   margin: 0;
   color: #fff;
