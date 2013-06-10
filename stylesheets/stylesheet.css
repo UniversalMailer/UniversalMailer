@@ -313,11 +313,12 @@ Full-Width Styles
 }
 
 #project_logo {
-	top: 10px;
-	left: -150px;
+	top: 130px;
+	right: 90px;
 	width: 128px;
 	height: 128px;
 	position: absolute;
+	display: block;
 }
 
 #project_title {
