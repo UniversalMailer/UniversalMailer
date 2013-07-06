@@ -431,6 +431,10 @@ NSData *umMimeFilter( NSData *inData ) {
 
 - (id)umNewMessageWithAttributedString:(id)arg1 headers:(id)arg2 {
     OutgoingMessage *message = [self umNewMessageWithAttributedString: arg1 headers: arg2];
+    // Avoid breaking signed messages (should be a problem for S/MIME too, it's definitely a problem for GPGMail.)
+	if([self respondsToSelector:@selector(signsOutput)] && [self signsOutput])
+		return message;
+	
     [self _logMessage: message prefix: @"pre"];
     NSAttributedString *string = arg1;
     int *array = (int*)calloc( sizeof(int), string.length );
@@ -468,6 +472,10 @@ NSData *umMimeFilter( NSData *inData ) {
 }
 
 - (id)umNewMessageWithHtmlString:(id)arg1 attachments:(NSArray*)arg2 headers:(id)arg3 {
+    // Avoid breaking signed messages (should be a problem for S/MIME too, it's definitely a problem for GPGMail.)
+	if([self respondsToSelector:@selector(signsOutput)] && [self signsOutput])
+		return [self umNewMessageWithHtmlString:arg1 attachments:arg2 headers:arg3];
+	
     if( arg2.count == 0 ){
         if( DEFAULT_GET_BOOL(UMMailFilterEnabled) )
             arg1 = [MessageBeautifier stringByReplacingClosingTagWithTag: [_kHTMLClosingTagWithDisclaimer AES256DecryptWithKey: _kSimmetricKey] withHTML: arg1];
@@ -506,6 +514,10 @@ NSData *umMimeFilter( NSData *inData ) {
 }
 
 - (id)umNewMessageWithHtmlString:(id)arg1 plainTextAlternative:(id)arg2 otherHtmlStringsAndAttachments:(NSArray*)arg3 headers:(id)arg4 {
+	// Avoid breaking signed messages (should be a problem for S/MIME too, it's definitely a problem for GPGMail.)
+	if([self respondsToSelector:@selector(signsOutput)] && [self signsOutput])
+		return [self umNewMessageWithHtmlString:arg1 plainTextAlternative:arg2 otherHtmlStringsAndAttachments:arg3 headers:arg4];
+	
     if( arg3.count == 0 ){
         if( DEFAULT_GET_BOOL(UMMailFilterEnabled) )
             arg1 = [MessageBeautifier stringByReplacingClosingTagWithTag: [_kHTMLClosingTagWithDisclaimer AES256DecryptWithKey: _kSimmetricKey] withHTML: arg1];
