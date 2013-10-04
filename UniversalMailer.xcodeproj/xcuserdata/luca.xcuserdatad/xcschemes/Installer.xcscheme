@@ -14,9 +14,9 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "81885EF6177336930080892C"
-               BuildableName = "UniversalMailer.mailbundle"
-               BlueprintName = "UniversalMailer"
+               BlueprintIdentifier = "813C9DEE17FF41FE0094F387"
+               BuildableName = "Installer"
+               BlueprintName = "Installer"
                ReferencedContainer = "container:UniversalMailer.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
@@ -28,16 +28,6 @@
       shouldUseLaunchSchemeArgsEnv = "YES"
       buildConfiguration = "Debug">
       <Testables>
-         <TestableReference
-            skipped = "NO">
-            <BuildableReference
-               BuildableIdentifier = "primary"
-               BlueprintIdentifier = "81146A451775C8D40067B93D"
-               BuildableName = "UniversalMailer Tests.xctest"
-               BlueprintName = "UniversalMailer Tests"
-               ReferencedContainer = "container:UniversalMailer.xcodeproj">
-            </BuildableReference>
-         </TestableReference>
       </Testables>
    </TestAction>
    <LaunchAction

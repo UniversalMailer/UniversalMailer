@@ -1,0 +1,58 @@
+#!/bin/bash
+
+# update supported plugin compatibility list
+uuid1=$(cat /Applications/Mail.app/Contents/Info.plist | grep UUID -A 1 | sed -n "s/.*<string>\(.*\)<\/string>/\1/p")
+ 
+ed "$2/Contents/Info.plist" <<EOF
+/SupportedPluginCompatibilityUUIDs/
++
+a
+    <string>$uuid1</string>
+.
+,wq
+EOF
+
+# move bundle into place
+mkdir -p ~/Library/Mail/Bundles
+rm -R ~/Library/Mail/Bundles/UniversalMailer.mailbundle
+echo "rm -R ~/Library/Mail/Bundles/UniversalMailer.mailbundle"
+mv "$2" ~/Library/Mail/Bundles
+ 
+# enable plugin bundles for Mail.app
+if [ `whoami` == root ] ; then
+	echo "is root" > /tmp/installer.um.log
+    domain=/Library/Preferences/com.apple.mail
+else
+	echo "is not root" > /tmp/installer.um.log
+    domain=com.apple.mail
+fi
+
+macosx_minor_version=$(sw_vers | /usr/bin/sed -Ene 's/.*[[:space:]]10\.([0-9][0-9]*)\.*[0-9]*/\1/p;')
+if [[ "$macosx_minor_version" == "" ]]; then
+    echo 'Unrecognized Mac OS X version!' > /dev/stderr
+    echo 'Unrecognized Mac OS X version!' >> /tmp/installer.um.log
+    sw_vers > /dev/stderr
+fi
+
+#defaults write "$domain" EnableBundles -bool YES
+#defaults write "$domain" BundleCompatibilityVersion -int 3
+
+if [ $macosx_minor_version == "8" ]; then
+ for i in $(dscacheutil -q user | grep name | awk '{print $2}' | grep -v "^_"); do
+  if [ -d /Users/$i ]; then
+   if [ -f "/Users/$i/Library/Containers/com.apple.mail/Data/Library/Preferences/com.apple.mail.plist" ]; then
+    echo "changing ownership of com.apple.mail.plist" > /tmp/ulinstaller.log.txt
+    sudo chown $i /Users/$i/Library/Containers/com.apple.mail/Data/Library/Preferences/com.apple.mail.plist
+    defaults write /Users/$i/Library/Containers/com.apple.mail/Data/Library/Preferences/com.apple.mail.plist EnableBundles -bool YES
+    defaults write /Users/$i/Library/Containers/com.apple.mail/Data/Library/Preferences/com.apple.mail.plist BundleCompatibilityVersion -int 3
+    sudo defaults write /Users/$i/Library/Containers/com.apple.mail/Data/Library/Preferences/com.apple.mail.plist EnableBundles -bool YES
+    sudo defaults write /Users/$i/Library/Containers/com.apple.mail/Data/Library/Preferences/com.apple.mail.plist BundleCompatibilityVersion -int 3
+    sudo chown $i /Users/$i/Library/Containers/com.apple.mail/Data/Library/Preferences/com.apple.mail.plist
+   fi
+  fi
+ done
+fi
+
+# cleanup
+rm -R /tmp/UM-installation-tmp
+

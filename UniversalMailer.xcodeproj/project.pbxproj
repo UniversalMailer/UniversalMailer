@@ -6,6 +6,21 @@
 	objectVersion = 46;
 	objects = {
 
+/* Begin PBXAggregateTarget section */
+		813C9DEE17FF41FE0094F387 /* Installer */ = {
+			isa = PBXAggregateTarget;
+			buildConfigurationList = 813C9DF117FF41FE0094F387 /* Build configuration list for PBXAggregateTarget "Installer" */;
+			buildPhases = (
+				813C9DF217FF42040094F387 /* ShellScript */,
+			);
+			dependencies = (
+				813C9DF417FF42650094F387 /* PBXTargetDependency */,
+			);
+			name = Installer;
+			productName = Installer;
+		};
+/* End PBXAggregateTarget section */
+
 /* Begin PBXBuildFile section */
 		81146A3A1775146B0067B93D /* MCMessageGenerator+UMExtension.m in Sources */ = {isa = PBXBuildFile; fileRef = 81146A391775146B0067B93D /* MCMessageGenerator+UMExtension.m */; };
 		81146A3E1775C7830067B93D /* UMStyleFilter.mm in Sources */ = {isa = PBXBuildFile; fileRef = 81146A3D1775C7830067B93D /* UMStyleFilter.mm */; };
@@ -71,6 +86,13 @@
 			remoteGlobalIDString = 81885EF6177336930080892C;
 			remoteInfo = UniversalMailer;
 		};
+		813C9DF317FF42650094F387 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 81885EEF177336930080892C /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 81885EF6177336930080892C;
+			remoteInfo = UniversalMailer;
+		};
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
@@ -80,7 +102,7 @@
 		81146A3D1775C7830067B93D /* UMStyleFilter.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = UMStyleFilter.mm; sourceTree = "<group>"; };
 		81146A3F1775C7920067B93D /* UMMIMEFilter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UMMIMEFilter.h; sourceTree = "<group>"; };
 		81146A401775C7920067B93D /* UMMIMEFilter.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = UMMIMEFilter.mm; sourceTree = "<group>"; };
-		81146A461775C8D40067B93D /* UniversalMailer Tests.xctest */ = {isa = PBXFileReference; explicitFileType = folder; includeInIndex = 0; path = "UniversalMailer Tests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		81146A461775C8D40067B93D /* UniversalMailer Tests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "UniversalMailer Tests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		81146A471775C8D40067B93D /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
 		81146A4B1775C8D40067B93D /* UniversalMailer Tests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "UniversalMailer Tests-Info.plist"; sourceTree = "<group>"; };
 		81146A4D1775C8D40067B93D /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
@@ -572,6 +594,7 @@
 			targets = (
 				81885EF6177336930080892C /* UniversalMailer */,
 				81146A451775C8D40067B93D /* UniversalMailer Tests */,
+				813C9DEE17FF41FE0094F387 /* Installer */,
 			);
 		};
 /* End PBXProject section */
@@ -602,6 +625,19 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
+		813C9DF217FF42040094F387 /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/bash;
+			shellScript = "if [[ $CONFIGURATION != \"Debug\" ]]; then\npkgbuild --root \"$BUILT_PRODUCTS_DIR/UniversalMailer.mailbundle/\" --scripts \"$SRCROOT/installation_scripts/\" --identifier it.noware.universalmailer.pkg --install-location \"/tmp/UM-installation-tmp/UniversalMailer.mailbundle\" \"$BUILT_PRODUCTS_DIR/UniversalMailer.pkg\"\nopen \"$BUILT_PRODUCTS_DIR\"\nelse\necho \"warning: installer not generated with Debug configuration\"\nfi";
+		};
 		8199A6E71776FA5C00F40B2E /* ShellScript */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -698,6 +734,11 @@
 			target = 81885EF6177336930080892C /* UniversalMailer */;
 			targetProxy = 81146A521775C8D40067B93D /* PBXContainerItemProxy */;
 		};
+		813C9DF417FF42650094F387 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 81885EF6177336930080892C /* UniversalMailer */;
+			targetProxy = 813C9DF317FF42650094F387 /* PBXContainerItemProxy */;
+		};
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
@@ -753,6 +794,20 @@
 				INFOPLIST_FILE = "UniversalMailer Tests/UniversalMailer Tests-Info.plist";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = xctest;
+			};
+			name = Release;
+		};
+		813C9DEF17FF41FE0094F387 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		813C9DF017FF41FE0094F387 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Release;
 		};
@@ -870,6 +925,14 @@
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
+		};
+		813C9DF117FF41FE0094F387 /* Build configuration list for PBXAggregateTarget "Installer" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				813C9DEF17FF41FE0094F387 /* Debug */,
+				813C9DF017FF41FE0094F387 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
 		};
 		81885EF2177336930080892C /* Build configuration list for PBXProject "UniversalMailer" */ = {
 			isa = XCConfigurationList;
