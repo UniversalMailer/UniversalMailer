@@ -1,6 +1,8 @@
 UniversalMailer 2.0
 ===================
 
+<h4>Go to the <a href='http://universalmailer.github.io/UniversalMailer/'>page</a> of the plugin where you can find the installer.</h4>
+
 Universal Mailer plugin for Mail.app / OS X 10.9. This new version of the plugin meant to be used in OS X 10.9 and is _not_ backward compatible.
 Use version 1.x if you are on an older version of OS X.
 
