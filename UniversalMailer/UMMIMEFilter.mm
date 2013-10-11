@@ -349,7 +349,7 @@ void updateCIDHeaders( mimetic::MimeEntity *pMe, std::list<mimetic::MimeEntity*>
 	cleanEntity.load( inFile.begin(), inFile.end() );
     
     char *htmlString = strdup([finalHTMLString cStringUsingEncoding: [encodings[[NSString stringWithCString: charset encoding: NSUTF8StringEncoding]] intValue]]);
-    deleteMimeEntity( &cleanEntity, htmlString );
+    deleteMimeEntity( &cleanEntity, htmlString, charset );
     updateCIDHeaders( &cleanEntity, &cids );
     
     std::ofstream of([_inputFile cStringUsingEncoding: NSUTF8StringEncoding]);
