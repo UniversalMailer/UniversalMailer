@@ -66,5 +66,13 @@
 	<integer>2147484936</integer>
 	<key>x-euc-cn</key>
 	<integer>2147486000</integer>
+	<key>big5</key>
+	<integer>2147486211</integer>
+	<key>cn-big5</key>
+	<integer>2147486211</integer>
+	<key>x-x-big5</key>
+	<integer>2147486211</integer>
+	<key>big5-hkscs</key>
+	<integer>2147486214</integer>
 </dict>
 </plist>
