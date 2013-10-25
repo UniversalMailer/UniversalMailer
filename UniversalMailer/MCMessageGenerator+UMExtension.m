@@ -21,10 +21,17 @@
 #import "UMMIMEFilter.h"
 #import "UMStyleFilter.h"
 
+@interface DummyObject : NSObject
+- (BOOL)signsOutput;
+@end
+
 id UMnewMessageWithHtmlStringP(id self, SEL _cmd, id str, id plain, NSArray* other, id hdrs){
     UMLog( @"%s", __PRETTY_FUNCTION__ );
     
-    // TODO: add new GPGMail and S/MIME fix
+    // GPGMail and S/MIME fix
+    DummyObject *dummy = self;
+    if( [self respondsToSelector: @selector(signsOutput)] && [dummy signsOutput] )
+        return UMnewMessageWithHtmlStringP( self, _cmd, str, plain, other, hdrs );
 
     // Normal HTML manipulation
     if( [[NSUserDefaults standardUserDefaults] boolForKey: UMMailFilterEnabled] ){
