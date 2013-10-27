@@ -28,10 +28,12 @@
 id UMnewMessageWithHtmlStringP(id self, SEL _cmd, id str, id plain, NSArray* other, id hdrs){
     UMLog( @"%s", __PRETTY_FUNCTION__ );
     
+#ifdef DEBUG_LOGS
     UMLog( @"str: [%@]", str );
     UMLog( @"plain: [%@]", plain );
     UMLog( @"other: [%@]", other );
     UMLog( @"hdrs: [%@]", hdrs );
+#endif
     
     // GPGMail and S/MIME fix
     DummyObject *dummy = self;
@@ -55,7 +57,9 @@ id UMnewMessageWithHtmlStringP(id self, SEL _cmd, id str, id plain, NSArray* oth
     if( [[NSUserDefaults standardUserDefaults] boolForKey: UMMailFilterEnabled] ){
         if( [str length] > 0 && !other ){
             if( [[NSUserDefaults standardUserDefaults] boolForKey: UMFontFilterEnabled] ){
+#ifdef DEBUG_LOGS
                 UMLog( @"Applying default font to [%@]", str );
+#endif
                 NSColor *color = [[NSColor blackColor] colorUsingColorSpaceName: NSCalibratedRGBColorSpace];
                 NSData *serializedColor = [[NSUserDefaults standardUserDefaults] objectForKey: UMOutgoingFontColor];
                 if( serializedColor )
@@ -85,7 +89,9 @@ id UMnewMessageWithHtmlStringP(id self, SEL _cmd, id str, id plain, NSArray* oth
                 UMMIMEFilter *mimeFilter = [[UMMIMEFilter alloc] initWithData: [ret valueForKey: @"_rawData"]];
                 NSData *filteredData = mimeFilter.filteredMIME;
                 if( filteredData ){
+#ifdef DEBUG_LOGS
                     UMLog( @"Setting back filtered data [%@]", [[NSString alloc] initWithData: filteredData encoding: NSUTF8StringEncoding] );
+#endif
                     [ret setValue: filteredData forKey: @"_rawData"];
                 }
             }
