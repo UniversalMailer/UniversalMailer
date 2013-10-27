@@ -893,6 +893,7 @@
 				OTHER_CFLAGS = (
 					"-DHAVE_MIMETIC_CONFIG",
 					"-DDEBUG",
+					"-DDEBUG_LOGS",
 				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = mailbundle;
@@ -933,6 +934,7 @@
 				813C9DF017FF41FE0094F387 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		81885EF2177336930080892C /* Build configuration list for PBXProject "UniversalMailer" */ = {
 			isa = XCConfigurationList;

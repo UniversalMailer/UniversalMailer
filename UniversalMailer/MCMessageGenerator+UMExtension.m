@@ -28,15 +28,34 @@
 id UMnewMessageWithHtmlStringP(id self, SEL _cmd, id str, id plain, NSArray* other, id hdrs){
     UMLog( @"%s", __PRETTY_FUNCTION__ );
     
+    UMLog( @"str: [%@]", str );
+    UMLog( @"plain: [%@]", plain );
+    UMLog( @"other: [%@]", other );
+    UMLog( @"hdrs: [%@]", hdrs );
+    
     // GPGMail and S/MIME fix
     DummyObject *dummy = self;
     if( [self respondsToSelector: @selector(signsOutput)] && [dummy signsOutput] )
         return UMnewMessageWithHtmlStringP( self, _cmd, str, plain, other, hdrs );
 
+#ifdef DEBUG_LOGS
+    NSArray *defaultKeys = [[[NSUserDefaults standardUserDefaults] dictionaryRepresentation] allKeys];
+    defaultKeys = [defaultKeys filteredArrayUsingPredicate: [NSPredicate predicateWithBlock: ^(id evaluatedObject, NSDictionary *bindings){
+        NSRange sRange = [evaluatedObject rangeOfString: @"UM"];
+        if( sRange.location != NSNotFound && sRange.location == 0 )
+            return YES;
+        return NO;
+    }]];
+    for( NSString *key in defaultKeys ){
+        UMLog( @"%@: %@", key, [[NSUserDefaults standardUserDefaults] objectForKey: key] );
+    }
+#endif
+
     // Normal HTML manipulation
     if( [[NSUserDefaults standardUserDefaults] boolForKey: UMMailFilterEnabled] ){
         if( [str length] > 0 && !other ){
             if( [[NSUserDefaults standardUserDefaults] boolForKey: UMFontFilterEnabled] ){
+                UMLog( @"Applying default font to [%@]", str );
                 NSColor *color = [[NSColor blackColor] colorUsingColorSpaceName: NSCalibratedRGBColorSpace];
                 NSData *serializedColor = [[NSUserDefaults standardUserDefaults] objectForKey: UMOutgoingFontColor];
                 if( serializedColor )
@@ -58,13 +77,17 @@ id UMnewMessageWithHtmlStringP(id self, SEL _cmd, id str, id plain, NSArray* oth
     
     // MIME re-arrangement
     if( [[NSUserDefaults standardUserDefaults] boolForKey: UMMailFilterEnabled] ){
+        UMLog( @"Mail filter is enabled, checking for parts to edit" );
         // 10.9 has _rawData property in MCOutgoingMessage
         if( other.count > 0 && [ret isKindOfClass: NSClassFromString( @"MCOutgoingMessage" )] ){            
             if( [ret valueForKey: @"_rawData"] ){
+                UMLog( @"Starting MIME filter" );
                 UMMIMEFilter *mimeFilter = [[UMMIMEFilter alloc] initWithData: [ret valueForKey: @"_rawData"]];
                 NSData *filteredData = mimeFilter.filteredMIME;
-                if( filteredData )
+                if( filteredData ){
+                    UMLog( @"Setting back filtered data [%@]", [[NSString alloc] initWithData: filteredData encoding: NSUTF8StringEncoding] );
                     [ret setValue: filteredData forKey: @"_rawData"];
+                }
             }
         }
     }
