@@ -1,0 +1,57 @@
+.header {
+		padding-left: 15px;
+		padding-right: 15px;
+		padding-top: 10px;
+		padding-bottom: 5px;
+		border-bottom: 1px solid #e5e5e5;
+}
+
+.header h3 {
+		margin-top: 0;
+		margin-bottom: 0;
+		line-height: 40px;
+		padding-bottom: 10px;
+}
+
+.jumbotron {
+		text-align: center;
+		background-color: transparent;
+		padding-top: 20px;
+		padding-bottom: 0px;
+		margin-bottom: 10px;
+}
+
+.jumbotron h1, h2 {
+		margin-left: 140px;
+}
+
+#forkme_banner {
+  display: block;
+	width: 170px;
+  z-index: 10;
+  padding: 10px 50px 10px 10px;
+  color: #fff;
+  background: url('../images/blacktocat.png') #0090ff no-repeat 95% 50%;
+  font-weight: 700;
+  box-shadow: 0 0 10px rgba(0,0,0,.5);
+  border-bottom-left-radius: 2px;
+  border-bottom-right-radius: 2px;
+}
+
+.donation {
+		margin-top: 60px;
+		font-size: 70%;
+		font-weight: bold;
+}
+
+.umlogo {
+		float: right;
+}
+
+.dld-btn {
+		margin-top: 20px;
+}
+
+.prettyprint {
+		font-size: 80% !important;
+}

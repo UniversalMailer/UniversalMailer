@@ -1,0 +1,8 @@
+.jumbotron {
+		font-size: 13pt;
+		text-align: left !important;
+}
+
+.jumbotron h1, h3 {
+		margin-left: auto;
+}
