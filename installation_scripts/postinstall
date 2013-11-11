@@ -65,7 +65,7 @@ chmod -R 755 "$target"
 
 # Enable bundles in Mail.app ###################################################
 defaults write "/Library/Preferences/com.apple.mail" EnableBundles -bool YES
-defaults write "/Library/Preferences/com.apple.mail" BundleCompatibilityVersion -int $bundleCompVer
+defaults write "/Library/Preferences/com.apple.mail" BundleCompatibilityVersion -int 3
 ################################################################################
 
 
