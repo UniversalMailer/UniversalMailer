@@ -30,9 +30,16 @@
                                  [defaults objectForKey:UMOutgoingFontName],
                                  [defaults objectForKey: UMOutgoingFontSize]];
     NSData *colorData = [defaults objectForKey: UMOutgoingFontColor];
+#ifdef DEBUG_LOGS
+    UMLog( @"Setting default color to colorData" );
+#endif
     NSColor *color = [[NSColor blackColor] colorUsingColorSpaceName: NSCalibratedRGBColorSpace];
-    if( colorData )
+    if( colorData ){
+#ifdef DEBUG_LOGS
+        UMLog( @"Found color data in default settings, using it [%@]", colorData );
+#endif
         color = [[NSUnarchiver unarchiveObjectWithData: colorData] colorUsingColorSpaceName: NSCalibratedRGBColorSpace];
+    }
     _colorWell.color = color;
     NSString *versionString = [NSString stringWithFormat: @"Version %@", [[[NSBundle bundleForClass: [self class]] infoDictionary] objectForKey: (NSString*)kCFBundleVersionKey]];
     [_UMVersion setStringValue: versionString];
@@ -76,6 +83,7 @@
         [[NSUserDefaults standardUserDefaults] setBool: NO forKey: UMMailFilterEnabled];
 		[_UMForceFontButton setEnabled: NO];
 	}
+    [[NSUserDefaults standardUserDefaults] synchronize];
 }
 
 - (IBAction)UMForceFontPressed: (NSButton*)sender {
@@ -87,6 +95,7 @@
         [[NSUserDefaults standardUserDefaults] setBool: NO forKey: UMFontFilterEnabled];
         [_UMSelectFontButton setEnabled: NO];
 	}
+    [[NSUserDefaults standardUserDefaults] synchronize];
 }
 
 - (IBAction)UMForceAttachmentsPressed: (id)sender {
@@ -96,6 +105,7 @@
     else {
         [[NSUserDefaults standardUserDefaults] setBool: NO forKey: UMDisableImageInlining];
     }
+    [[NSUserDefaults standardUserDefaults] synchronize];
 }
 
 - (IBAction)selectFont:(id)sender {
@@ -112,6 +122,7 @@
     NSString *fontSize = [NSString stringWithFormat: @"%.0f", newFont.pointSize];
     [[NSUserDefaults standardUserDefaults] setObject: fontSize forKey: UMOutgoingFontSize];
     [_outgoingFontTextField setStringValue: newFontDescription];
+    [[NSUserDefaults standardUserDefaults] synchronize];
 }
 
 - (IBAction)UMUsePointsPressed:(id)sender {
@@ -121,6 +132,7 @@
     else {
         [[NSUserDefaults standardUserDefaults] setBool: NO forKey: UMUsePointsForFontSizes];
     }
+    [[NSUserDefaults standardUserDefaults] synchronize];
 }
 
 - (BOOL)isResizable {
@@ -140,6 +152,7 @@
     _colorWell.color = sender.color;
     NSData *colorData = [NSArchiver archivedDataWithRootObject: [sender.color colorUsingColorSpaceName: NSCalibratedRGBColorSpace]];
     [[NSUserDefaults standardUserDefaults] setObject: colorData forKey: UMOutgoingFontColor];
+    [[NSUserDefaults standardUserDefaults] synchronize];
 }
 
 @end
