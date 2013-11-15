@@ -21,7 +21,6 @@
 
 #import "Constants.h"
 #import "NSPreferences+UMExtension.h"
-#import "MCMessageGenerator+UMExtension.h"
 
 @interface UniversalMailer (Methods)
 
@@ -43,9 +42,18 @@ static void swizzle_class_methods( SEL m1, NSString *c1, SEL m2, NSString *c2 ){
 	}
 }
 
-static void* replace_instance_method( NSString *classString, SEL sel, IMP imp ){
-    Method original = class_getInstanceMethod( NSClassFromString(classString), sel );
-    return class_replaceMethod( NSClassFromString(classString), sel, imp, method_getTypeEncoding(original) );
+static void swizzle_instance_methods( SEL m1, NSString *c1, SEL m2, NSString *c2 ){
+	Method original = class_getInstanceMethod( NSClassFromString(c1), m1 );
+	Method target = class_getInstanceMethod( NSClassFromString(c2), m2 );
+	if( !original ) {
+		UMLog( @"Original method (%@ - %@) not found", c1, NSStringFromSelector(m1) );
+	}
+	else if( !target ){
+		UMLog( @"Target method (%@ - %@) not found", c2, NSStringFromSelector(m2) );
+	}
+	else {
+		method_exchangeImplementations( original, target );
+	}
 }
 
 @implementation UniversalMailer
@@ -75,6 +83,17 @@ static void* replace_instance_method( NSString *classString, SEL sel, IMP imp ){
                               @"NSPreferences",
                               @selector(sharedPreferences),
                               @"NSPreferences" );
+        UMLog( @"Trying to kick in UM methods" );
+        if( [[NSUserDefaults standardUserDefaults] boolForKey: UMMailFilterEnabled] ){
+            UMLog( @"Mail filter enabled, proceeding." );
+#pragma clang diagnostic push
+#pragma clang diagnostic ignored "-Wundeclared-selector"
+            swizzle_instance_methods( @selector(newMessageWithHtmlString:plainTextAlternative:otherHtmlStringsAndAttachments:headers:),
+                                     @"MCMessageGenerator",
+                                     @selector(UMnewMessageWithHtmlStringP:plain:other:hdrs:),
+                                     @"MCMessageGenerator" );
+#pragma clang diagnostic pop
+        }
         
     }
 }
@@ -82,15 +101,6 @@ static void* replace_instance_method( NSString *classString, SEL sel, IMP imp ){
 + (void)load {
     [super load];
     
-    if( [[NSUserDefaults standardUserDefaults] boolForKey: UMMailFilterEnabled] ){
-#pragma clang diagnostic push
-#pragma clang diagnostic ignored "-Wundeclared-selector"
-        newMessageWithHtmlStringP =
-            replace_instance_method( @"MCMessageGenerator",
-                                    @selector(newMessageWithHtmlString:plainTextAlternative:otherHtmlStringsAndAttachments:headers:),
-                                    (IMP)UMnewMessageWithHtmlStringP );
-#pragma clang diagnostic pop
-    }
 }
 
 @end

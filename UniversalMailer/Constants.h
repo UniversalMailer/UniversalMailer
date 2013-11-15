@@ -19,6 +19,8 @@
    cat /Applications/Mail.app/Contents/Info.plist | grep UUID -A 1
  */
 
+// TODO: modify UMLog to read a setting and decide whether to log or not the msg.
+
 #ifdef DEBUG
 #define UMLog(...) NSLog(__VA_ARGS__)
 #else

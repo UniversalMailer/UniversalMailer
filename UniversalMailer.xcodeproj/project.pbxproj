@@ -22,13 +22,13 @@
 /* End PBXAggregateTarget section */
 
 /* Begin PBXBuildFile section */
-		81146A3A1775146B0067B93D /* MCMessageGenerator+UMExtension.m in Sources */ = {isa = PBXBuildFile; fileRef = 81146A391775146B0067B93D /* MCMessageGenerator+UMExtension.m */; };
 		81146A3E1775C7830067B93D /* UMStyleFilter.mm in Sources */ = {isa = PBXBuildFile; fileRef = 81146A3D1775C7830067B93D /* UMStyleFilter.mm */; };
 		81146A411775C7920067B93D /* UMMIMEFilter.mm in Sources */ = {isa = PBXBuildFile; fileRef = 81146A401775C7920067B93D /* UMMIMEFilter.mm */; };
 		81146A481775C8D40067B93D /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 81146A471775C8D40067B93D /* XCTest.framework */; };
 		81146A4E1775C8D40067B93D /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 81146A4C1775C8D40067B93D /* InfoPlist.strings */; };
 		81146A581775C9450067B93D /* UMStyleFilterTest.m in Sources */ = {isa = PBXBuildFile; fileRef = 81146A571775C9450067B93D /* UMStyleFilterTest.m */; };
 		81146A5A1775C9620067B93D /* UMMIMEFilterTest.m in Sources */ = {isa = PBXBuildFile; fileRef = 81146A591775C9620067B93D /* UMMIMEFilterTest.m */; };
+		8167D90F1834C23700DDD8AE /* MCMessageGenerator+UMExtensions.m in Sources */ = {isa = PBXBuildFile; fileRef = 8167D90E1834C23700DDD8AE /* MCMessageGenerator+UMExtensions.m */; };
 		816C5418178CA23500FD6E03 /* btn_donate_SM.gif in Resources */ = {isa = PBXBuildFile; fileRef = 816C5417178CA23500FD6E03 /* btn_donate_SM.gif */; };
 		81885EFB177336930080892C /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 81885EFA177336930080892C /* Cocoa.framework */; };
 		81885F05177336930080892C /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 81885F03177336930080892C /* InfoPlist.strings */; };
@@ -96,8 +96,6 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		81146A38177514510067B93D /* MCMessageGenerator+UMExtension.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "MCMessageGenerator+UMExtension.h"; sourceTree = "<group>"; };
-		81146A391775146B0067B93D /* MCMessageGenerator+UMExtension.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "MCMessageGenerator+UMExtension.m"; sourceTree = "<group>"; };
 		81146A3C1775C7830067B93D /* UMStyleFilter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UMStyleFilter.h; sourceTree = "<group>"; };
 		81146A3D1775C7830067B93D /* UMStyleFilter.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = UMStyleFilter.mm; sourceTree = "<group>"; };
 		81146A3F1775C7920067B93D /* UMMIMEFilter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UMMIMEFilter.h; sourceTree = "<group>"; };
@@ -109,6 +107,9 @@
 		81146A511775C8D40067B93D /* UniversalMailer Tests-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UniversalMailer Tests-Prefix.pch"; sourceTree = "<group>"; };
 		81146A571775C9450067B93D /* UMStyleFilterTest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UMStyleFilterTest.m; sourceTree = "<group>"; };
 		81146A591775C9620067B93D /* UMMIMEFilterTest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UMMIMEFilterTest.m; sourceTree = "<group>"; };
+		8167D90B1834C21800DDD8AE /* MailCore.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MailCore.h; sourceTree = "<group>"; };
+		8167D90D1834C23700DDD8AE /* MCMessageGenerator+UMExtensions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "MCMessageGenerator+UMExtensions.h"; sourceTree = "<group>"; };
+		8167D90E1834C23700DDD8AE /* MCMessageGenerator+UMExtensions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "MCMessageGenerator+UMExtensions.m"; sourceTree = "<group>"; };
 		816C5417178CA23500FD6E03 /* btn_donate_SM.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = btn_donate_SM.gif; sourceTree = "<group>"; };
 		81885EF7177336930080892C /* UniversalMailer.mailbundle */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = UniversalMailer.mailbundle; sourceTree = BUILT_PRODUCTS_DIR; };
 		81885EFA177336930080892C /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = System/Library/Frameworks/Cocoa.framework; sourceTree = SDKROOT; };
@@ -242,8 +243,7 @@
 		81146A37177514200067B93D /* Replaced methods */ = {
 			isa = PBXGroup;
 			children = (
-				81146A38177514510067B93D /* MCMessageGenerator+UMExtension.h */,
-				81146A391775146B0067B93D /* MCMessageGenerator+UMExtension.m */,
+				8167D90C1834C21E00DDD8AE /* Swizzled classes */,
 			);
 			name = "Replaced methods";
 			sourceTree = "<group>";
@@ -277,6 +277,15 @@
 				81146A511775C8D40067B93D /* UniversalMailer Tests-Prefix.pch */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		8167D90C1834C21E00DDD8AE /* Swizzled classes */ = {
+			isa = PBXGroup;
+			children = (
+				8167D90D1834C23700DDD8AE /* MCMessageGenerator+UMExtensions.h */,
+				8167D90E1834C23700DDD8AE /* MCMessageGenerator+UMExtensions.m */,
+			);
+			name = "Swizzled classes";
 			sourceTree = "<group>";
 		};
 		81885EEE177336930080892C = {
@@ -521,6 +530,7 @@
 		81E876B51774470B004B917C /* Dumped headers */ = {
 			isa = PBXGroup;
 			children = (
+				8167D90B1834C21800DDD8AE /* MailCore.h */,
 				81885F1317733D210080892C /* NSPreferences.h */,
 			);
 			name = "Dumped headers";
@@ -720,9 +730,9 @@
 				8199A6CC17765BBB00F40B2E /* message.cxx in Sources */,
 				8199A6C617765BBB00F40B2E /* contentdisposition.cxx in Sources */,
 				81146A3E1775C7830067B93D /* UMStyleFilter.mm in Sources */,
-				81146A3A1775146B0067B93D /* MCMessageGenerator+UMExtension.m in Sources */,
 				8199A6DE17765BBB00F40B2E /* mailbox.cxx in Sources */,
 				8199A6E017765BBB00F40B2E /* message.cxx in Sources */,
+				8167D90F1834C23700DDD8AE /* MCMessageGenerator+UMExtensions.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -845,6 +855,11 @@
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				MACOSX_DEPLOYMENT_TARGET = 10.9;
 				ONLY_ACTIVE_ARCH = YES;
+				OTHER_LDFLAGS = (
+					"-undefined",
+					suppress,
+					"-force_flat_namespace",
+				);
 				SDKROOT = macosx;
 			};
 			name = Debug;
@@ -877,6 +892,11 @@
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				MACOSX_DEPLOYMENT_TARGET = 10.9;
+				OTHER_LDFLAGS = (
+					"-undefined",
+					suppress,
+					"-force_flat_namespace",
+				);
 				SDKROOT = macosx;
 			};
 			name = Release;
@@ -885,6 +905,10 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				COMBINE_HIDPI_IMAGES = YES;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(SYSTEM_LIBRARY_DIR)/PrivateFrameworks",
+				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "UniversalMailer/UniversalMailer-Prefix.pch";
 				HEADER_SEARCH_PATHS = "\"$SRCROOT\"";
@@ -904,6 +928,10 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				COMBINE_HIDPI_IMAGES = YES;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(SYSTEM_LIBRARY_DIR)/PrivateFrameworks",
+				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "UniversalMailer/UniversalMailer-Prefix.pch";
 				HEADER_SEARCH_PATHS = "\"$SRCROOT\"";
