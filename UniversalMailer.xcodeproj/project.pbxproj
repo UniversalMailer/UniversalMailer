@@ -917,7 +917,6 @@
 				OTHER_CFLAGS = (
 					"-DHAVE_MIMETIC_CONFIG",
 					"-DDEBUG",
-					"-DDEBUG_LOGS",
 				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = mailbundle;

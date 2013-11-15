@@ -19,13 +19,13 @@
    cat /Applications/Mail.app/Contents/Info.plist | grep UUID -A 1
  */
 
-// TODO: modify UMLog to read a setting and decide whether to log or not the msg.
-
 #ifdef DEBUG
 #define UMLog(...) NSLog(__VA_ARGS__)
 #else
-#define UMLog(...) ;
+#define UMLog(...) { if( [[NSUserDefaults standardUserDefaults] boolForKey: UMLoggingEnabled] ){ NSLog(__VA_ARGS__); } }
 #endif
+
+#define UMLoggingEnabled @"UMLoggingEnabled"
 
 #define UMMailFilterEnabled @"UMMailFilterEnabled"
 #define UMFontFilterEnabled @"UMFontFilterEnabled"

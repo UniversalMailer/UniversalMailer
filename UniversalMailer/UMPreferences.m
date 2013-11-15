@@ -30,14 +30,10 @@
                                  [defaults objectForKey:UMOutgoingFontName],
                                  [defaults objectForKey: UMOutgoingFontSize]];
     NSData *colorData = [defaults objectForKey: UMOutgoingFontColor];
-#ifdef DEBUG_LOGS
     UMLog( @"Setting default color to colorData" );
-#endif
     NSColor *color = [[NSColor blackColor] colorUsingColorSpaceName: NSCalibratedRGBColorSpace];
     if( colorData ){
-#ifdef DEBUG_LOGS
         UMLog( @"Found color data in default settings, using it [%@]", colorData );
-#endif
         color = [[NSUnarchiver unarchiveObjectWithData: colorData] colorUsingColorSpaceName: NSCalibratedRGBColorSpace];
     }
     _colorWell.color = color;

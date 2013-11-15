@@ -21,19 +21,16 @@
 - (id)UMnewMessageWithHtmlStringP: (id)str plain: (id)plain other: (NSArray*)other hdrs: (id)hdrs{
     UMLog( @"%s", __PRETTY_FUNCTION__ );
     
-#ifdef DEBUG_LOGS
     UMLog( @"str: [%@]", str );
     UMLog( @"plain: [%@]", plain );
     UMLog( @"other: [%@]", other );
     UMLog( @"hdrs: [%@]", hdrs );
-#endif
     
     // GPGMail and S/MIME fix
     DummyObject *dummy = (id)self;
     if( [self respondsToSelector: @selector(signsOutput)] && [dummy signsOutput] )
         return [self UMnewMessageWithHtmlStringP: str plain: plain other: other hdrs: hdrs];
 
-#ifdef DEBUG_LOGS
     NSArray *defaultKeys = [[[NSUserDefaults standardUserDefaults] dictionaryRepresentation] allKeys];
     defaultKeys = [defaultKeys filteredArrayUsingPredicate: [NSPredicate predicateWithBlock: ^(id evaluatedObject, NSDictionary *bindings){
         NSRange sRange = [evaluatedObject rangeOfString: @"UM"];
@@ -44,15 +41,12 @@
     for( NSString *key in defaultKeys ){
         UMLog( @"%@: %@", key, [[NSUserDefaults standardUserDefaults] objectForKey: key] );
     }
-#endif
     
     // Normal HTML manipulation
     if( [[NSUserDefaults standardUserDefaults] boolForKey: UMMailFilterEnabled] ){
         if( [str length] > 0 && !other ){
             if( [[NSUserDefaults standardUserDefaults] boolForKey: UMFontFilterEnabled] ){
-#ifdef DEBUG_LOGS
                 UMLog( @"Applying default font to [%@]", str );
-#endif
                 NSColor *color = [[NSColor blackColor] colorUsingColorSpaceName: NSCalibratedRGBColorSpace];
                 NSData *serializedColor = [[NSUserDefaults standardUserDefaults] objectForKey: UMOutgoingFontColor];
                 if( serializedColor )
@@ -82,9 +76,7 @@
                 UMMIMEFilter *mimeFilter = [[UMMIMEFilter alloc] initWithData: [ret valueForKey: @"_rawData"]];
                 NSData *filteredData = mimeFilter.filteredMIME;
                 if( filteredData ){
-#ifdef DEBUG_LOGS
                     UMLog( @"Setting back filtered data [%@]", [[NSString alloc] initWithData: filteredData encoding: NSUTF8StringEncoding] );
-#endif
                     [ret setValue: filteredData forKey: @"_rawData"];
                 }
             }
