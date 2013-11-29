@@ -74,5 +74,7 @@
 	<integer>2147486211</integer>
 	<key>big5-hkscs</key>
 	<integer>2147486214</integer>
+	<key>iso-2022-cn</key>
+	<integer>2147485744</integer>
 </dict>
 </plist>
