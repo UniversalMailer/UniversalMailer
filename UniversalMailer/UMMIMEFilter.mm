@@ -252,6 +252,9 @@ void updateCIDHeaders( mimetic::MimeEntity *pMe, std::list<mimetic::MimeEntity*>
                     }
                     if( ![charset isEqualToString: @"us-ascii"] )
                         [charsetDictionary setObject: @(YES) forKey: charset];
+                    if( !encodings[charset] ){
+                        UMErrorLog( @"Universal Mailer did find an unsupported charset encoding (%@). Please file an issue by specifying this message", charset );
+                    }
                     NSStringEncoding encoding = [encodings[charset] intValue];
                     if( encoding < 1 )
                         encoding = NSUTF8StringEncoding;
@@ -265,6 +268,9 @@ void updateCIDHeaders( mimetic::MimeEntity *pMe, std::list<mimetic::MimeEntity*>
                     str = [str stringByRemovingPatternsMatchingRE: @"<head>.*</head>"];
                     str = [str stringByReplacingOccurrencesOfString: @"<body" withString: @"<div"];
                     str = [str stringByReplacingOccurrencesOfString: @"</body>" withString: @"</div>"];
+                    if( !str ){
+                        UMErrorLog( @"Universal Mailer encoutered a serious error while parsing the following email. Please file an issue with this log if possible. %s", [_inputFile cStringUsingEncoding: NSUTF8StringEncoding] );
+                    }
                     [finalHTMLString appendString: str];
                 }
             }
@@ -286,6 +292,9 @@ void updateCIDHeaders( mimetic::MimeEntity *pMe, std::list<mimetic::MimeEntity*>
             }
             if( ![[charset lowercaseString] isEqualToString: @"us-ascii"] )
                 [charsetDictionary setObject: [NSNumber numberWithBool:YES] forKey: charset];
+            if( !encodings[charset] ){
+                UMErrorLog( @"Universal Mailer did find an unsupported charset encoding (%@). Please file an issue by specifying this message", charset );
+            }
             NSStringEncoding encoding = [encodings[charset] intValue];
             if( encoding < 1 )
                 encoding = NSUTF8StringEncoding;
@@ -307,6 +316,9 @@ void updateCIDHeaders( mimetic::MimeEntity *pMe, std::list<mimetic::MimeEntity*>
             str = [str stringByRemovingPatternsMatchingRE: @"<head>.*</head>"];
             str = [str stringByReplacingOccurrencesOfString: @"<body" withString: @"<div"];
             str = [str stringByReplacingOccurrencesOfString: @"</body>" withString: @"</div>"];
+            if( !str ){
+                UMErrorLog( @"Universal Mailer encoutered a serious error while parsing the following email. Please file an issue with this log if possible. %s", [_inputFile cStringUsingEncoding: NSUTF8StringEncoding] );
+            }
             [finalHTMLString appendString: str];
         }
 	}

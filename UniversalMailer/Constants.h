@@ -21,8 +21,10 @@
 
 #ifdef DEBUG
 #define UMLog(...) NSLog(__VA_ARGS__)
+#define UMErrorLog(...) NSLog(__VA_ARGS__)
 #else
 #define UMLog(...) { if( [[NSUserDefaults standardUserDefaults] boolForKey: UMLoggingEnabled] ){ NSLog(__VA_ARGS__); } }
+#define UMErrorLog(...) NSLog(__VA_ARGS__)
 #endif
 
 #define UMLoggingEnabled @"UMLoggingEnabled"
