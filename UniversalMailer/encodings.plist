@@ -76,5 +76,9 @@
 	<integer>2147486214</integer>
 	<key>iso-2022-cn</key>
 	<integer>2147485744</integer>
+	<key>gb18030</key>
+	<integer>2147485744</integer>
+	<key>gbk</key>
+	<integer>2147485233</integer>
 </dict>
 </plist>
