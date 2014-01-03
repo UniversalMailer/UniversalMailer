@@ -20,7 +20,7 @@
 #import "Constants.h"
 #import "UniversalMailer.h"
 
-#define _kFullVersionCopyright @"Copyright © 2013 noware. All rights reserved. This program comes with no warranties. Use at your own risk."
+#define _kFullVersionCopyright @"Copyright © 2014 noware. All rights reserved. This program comes with no warranties. Use at your own risk."
 
 @implementation UMPreferences
 
@@ -145,10 +145,16 @@
 }
 
 - (void)colorSelected: (NSColorPanel*)sender {
-    _colorWell.color = sender.color;
-    NSData *colorData = [NSArchiver archivedDataWithRootObject: [sender.color colorUsingColorSpaceName: NSCalibratedRGBColorSpace]];
-    [[NSUserDefaults standardUserDefaults] setObject: colorData forKey: UMOutgoingFontColor];
-    [[NSUserDefaults standardUserDefaults] synchronize];
+    Class pref = NSClassFromString( @"NSPreferences" );
+    id currentModule = [[pref sharedPreferences] valueForKey: @"_currentModule"];
+    id kWindow = [NSApp keyWindow];
+    id lWindow = [[pref sharedPreferences] valueForKey: @"_preferencesPanel"];
+    if( currentModule == self && ([NSColorPanel sharedColorPanel] == kWindow || lWindow == kWindow) ){
+        UMLog( @"Saving color preference (%@)", sender.color );
+        NSData *colorData = [NSArchiver archivedDataWithRootObject: [sender.color colorUsingColorSpaceName: NSCalibratedRGBColorSpace]];
+        [[NSUserDefaults standardUserDefaults] setObject: colorData forKey: UMOutgoingFontColor];
+        [[NSUserDefaults standardUserDefaults] synchronize];
+    }
 }
 
 @end

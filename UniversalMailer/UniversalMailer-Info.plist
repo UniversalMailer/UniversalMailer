@@ -17,18 +17,18 @@
 	<key>CFBundlePackageType</key>
 	<string>BNDL</string>
 	<key>CFBundleShortVersionString</key>
-	<string>2.1.2</string>
+	<string>2.1.3</string>
 	<key>CFBundleSignature</key>
 	<string>emal</string>
 	<key>CFBundleVersion</key>
-	<string>2.1.2</string>
+	<string>2.1.3</string>
 	<key>NSHumanReadableCopyright</key>
-	<string>Copyright © 2013 noware. All rights reserved.</string>
+	<string>Copyright © 2014 noware. All rights reserved.</string>
 	<key>NSPrincipalClass</key>
 	<string>UniversalMailer</string>
 	<key>SupportedPluginCompatibilityUUIDs</key>
 	<array>
-		<string>FBE5B158-5602-4A6D-9CC5-8461B9B7054E</string>
+		<string>1CD40D64-945D-4D50-B12D-9CD865533506</string>
 	</array>
 </dict>
 </plist>
