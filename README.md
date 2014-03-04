@@ -22,5 +22,5 @@ Universal Mailer will make your day if any of these sound familiar to you:
 If that describes your frustrations, give Universal Mailer a try and see if it can simplify your workflow!
 
 <h2>Copyright and License</h2>
-Copyright (C) 2013 noware under [MIT license](LICENSE). mimetic library is released under
+Copyright (C) 2014 noware under [MIT license](LICENSE). mimetic library is released under
 <a href='http://www.gnu.org/licenses/gpl-2.0.html'>GPLv2</a> license.
