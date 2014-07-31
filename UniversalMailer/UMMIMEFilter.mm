@@ -178,6 +178,9 @@ void updateCIDHeaders( mimetic::MimeEntity *pMe, std::list<mimetic::MimeEntity*>
     mimetic::MimeEntityList &parts = me.body().parts();
     mimetic::MimeEntityList::iterator mbit = parts.begin(), meit = parts.end();
 
+    // To find new constants for encoding look here: http://www.opensource.apple.com/source/CF/CF-476.14/CFStringEncodingExt.h
+    // then take the output from this with the desired encoding:
+    //  NSLog( @"%ld", CFStringConvertEncodingToNSStringEncoding(kCFStringEncodingEUC_JP) );
     NSDictionary *encodings = [NSDictionary dictionaryWithContentsOfFile:
                                [[NSBundle bundleForClass: [UniversalMailer class]] pathForResource: @"encodings" ofType: @"plist"]];
 	NSMutableString *finalHTMLString = [@"" mutableCopy];
