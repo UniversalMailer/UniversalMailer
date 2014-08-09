@@ -284,7 +284,7 @@ void updateCIDHeaders( mimetic::MimeEntity *pMe, std::list<mimetic::MimeEntity*>
                 firstTextEntityFound = YES;
             }
             mimetic::string decodedBody = decodeBody(*mbit);
-            NSString *charset = [NSString stringWithCString: (*mbit)->header().contentType().str().c_str() encoding: NSUTF8StringEncoding];
+            NSString *charset = [[NSString stringWithCString: (*mbit)->header().contentType().str().c_str() encoding: NSUTF8StringEncoding] lowercaseString];
             NSArray *elements = [charset componentsSeparatedByString: @";"];
             for( NSString *s in elements ){
                 NSString *str = [s stringByTrimmingCharactersInSet: [NSCharacterSet characterSetWithCharactersInString: @" \t"]];
@@ -293,7 +293,7 @@ void updateCIDHeaders( mimetic::MimeEntity *pMe, std::list<mimetic::MimeEntity*>
                     charset = [str stringByTrimmingCharactersInSet: [NSCharacterSet characterSetWithCharactersInString: @" \t\""]];
                 }
             }
-            if( ![[charset lowercaseString] isEqualToString: @"us-ascii"] )
+            if( ![charset isEqualToString: @"us-ascii"] )
                 [charsetDictionary setObject: [NSNumber numberWithBool:YES] forKey: charset];
             if( !encodings[charset] ){
                 UMErrorLog( @"Universal Mailer did find an unsupported charset encoding (%@). Please file an issue by specifying this message", charset );
