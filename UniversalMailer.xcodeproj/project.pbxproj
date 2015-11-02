@@ -582,7 +582,7 @@
 		81885EEF177336930080892C /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastUpgradeCheck = 0500;
+				LastUpgradeCheck = 0710;
 				ORGANIZATIONNAME = noware;
 				TargetAttributes = {
 					81146A451775C8D40067B93D = {
@@ -774,6 +774,7 @@
 		81146A551775C8D40067B93D /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				COMBINE_HIDPI_IMAGES = YES;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(DEVELOPER_FRAMEWORKS_DIR)",
 					"$(inherited)",
@@ -786,6 +787,7 @@
 				);
 				HEADER_SEARCH_PATHS = "\"$SRCROOT\"";
 				INFOPLIST_FILE = "UniversalMailer Tests/UniversalMailer Tests-Info.plist";
+				PRODUCT_BUNDLE_IDENTIFIER = "it.noware.${PRODUCT_NAME:rfc1034identifier}";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = xctest;
 			};
@@ -794,6 +796,7 @@
 		81146A561775C8D40067B93D /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				COMBINE_HIDPI_IMAGES = YES;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(DEVELOPER_FRAMEWORKS_DIR)",
 					"$(inherited)",
@@ -802,6 +805,7 @@
 				GCC_PREFIX_HEADER = "UniversalMailer Tests/UniversalMailer Tests-Prefix.pch";
 				HEADER_SEARCH_PATHS = "\"$SRCROOT\"";
 				INFOPLIST_FILE = "UniversalMailer Tests/UniversalMailer Tests-Info.plist";
+				PRODUCT_BUNDLE_IDENTIFIER = "it.noware.${PRODUCT_NAME:rfc1034identifier}";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = xctest;
 			};
@@ -838,6 +842,7 @@
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				COPY_PHASE_STRIP = NO;
+				ENABLE_TESTABILITY = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_ENABLE_OBJC_EXCEPTIONS = YES;
@@ -918,6 +923,7 @@
 					"-DHAVE_MIMETIC_CONFIG",
 					"-DDEBUG",
 				);
+				PRODUCT_BUNDLE_IDENTIFIER = "it.noware.${PRODUCT_NAME:rfc1034identifier}";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = mailbundle;
 			};
@@ -937,6 +943,7 @@
 				INFOPLIST_FILE = "UniversalMailer/UniversalMailer-Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Bundles";
 				OTHER_CFLAGS = "-DHAVE_MIMETIC_CONFIG";
+				PRODUCT_BUNDLE_IDENTIFIER = "it.noware.${PRODUCT_NAME:rfc1034identifier}";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = mailbundle;
 			};
