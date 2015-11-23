@@ -9,7 +9,7 @@
 	<key>CFBundleIconFile</key>
 	<string></string>
 	<key>CFBundleIdentifier</key>
-	<string>it.noware.${PRODUCT_NAME:rfc1034identifier}</string>
+	<string>$(PRODUCT_BUNDLE_IDENTIFIER)</string>
 	<key>CFBundleInfoDictionaryVersion</key>
 	<string>6.0</string>
 	<key>CFBundleName</key>
@@ -28,7 +28,11 @@
 	<string>UniversalMailer</string>
 	<key>SupportedPluginCompatibilityUUIDs</key>
 	<array>
+		<string>D1EFE124-86FF-4751-BF00-80B2C0D6F2E4</string>
+		<string>F4C26776-22B3-4A0A-96E1-EA8E4482E0B5</string>
+		<string>88ED2D4C-D384-4BF5-8E94-B533455E6AAF</string>
 		<string>1CD40D64-945D-4D50-B12D-9CD865533506</string>
+		<string>DAF41AB7-F9AD-4273-9934-C81C74705B69</string>
 	</array>
 </dict>
 </plist>

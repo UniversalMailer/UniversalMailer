@@ -234,7 +234,7 @@ protected:
             sValue,
             sIgnoreHeader
         };
-        register int status;
+        int status;
         int pos;
         char *name, *value;
         size_t nBufSz, vBufSz, nPos, vPos;
@@ -472,7 +472,7 @@ protected:
     virtual void copy_until_boundary(ParsingElem pe)
     {
         size_t pos, lines, eomsz = 0;
-        register char c;
+        char c;
         enum { nlsz = 1 };
         const char *eom = 0;
 
