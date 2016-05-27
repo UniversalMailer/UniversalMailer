@@ -1,5 +1,0 @@
-#!/bin/bash
-
-osascript -e "quit app \"Mail\""
-
-rm -rf ~/Library/Mail/Bundles/UniversalMailer.mailbundle
