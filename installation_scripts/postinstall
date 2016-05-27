@@ -1,0 +1,92 @@
+#!/bin/bash
+# Universal Mailer post install scripts. Adapdted from GPGTools
+# https://github.com/GPGTools/GPGMail/blob/dev/Installer/postinstall.sh
+
+sysdir="/Library/Mail/Bundles"
+netdir="/Network/Library/Mail/Bundles"
+homedir="$HOME/Library/Mail/Bundles"
+bundle="UniversalMailer.mailbundle"
+USER=${USER:-$(id -un)}
+temporarydir=/tmp/UM-installation-tmp
+
+
+# Find real target #############################################################
+existingInstallationAt=""
+
+if [[ -e "$netdir/$bundle" ]]; then
+    existingInstallationAt="$netdir"
+    target="$netdir"
+elif [[ -e "$homedir/$bundle" ]]; then
+    existingInstallationAt="$homedir"
+    target="$homedir"
+elif [[ -e "$sysdir/$bundle" ]]; then
+    existingInstallationAt="$sysdir"
+    target="$sysdir"
+else
+    target="$sysdir"
+fi
+
+################################################################################
+
+echo "Temporary dir: $temporarydir"
+echo "existing installation at: $existingInstallationAt"
+echo "installation target: $target"
+
+# Check if UniversalMailer is correctly installed ########################################
+if [[ ! -e "$temporarydir/$bundle" ]]; then
+	echo "[universal_mailer] Couldn't install '$bundle' in temporary directory $temporarydir.  Aborting." >&2
+	exit 1
+fi
+################################################################################
+
+# Cleanup ######################################################################
+if [[ "$existingInstallationAt" != "" ]]; then
+    echo "[universal_mailer] Removing existing installation of the bundle..."
+    rm -rf "$existingInstallationAt/$bundle" || exit 1
+fi
+################################################################################
+
+# Proper installation ##########################################################
+echo "[universal_mailer] Moving bundle to final destination: $target"
+if [[ ! -d "$target" ]]; then
+	mkdir -p "$target" || exit 1
+fi
+mv "$temporarydir/$bundle" "$target/" || exit 1
+################################################################################
+
+# Permissions ##################################################################
+echo "[universal_mailer] Fixing permissions..."
+if [ "$target" == "$homedir" ]; then
+    chown "$USER:staff" "$HOME/Library/Mail"
+    chown -R "$USER:staff" "$homedir"
+fi
+chmod -R 755 "$target"
+################################################################################
+
+# Enable bundles in Mail.app ###################################################
+defaults write "/Library/Preferences/com.apple.mail" EnableBundles -bool YES
+defaults write "/Library/Preferences/com.apple.mail" BundleCompatibilityVersion -int 3
+################################################################################
+
+
+# Add the PluginCompatibilityUUIDs #############################################
+echo "[universal_mailer] Adding PluginCompatibilityUUIDs..."
+plistBundle="$target/$bundle/Contents/Info"
+plistMail="/Applications/Mail.app/Contents/Info"
+plistFramework="/System/Library/Frameworks/Message.framework/Resources/Info"
+
+uuid1=$(defaults read "$plistMail" "PluginCompatibilityUUID")
+uuid2=$(defaults read "$plistFramework" "PluginCompatibilityUUID")
+
+if [[ -n "$uuid1" ]] && ! grep -q $uuid1 "${plistBundle}.plist" ;then
+	defaults write "$plistBundle" "SupportedPluginCompatibilityUUIDs" -array-add "$uuid1"
+fi
+if [[ -n "$uuid2" ]] && ! grep -q $uuid2 "${plistBundle}.plist" ;then
+	defaults write "$plistBundle" "SupportedPluginCompatibilityUUIDs" -array-add "$uuid2"
+fi
+
+plutil -convert xml1 "$plistBundle.plist"
+chmod +r "$plistBundle.plist"
+################################################################################
+
+exit 0

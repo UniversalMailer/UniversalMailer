@@ -1,0 +1,492 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXAggregateTarget section */
+		811DDB941CF45AF400DC3EA7 /* Installer */ = {
+			isa = PBXAggregateTarget;
+			buildConfigurationList = 811DDB951CF45AF400DC3EA7 /* Build configuration list for PBXAggregateTarget "Installer" */;
+			buildPhases = (
+				811DDB981CF45B0000DC3EA7 /* Installer */,
+			);
+			dependencies = (
+				811DDB9A1CF45B0700DC3EA7 /* PBXTargetDependency */,
+			);
+			name = Installer;
+			productName = Installer;
+		};
+/* End PBXAggregateTarget section */
+
+/* Begin PBXBuildFile section */
+		8118B6641CF5B49B005A24CA /* UMFilter.m in Sources */ = {isa = PBXBuildFile; fileRef = 8118B6631CF5B49B005A24CA /* UMFilter.m */; };
+		811DDB9D1CF45B3300DC3EA7 /* UniversalMailer.m in Sources */ = {isa = PBXBuildFile; fileRef = 811DDB9C1CF45B3300DC3EA7 /* UniversalMailer.m */; };
+		811DDBA21CF45C1300DC3EA7 /* NSObject+UMExtensions.m in Sources */ = {isa = PBXBuildFile; fileRef = 811DDBA11CF45C1300DC3EA7 /* NSObject+UMExtensions.m */; };
+		811DDBA51CF45D5900DC3EA7 /* UniversalMailer.icns in Resources */ = {isa = PBXBuildFile; fileRef = 811DDBA41CF45D5900DC3EA7 /* UniversalMailer.icns */; };
+		811DDBA91CF45DA800DC3EA7 /* UMMessageGenerator.m in Sources */ = {isa = PBXBuildFile; fileRef = 811DDBA81CF45DA800DC3EA7 /* UMMessageGenerator.m */; };
+		811DDBAC1CF4608A00DC3EA7 /* UMComposeBackEnd.m in Sources */ = {isa = PBXBuildFile; fileRef = 811DDBAB1CF4608A00DC3EA7 /* UMComposeBackEnd.m */; };
+		811DDBAF1CF4613300DC3EA7 /* UMSharedPreferences.m in Sources */ = {isa = PBXBuildFile; fileRef = 811DDBAE1CF4613300DC3EA7 /* UMSharedPreferences.m */; };
+		811DDBB31CF4817500DC3EA7 /* UMMIMEEntity.m in Sources */ = {isa = PBXBuildFile; fileRef = 811DDBB21CF4817500DC3EA7 /* UMMIMEEntity.m */; };
+		811DDBB61CF4858700DC3EA7 /* NSString+UMExtensions.m in Sources */ = {isa = PBXBuildFile; fileRef = 811DDBB51CF4858700DC3EA7 /* NSString+UMExtensions.m */; };
+		8156AB801CF82FA300E5C26B /* UMPreferencesPanel.m in Sources */ = {isa = PBXBuildFile; fileRef = 8156AB7E1CF82FA300E5C26B /* UMPreferencesPanel.m */; };
+		8156AB811CF82FA300E5C26B /* UMPreferencesPanelUI.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8156AB7F1CF82FA300E5C26B /* UMPreferencesPanelUI.xib */; };
+		8156AB861CF82FCF00E5C26B /* UMAttributedStringToStringTransformer.m in Sources */ = {isa = PBXBuildFile; fileRef = 8156AB851CF82FCF00E5C26B /* UMAttributedStringToStringTransformer.m */; };
+		8156AB881CF82FE800E5C26B /* btn_donate_SM.gif in Resources */ = {isa = PBXBuildFile; fileRef = 8156AB871CF82FE800E5C26B /* btn_donate_SM.gif */; };
+		81DEBB0D1CF839460057850F /* UniversalMailerIcon.png in Resources */ = {isa = PBXBuildFile; fileRef = 81DEBB0C1CF839460057850F /* UniversalMailerIcon.png */; };
+		81DEBB1F1CF84CD90057850F /* UMLog.m in Sources */ = {isa = PBXBuildFile; fileRef = 81DEBB1E1CF84CD90057850F /* UMLog.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		811DDB991CF45B0700DC3EA7 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 811DDB801CF45A2400DC3EA7 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 811DDB871CF45A2400DC3EA7;
+			remoteInfo = UniversalMailer;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		8118B6611CF5B32C005A24CA /* UMConstants.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = UMConstants.h; sourceTree = "<group>"; };
+		8118B6621CF5B49B005A24CA /* UMFilter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UMFilter.h; sourceTree = "<group>"; };
+		8118B6631CF5B49B005A24CA /* UMFilter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UMFilter.m; sourceTree = "<group>"; };
+		811DDB881CF45A2400DC3EA7 /* UniversalMailer.mailbundle */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = UniversalMailer.mailbundle; sourceTree = BUILT_PRODUCTS_DIR; };
+		811DDB8B1CF45A2400DC3EA7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		811DDB9B1CF45B3300DC3EA7 /* UniversalMailer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UniversalMailer.h; sourceTree = "<group>"; };
+		811DDB9C1CF45B3300DC3EA7 /* UniversalMailer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UniversalMailer.m; sourceTree = "<group>"; };
+		811DDBA01CF45C1300DC3EA7 /* NSObject+UMExtensions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSObject+UMExtensions.h"; sourceTree = "<group>"; };
+		811DDBA11CF45C1300DC3EA7 /* NSObject+UMExtensions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSObject+UMExtensions.m"; sourceTree = "<group>"; };
+		811DDBA41CF45D5900DC3EA7 /* UniversalMailer.icns */ = {isa = PBXFileReference; lastKnownFileType = image.icns; path = UniversalMailer.icns; sourceTree = "<group>"; };
+		811DDBA71CF45DA800DC3EA7 /* UMMessageGenerator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UMMessageGenerator.h; sourceTree = "<group>"; };
+		811DDBA81CF45DA800DC3EA7 /* UMMessageGenerator.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UMMessageGenerator.m; sourceTree = "<group>"; };
+		811DDBAA1CF4608A00DC3EA7 /* UMComposeBackEnd.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UMComposeBackEnd.h; sourceTree = "<group>"; };
+		811DDBAB1CF4608A00DC3EA7 /* UMComposeBackEnd.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UMComposeBackEnd.m; sourceTree = "<group>"; };
+		811DDBAD1CF4613300DC3EA7 /* UMSharedPreferences.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UMSharedPreferences.h; sourceTree = "<group>"; };
+		811DDBAE1CF4613300DC3EA7 /* UMSharedPreferences.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UMSharedPreferences.m; sourceTree = "<group>"; };
+		811DDBB11CF4817500DC3EA7 /* UMMIMEEntity.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UMMIMEEntity.h; sourceTree = "<group>"; };
+		811DDBB21CF4817500DC3EA7 /* UMMIMEEntity.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UMMIMEEntity.m; sourceTree = "<group>"; };
+		811DDBB41CF4858700DC3EA7 /* NSString+UMExtensions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+UMExtensions.h"; sourceTree = "<group>"; };
+		811DDBB51CF4858700DC3EA7 /* NSString+UMExtensions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+UMExtensions.m"; sourceTree = "<group>"; };
+		8156AB7D1CF82FA300E5C26B /* UMPreferencesPanel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UMPreferencesPanel.h; sourceTree = "<group>"; };
+		8156AB7E1CF82FA300E5C26B /* UMPreferencesPanel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UMPreferencesPanel.m; sourceTree = "<group>"; };
+		8156AB7F1CF82FA300E5C26B /* UMPreferencesPanelUI.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = UMPreferencesPanelUI.xib; sourceTree = "<group>"; };
+		8156AB841CF82FCF00E5C26B /* UMAttributedStringToStringTransformer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UMAttributedStringToStringTransformer.h; sourceTree = "<group>"; };
+		8156AB851CF82FCF00E5C26B /* UMAttributedStringToStringTransformer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UMAttributedStringToStringTransformer.m; sourceTree = "<group>"; };
+		8156AB871CF82FE800E5C26B /* btn_donate_SM.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = btn_donate_SM.gif; sourceTree = "<group>"; };
+		81DEBB0C1CF839460057850F /* UniversalMailerIcon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = UniversalMailerIcon.png; sourceTree = "<group>"; };
+		81DEBB1D1CF84A2D0057850F /* UMLog.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = UMLog.h; sourceTree = "<group>"; };
+		81DEBB1E1CF84CD90057850F /* UMLog.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UMLog.m; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		811DDB851CF45A2400DC3EA7 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		811DDB7F1CF45A2400DC3EA7 = {
+			isa = PBXGroup;
+			children = (
+				811DDB8A1CF45A2400DC3EA7 /* UniversalMailer */,
+				811DDB891CF45A2400DC3EA7 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		811DDB891CF45A2400DC3EA7 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				811DDB881CF45A2400DC3EA7 /* UniversalMailer.mailbundle */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		811DDB8A1CF45A2400DC3EA7 /* UniversalMailer */ = {
+			isa = PBXGroup;
+			children = (
+				8118B6611CF5B32C005A24CA /* UMConstants.h */,
+				811DDB9B1CF45B3300DC3EA7 /* UniversalMailer.h */,
+				811DDB9C1CF45B3300DC3EA7 /* UniversalMailer.m */,
+				8118B6621CF5B49B005A24CA /* UMFilter.h */,
+				8118B6631CF5B49B005A24CA /* UMFilter.m */,
+				811DDBB11CF4817500DC3EA7 /* UMMIMEEntity.h */,
+				811DDBB21CF4817500DC3EA7 /* UMMIMEEntity.m */,
+				81DEBB1C1CF84A070057850F /* Utilities */,
+				8156AB821CF82FAD00E5C26B /* Preferences */,
+				811DDBA61CF45D9900DC3EA7 /* Swizzled objects */,
+				811DDB9E1CF45BF600DC3EA7 /* Extensions */,
+				811DDBA31CF45D4800DC3EA7 /* Supporting Files */,
+			);
+			path = UniversalMailer;
+			sourceTree = "<group>";
+		};
+		811DDB9E1CF45BF600DC3EA7 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				811DDBA01CF45C1300DC3EA7 /* NSObject+UMExtensions.h */,
+				811DDBA11CF45C1300DC3EA7 /* NSObject+UMExtensions.m */,
+				811DDBB41CF4858700DC3EA7 /* NSString+UMExtensions.h */,
+				811DDBB51CF4858700DC3EA7 /* NSString+UMExtensions.m */,
+			);
+			name = Extensions;
+			sourceTree = "<group>";
+		};
+		811DDBA31CF45D4800DC3EA7 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				811DDB8B1CF45A2400DC3EA7 /* Info.plist */,
+				81DEBB0C1CF839460057850F /* UniversalMailerIcon.png */,
+				8156AB871CF82FE800E5C26B /* btn_donate_SM.gif */,
+				811DDBA41CF45D5900DC3EA7 /* UniversalMailer.icns */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		811DDBA61CF45D9900DC3EA7 /* Swizzled objects */ = {
+			isa = PBXGroup;
+			children = (
+				811DDBA71CF45DA800DC3EA7 /* UMMessageGenerator.h */,
+				811DDBA81CF45DA800DC3EA7 /* UMMessageGenerator.m */,
+				811DDBAA1CF4608A00DC3EA7 /* UMComposeBackEnd.h */,
+				811DDBAB1CF4608A00DC3EA7 /* UMComposeBackEnd.m */,
+				811DDBAD1CF4613300DC3EA7 /* UMSharedPreferences.h */,
+				811DDBAE1CF4613300DC3EA7 /* UMSharedPreferences.m */,
+			);
+			name = "Swizzled objects";
+			sourceTree = "<group>";
+		};
+		8156AB821CF82FAD00E5C26B /* Preferences */ = {
+			isa = PBXGroup;
+			children = (
+				8156AB831CF82FC100E5C26B /* Value Transformers */,
+				8156AB7D1CF82FA300E5C26B /* UMPreferencesPanel.h */,
+				8156AB7E1CF82FA300E5C26B /* UMPreferencesPanel.m */,
+				8156AB7F1CF82FA300E5C26B /* UMPreferencesPanelUI.xib */,
+			);
+			name = Preferences;
+			sourceTree = "<group>";
+		};
+		8156AB831CF82FC100E5C26B /* Value Transformers */ = {
+			isa = PBXGroup;
+			children = (
+				8156AB841CF82FCF00E5C26B /* UMAttributedStringToStringTransformer.h */,
+				8156AB851CF82FCF00E5C26B /* UMAttributedStringToStringTransformer.m */,
+			);
+			name = "Value Transformers";
+			sourceTree = "<group>";
+		};
+		81DEBB1C1CF84A070057850F /* Utilities */ = {
+			isa = PBXGroup;
+			children = (
+				81DEBB1D1CF84A2D0057850F /* UMLog.h */,
+				81DEBB1E1CF84CD90057850F /* UMLog.m */,
+			);
+			name = Utilities;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		811DDB871CF45A2400DC3EA7 /* UniversalMailer */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 811DDB8E1CF45A2400DC3EA7 /* Build configuration list for PBXNativeTarget "UniversalMailer" */;
+			buildPhases = (
+				811DDB841CF45A2400DC3EA7 /* Sources */,
+				811DDB851CF45A2400DC3EA7 /* Frameworks */,
+				811DDB861CF45A2400DC3EA7 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = UniversalMailer;
+			productName = UniversalMailer;
+			productReference = 811DDB881CF45A2400DC3EA7 /* UniversalMailer.mailbundle */;
+			productType = "com.apple.product-type.bundle";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		811DDB801CF45A2400DC3EA7 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0730;
+				ORGANIZATIONNAME = noware;
+				TargetAttributes = {
+					811DDB871CF45A2400DC3EA7 = {
+						CreatedOnToolsVersion = 7.3.1;
+					};
+					811DDB941CF45AF400DC3EA7 = {
+						CreatedOnToolsVersion = 7.3.1;
+					};
+				};
+			};
+			buildConfigurationList = 811DDB831CF45A2400DC3EA7 /* Build configuration list for PBXProject "UniversalMailer" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = 811DDB7F1CF45A2400DC3EA7;
+			productRefGroup = 811DDB891CF45A2400DC3EA7 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				811DDB871CF45A2400DC3EA7 /* UniversalMailer */,
+				811DDB941CF45AF400DC3EA7 /* Installer */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		811DDB861CF45A2400DC3EA7 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				8156AB881CF82FE800E5C26B /* btn_donate_SM.gif in Resources */,
+				811DDBA51CF45D5900DC3EA7 /* UniversalMailer.icns in Resources */,
+				81DEBB0D1CF839460057850F /* UniversalMailerIcon.png in Resources */,
+				8156AB811CF82FA300E5C26B /* UMPreferencesPanelUI.xib in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		811DDB981CF45B0000DC3EA7 /* Installer */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = Installer;
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "if [[ $CONFIGURATION != \"Debug\" ]]; then\npkgbuild --root \"$BUILT_PRODUCTS_DIR/UniversalMailer.mailbundle/\" --scripts \"$SRCROOT/installation_scripts/\" --identifier it.noware.universalmailer.pkg --install-location \"/tmp/UM-installation-tmp/UniversalMailer.mailbundle\" \"$BUILT_PRODUCTS_DIR/UniversalMailer.pkg\"\nopen \"$BUILT_PRODUCTS_DIR\"\nelse\necho \"warning: installer not generated with Debug configuration\"\nfi";
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		811DDB841CF45A2400DC3EA7 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				811DDB9D1CF45B3300DC3EA7 /* UniversalMailer.m in Sources */,
+				811DDBAC1CF4608A00DC3EA7 /* UMComposeBackEnd.m in Sources */,
+				8156AB861CF82FCF00E5C26B /* UMAttributedStringToStringTransformer.m in Sources */,
+				811DDBB61CF4858700DC3EA7 /* NSString+UMExtensions.m in Sources */,
+				811DDBB31CF4817500DC3EA7 /* UMMIMEEntity.m in Sources */,
+				81DEBB1F1CF84CD90057850F /* UMLog.m in Sources */,
+				811DDBA21CF45C1300DC3EA7 /* NSObject+UMExtensions.m in Sources */,
+				8118B6641CF5B49B005A24CA /* UMFilter.m in Sources */,
+				8156AB801CF82FA300E5C26B /* UMPreferencesPanel.m in Sources */,
+				811DDBAF1CF4613300DC3EA7 /* UMSharedPreferences.m in Sources */,
+				811DDBA91CF45DA800DC3EA7 /* UMMessageGenerator.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		811DDB9A1CF45B0700DC3EA7 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 811DDB871CF45A2400DC3EA7 /* UniversalMailer */;
+			targetProxy = 811DDB991CF45B0700DC3EA7 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin XCBuildConfiguration section */
+		811DDB8C1CF45A2400DC3EA7 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "-";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.11;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				OTHER_LDFLAGS = (
+					"-force_flat_namespaces",
+					"-undefined",
+					suppress,
+				);
+				SDKROOT = macosx;
+			};
+			name = Debug;
+		};
+		811DDB8D1CF45A2400DC3EA7 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "-";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.11;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				OTHER_LDFLAGS = (
+					"-force_flat_namespaces",
+					"-undefined",
+					suppress,
+				);
+				SDKROOT = macosx;
+			};
+			name = Release;
+		};
+		811DDB8F1CF45A2400DC3EA7 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				COMBINE_HIDPI_IMAGES = YES;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(SYSTEM_LIBRARY_DIR)/PrivateFrameworks",
+				);
+				INFOPLIST_FILE = UniversalMailer/Info.plist;
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Bundles";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/../Frameworks";
+				OTHER_LDFLAGS = (
+					"-force_flat_namespace",
+					"-undefined",
+					suppress,
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = it.noware.UniversalMailer;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = mailbundle;
+			};
+			name = Debug;
+		};
+		811DDB901CF45A2400DC3EA7 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				COMBINE_HIDPI_IMAGES = YES;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(SYSTEM_LIBRARY_DIR)/PrivateFrameworks",
+				);
+				INFOPLIST_FILE = UniversalMailer/Info.plist;
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Bundles";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/../Frameworks";
+				OTHER_LDFLAGS = (
+					"-force_flat_namespace",
+					"-undefined",
+					suppress,
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = it.noware.UniversalMailer;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = mailbundle;
+			};
+			name = Release;
+		};
+		811DDB961CF45AF400DC3EA7 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		811DDB971CF45AF400DC3EA7 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		811DDB831CF45A2400DC3EA7 /* Build configuration list for PBXProject "UniversalMailer" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				811DDB8C1CF45A2400DC3EA7 /* Debug */,
+				811DDB8D1CF45A2400DC3EA7 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		811DDB8E1CF45A2400DC3EA7 /* Build configuration list for PBXNativeTarget "UniversalMailer" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				811DDB8F1CF45A2400DC3EA7 /* Debug */,
+				811DDB901CF45A2400DC3EA7 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		811DDB951CF45AF400DC3EA7 /* Build configuration list for PBXAggregateTarget "Installer" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				811DDB961CF45AF400DC3EA7 /* Debug */,
+				811DDB971CF45AF400DC3EA7 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 811DDB801CF45A2400DC3EA7 /* Project object */;
+}
