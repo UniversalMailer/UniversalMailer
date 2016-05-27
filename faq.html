@@ -14,6 +14,7 @@
 					<ul class="nav nav-pills pull-right">
 							<li><a href="index.html">Home</a></li>
 							<li><a href="download.html">Downloads</a></li>
+							<li><a href="whatsnew.html">What's new</a></li>
 							<li><a href="usage.html">Installation & Usage</a></li>
 							<li class="active"><a href="#">FAQ</a></li>
 					</ul>
@@ -25,71 +26,24 @@
 					<img src="images/logo.png" alt="logo" class="umlogo">
 					<h1>FAQ</h1>
 
-					<h3>After I installed the plugin nothing happens, the plugin is not working!</h3>
+					<h3>I updated to the latest OS X version but now Universal Mailer has been disabled!</h3>
 					<p>
-					First, check if you have the plugin installed: you can tell this by opening Mail.app's
-					Preferences. If you see a '&gt;&gt;' symbol on the top right or the Universal Mailer logo,
-					the plugin is there.
+					This will happen with every new versions of Mail.app, that's something we have to live
+					with when using plugins form Mail. There's however a good news: most of the time all you
+					have to do is to run the installer of Universal Mailer again, it will magically re-enable
+					the plugin for you!
 					</p>
 					<p>
-					Be sure to avoid conflicts between Mail.app's plugins: due to the way Apple handles third
-					parties plugin in Mail, two similar plugins might lead to one of them not working. There
-					are no brilliant solutions here: just try one plugin at a time and keep only those you
-					use.
-					</p>
-					<p>
-					If the plugin is not installed you can run a few commands from Terminal.app (you can find
-					it under /Applications/Utilities) to ensure that everything is correctly set up. Some of those
-					commands might ask you for a password: enter your login password followed by the enter key.
-					Please note that there won't be any echo to the screen when you type the password and, if
-					you never have used 'sudo' before, the system will warn you about its usage: it's all ok, the
-					commands listed here won't do anything harmful to your computer and you can safely enter
-					the password!
-					</p>
-					<code class="prettyprint">&gt; defaults write com.apple.mail EnableBundles -bool YES<br/>
-							&gt; defaults write com.apple.mail BundleCompatibilityVersion -int 3<br/>
-							&gt; sudo defaults write com.apple.mail EnableBundles -bool YES<br/>
-							&gt; sudo defaults write com.apple.mail BundleCompatibilityVersion -int 3
-					</code>
-
-					<h3>After I launch Mail.app an alert complains about the plugin not being compatible</h3>
-					<p>
-					This error might be shown when the installer failed to detect the version of Mail.app
-					you have.
-					To solve this problem, you can proceed as follow:
-					<ul>
-							<li>open Terminal.app from /Application/Utilities</li>
-							<li>enter these two commands and hit the enter key after each one:
-								<code class="prettyprint">&gt; cat /Applications/Mail.app/Contents/Info.plist | grep UUID -A 1</code>
-						  	<code class="prettyprint">&gt; cat /System/Library/Frameworks/Message.framework/Resources/Info.plist | grep UUID -A 1</code>
-							</li>
-							<li>they both should output two lines, with the second one containing a strange UUID (similar to this, for example: 04D6EC0A-52FF-4BBE-9896-C0B5FB851BBA)</li>
-							<li>open Finder, select Go-&gt;Go to Folder... and enter '~/Library/Mail/Bundles' in the prompt that appears</li>
-							<li>you should see a bundle named UniversalMailer.mailbundle: ctrl+click it and select 'Show Package Contents'</li>
-							<li>open 'Contents' directory and you'll see a file named Info.plist</li>
-							<li>edit Info.plist with a text editor (TextEdit is fine) and enter the two UUID you 
-							got before at the end of the file (you'll see here other UUIDs, you can either
-							replace them or add new lines by enclosing them in 
-							<code class="prettyprint">&lt;string&gt;</code> and 
-							<code class="prettyprint">&lt;/string&gt;</code> tags</li>
-							Note that on Mavericks you'll have just one UUID, the first one: it's not something
-							that you're missing!
-					</ul>
-					</p>
-
-					<h3>I installed the plugin and I think it's loaded by Mail.app. Why doesn't it do what
-					it should?</h3>
-					<p>
-					Check <a href="usage.html" alt="usage">Installation & Usage</a> page and be sure to use
-					a signature in your emails to enforce rich text emails.
+					There's however a catch here: if a major OS X update comes out (Mavericks is a good example)
+					be sure to check this website for updates, there might be a new version that needs to
+					be used with the updated Mail.app!
 					</p>
 
 					<h3>Everything is working ok but can you suggest a font size for a 'readable' email?</h3>
 					<p>
 					It largely depends on your personal tastes and also what you mean by 'readable', however
 					I suggest to start with a Helvetica fonts with size 14, and I would specify using points
-					instead of pixels. On newer versions of OS X (i.e. Mavericks and above) it seems to be
-					better to use pixels instead of points because of a change Apple made on Mail.app.
+					instead of pixels.
 					</p>
 
 					<h3>When I send an email my signature doesn't match the font I specified in Universal
@@ -104,19 +58,6 @@
 					specifying 15 pixels in your signature might be the same on your screen but it certainly
 					change with other screen resolutions! Be sure to double check your signature specification
 					and configure Universal Mailer to do the same.
-					</p>
-
-					<h3>I updated to the latest OS X version but now Universal Mailer has been disabled!</h3>
-					<p>
-					This will happen with every new versions of Mail.app, that's something we have to live
-					with when using plugins form Mail. There's however a good news: most of the time all you
-					have to do is to run the installer of Universal Mailer again, it will magically re-enable
-					the plugin for you!
-					</p>
-					<p>
-					There's however a catch here: if a major OS X update comes out (Mavericks is a good example)
-					be sure to check this website for updates, there might be a new version that needs to
-					be used with the new Mail.app!
 					</p>
 
 					<h3>I'm trying to install the software but the system complains it comes from an
@@ -137,22 +78,111 @@
 
 					<h3>I'm done with the plugin, how can I remove it?</h3>
 					<p>
-					Are you sure? Are you really sure? No, really, you want to remove the plugin?</br>
-					YES<br/>
-					Well, that's ok :) To remove it just delete UniversalMailer.mailbundle from
-				 	~/Library/Mail/Bundles or /Library/Mail/Bundles (it depends on your configuration
-				  where you'll find the plugin bundle) and restart Mail.app. That's it, no other leftover or something.
+					If you're done with the plugin, the easiest way to remove it is to use
+					<a href="https://smallcubed.com/mpm/" alt="Mail Plugin Manager">Mail Plugin Manager</a>,
+					a free software provided by MailTags.
 					</p>
 
-					<h3>I tried everything here but I'm still in troubles!</h3>
+					<h3>After I installed the plugin nothing happens, the plugin is not working!</h3>
+					<p>
+					First, check if you have the plugin installed: you can tell this by opening Mail.app's
+					Preferences. If you see a '&gt;&gt;' symbol on the top right or the Universal Mailer logo,
+					the plugin is there.
+					</p>
+					<p>
+					Be sure to avoid conflicts between Mail.app's plugins: due to the way Apple handles third
+					parties plugin in Mail, two similar plugins might lead to one of them not working. There
+					are no brilliant solutions here: just try one plugin at a time and keep only those you
+					prefer.
+					</p>
+					<p>
+					If the plugin is not installed you can run
+					<a href="https://smallcubed.com/mpm/" alt="Mail Plugin Manager">Mail Plugin Manager</a>,
+					it will help you manage Mail.app's plugins.
+					</p>
+
+					<h3>After I launch Mail.app an alert complains about the plugin not being compatible</h3>
+					<p>
+					This error might be shown when the installer failed to detect the version of Mail.app
+					you have.
+					To solve this problem you can run
+					<a href="https://smallcubed.com/mpm/" alt="Mail Plugin Manager">Mail Plugin Manager</a>.
+					</p>
+
+					<h3>Why UniversalMailer v3 supports OS X El Capitan only?</h3>
+					<p>
+					There are various reasons for this and here's a list of them, it is not complete nor in a particular order:
+
+					<ul>
+							<li>El Capitan hardware requirements are almost the same as Mavericks and Yosemite. If you're running
+							a older version of OS X you should consider updating to the latest one anyway, in my opinion.</li>
+							<li>I don't have enough time nor enough (virtual) machines to test the plugin on older version of OS X,
+							so I prefer dropping support to avoid hunting for bugs on older systems</li>
+							<li>Technically speaking the plugin should work on Mavericks and Yosemite too. If you're brave enough
+							to do so, download the source code and set the deployment target to 10.9 or 10.10, then compile your own
+							custom version.</li>
+					</ul>
+					</p>
+
+					<h3>I think there's a bug!</h3>
+					<p>
+					If you encounter a bug inside the plugin you should first go through all the FAQs (and since
+					you are reading this I suppose you already did so), then try to identify the steps that
+					caused it and submit a new
+					<a href="https://github.com/UniversalMailer/UniversalMailer/issues" alt="issue">issue</a>.
+					It is of much help to read the existing issues to avoid duplicates: the more duplicates the
+					more the time to read them, the more the time to read them the lesser the time available to look at
+					the code and solve it. Sounds simple and complicated at the same time.
+					</p>
+					<p>
+					Also, if you tag the issue with 'Bug' it speeds things up when reviewing open issues.
+					</p>
+
+					<h3>I want a new feature!</h3>
+					<p>
+					Think about it twice: are you sure this feature should be included inside UniversalMailer?
+					If so, describe it by creating a new
+					<a href="https://github.com/UniversalMailer/UniversalMailer/issues" alt="issue">issue</a>.
+					It helps if you tag it as 'enhancement' and it also really helps if you explain it in simple
+					terms, don't assume I'm smart :-)
+					</p>
+
+					<h3>I want to help!</h3>
+					<p>
+					Great! There are many ways to help here: you can either contribute by improving the code
+					(cloning the project and filing a merge request is the way to go) or with anything you
+					think it might help with the plugin such as improvements in the messages, improved graphics, help
+					with the website, you name it...
+					</p>
+					<p>
+					If you however are not into programming, website design, etc. a donation is always appreciated!
+					</p>
+					<center>
+							<form style="padding: 0px;" action="https://www.paypal.com/cgi-bin/webscr" method="post">
+									<input type="hidden" name="cmd" value="_s-xclick" autocomplete="on">
+									<input type="hidden" name="hosted_button_id" value="8563T8FQ5H58C" autocomplete="on">
+									<input type="image" src="https://www.paypalobjects.com/en_GB/i/btn/btn_donate_SM.gif" border="0" name="submit" alt="PayPal — The safer, easier way to pay online." autocomplete="on">
+							</form>
+					</center>
+
+					<h3>I tried everything in here but I'm still in troubles!</h3>
 					<p>
 					If nothing here seems to help, you can send an email at universal.mailer.noware AT gmail.com,
 					you'll get support as soon as possible!
 					</p>
+
+					<h3>What about the team behind UniversalMailer?</h3>
+					<p>
+					It's as easy as a one man team, i.e. that's only one developer: me. This is to say you shouldn't
+					expect frequent release or prompt responses: it largely depends on how busy I am at the moment.
+					I promise I'll read all your emails and issues but you can experience a delay in the response
+					from 1 hour to 1 month or something similar :-)
+					</p>
+
 			</div>
 
 			<div id="footer">
-					<div class="pull-right">Copyright &copy; 2014-2015 noware</p>
+					<div class="pull-right">Copyright &copy; 2016 noware</p>
 			</div>
 	</div>
 
