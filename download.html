@@ -26,20 +26,20 @@
 					<img src="images/logo.png" alt="logo" class="umlogo">
 					<h1>Download page</h1>
 					<h2>Choose a version that fits your Mac</h2>
-					<p><a onclick="track_download('download','v3b1', 'v3b1', 1);" id="mavericks" class="btn btn-lg btn-success dld-btn" href="zips/UniversalMailer-v3b1.zip">
+					<p><a onclick="ga.push(['_trackEvent', 'Download', 'ZIP', 'v3b1']);" id="mavericks" class="btn btn-lg btn-success dld-btn" href="zips/UniversalMailer-v3b1.zip">
 							Universal Mailer 3.0 for El Capitan</a>
 					<p class="downloadsize">Download size: 1,7MB</p>
 					</p>
 					<h3>Older versions</h3>
 					<div class="row">
 							<span class="col-md-4">
-									<p><a onclick="track_download('download','v216', 'v216', 1);" class="btn btn-md btn-primary dld-btn" href="zips/UniversalMailer-v2_1_6.zip">
+									<p><a onclick="ga.push(['_trackEvent', 'Download', 'ZIP', 'v216']);" class="btn btn-md btn-primary dld-btn" href="zips/UniversalMailer-v2_1_6.zip">
 											v2.1.6 for Mavericks, Yosemite and El Capitan</a>
 									<p class="downloadsize">Download size: 314kB</p>
 									</p>
 							</span>
 							<span class="col-md-4">
-								<p><a onclick="track_download('download','v154', 'v154', 1);" class="btn btn-md btn-primary dld-btn" href="zips/UniversalMailer-v1_5_4.zip">
+								<p><a onclick="ga.push(['_trackEvent', 'Download', 'ZIP', 'v154']);" class="btn btn-md btn-primary dld-btn" href="zips/UniversalMailer-v1_5_4.zip">
 										v1.5.4 for Mountain Lion</a>
 								<p class="downloadsize">Download size: 333kB</p>
 								</p>
@@ -76,10 +76,6 @@
 
               ga('create', 'UA-41621933-1', 'universalmailer.github.io');
                 ga('send', 'pageview');
-
-					function track_download(category, action, label, value){
-							ga('send', 'event', category, action, label, value);
-					}
 	</script>
  </body>
 </html>
