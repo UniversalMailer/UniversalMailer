@@ -17,6 +17,7 @@
 @property (weak) IBOutlet NSTextField *versionLabel;
 @property (weak) IBOutlet NSTextField *logFilePathLabel;
 @property (unsafe_unretained) IBOutlet NSTextView *injectedCSSLabel;
+@property (weak) IBOutlet NSTextField *fontNAInfoLabel;
 @end
 
 @implementation UMPreferencesPanel

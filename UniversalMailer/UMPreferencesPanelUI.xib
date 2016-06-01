@@ -12,7 +12,9 @@
             <connections>
                 <outlet property="_preferencesView" destination="Kq7-xF-rvo" id="2nL-wZ-8wY"/>
                 <outlet property="fontColorWell" destination="DDM-Xj-8So" id="xFU-1U-R56"/>
+                <outlet property="fontNAInfoLabel" destination="Eg5-fS-kYO" id="Oec-mF-njU"/>
                 <outlet property="fontPreviewLabel" destination="OWZ-JQ-FY2" id="fQK-df-FgI"/>
+                <outlet property="injectedCSSLabel" destination="zzo-K2-H3j" id="i6i-Gp-JBV"/>
                 <outlet property="logWarningLabel" destination="CG5-55-7Ge" id="YeX-Gq-5Rs"/>
                 <outlet property="versionLabel" destination="heP-2h-a11" id="xmn-9c-IVC"/>
             </connections>
@@ -284,10 +286,38 @@
                                                         <binding destination="Lfg-hO-0La" name="value" keyPath="values.UMUsePointsInsteadOfPixels" id="k7j-iA-EGK"/>
                                                     </connections>
                                                 </button>
+                                                <textField verticalHuggingPriority="750" horizontalCompressionResistancePriority="250" translatesAutoresizingMaskIntoConstraints="NO" id="Eg5-fS-kYO">
+                                                    <rect key="frame" x="15" y="88" width="392" height="45"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="45" id="83j-nF-kpY"/>
+                                                    </constraints>
+                                                    <textFieldCell key="cell" sendsActionOnEndEditing="YES" title="Outgoing font preferences is not available when a custom CSS is specified under the Advanced tab" id="jP8-9R-0U5">
+                                                        <font key="font" metaFont="system"/>
+                                                        <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
+                                                        <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                                                    </textFieldCell>
+                                                    <connections>
+                                                        <binding destination="Lfg-hO-0La" name="hidden2" keyPath="values.UMOverrideInjectedCSS" previousBinding="3pB-Gc-e3B" id="Igu-6M-YgS">
+                                                            <dictionary key="options">
+                                                                <integer key="NSMultipleValuesPlaceholder" value="-1"/>
+                                                                <integer key="NSNoSelectionPlaceholder" value="-1"/>
+                                                                <integer key="NSNotApplicablePlaceholder" value="-1"/>
+                                                                <integer key="NSNullPlaceholder" value="-1"/>
+                                                                <string key="NSValueTransformerName">NSNegateBoolean</string>
+                                                            </dictionary>
+                                                        </binding>
+                                                        <binding destination="Lfg-hO-0La" name="hidden" keyPath="values.UMMailFilterEnabled" id="3pB-Gc-e3B">
+                                                            <dictionary key="options">
+                                                                <string key="NSValueTransformerName">NSNegateBoolean</string>
+                                                            </dictionary>
+                                                        </binding>
+                                                    </connections>
+                                                </textField>
                                             </subviews>
                                             <constraints>
                                                 <constraint firstItem="tZ3-VF-AEM" firstAttribute="top" secondItem="C9u-ds-ein" secondAttribute="bottom" constant="2" id="6TM-qS-B72"/>
                                                 <constraint firstItem="C9u-ds-ein" firstAttribute="trailing" secondItem="tZ3-VF-AEM" secondAttribute="trailing" id="7oR-Rb-B2W"/>
+                                                <constraint firstItem="Eg5-fS-kYO" firstAttribute="top" secondItem="DDM-Xj-8So" secondAttribute="bottom" constant="8" id="8ex-lm-Fh1"/>
                                                 <constraint firstItem="rSN-Bx-vom" firstAttribute="leading" secondItem="qOb-6P-Mwo" secondAttribute="leading" id="97l-4S-qnC"/>
                                                 <constraint firstItem="756-B6-kru" firstAttribute="leading" secondItem="rSN-Bx-vom" secondAttribute="leading" id="9oX-3W-hFx"/>
                                                 <constraint firstItem="756-B6-kru" firstAttribute="top" secondItem="C9u-ds-ein" secondAttribute="bottom" constant="25" id="9rn-QM-std"/>
@@ -298,6 +328,7 @@
                                                 <constraint firstItem="OWZ-JQ-FY2" firstAttribute="top" secondItem="DDM-Xj-8So" secondAttribute="top" id="Ome-d1-qgh"/>
                                                 <constraint firstItem="rSN-Bx-vom" firstAttribute="top" secondItem="756-B6-kru" secondAttribute="bottom" constant="43" id="Svs-e4-JVf"/>
                                                 <constraint firstItem="tZ3-VF-AEM" firstAttribute="trailing" secondItem="756-B6-kru" secondAttribute="trailing" id="YZf-Rd-h1W"/>
+                                                <constraint firstAttribute="trailing" secondItem="Eg5-fS-kYO" secondAttribute="trailing" constant="17" id="Yma-pH-Fod"/>
                                                 <constraint firstItem="deW-nt-NRA" firstAttribute="centerY" secondItem="DDM-Xj-8So" secondAttribute="centerY" id="aYf-hN-6NR"/>
                                                 <constraint firstItem="9xt-cY-pHl" firstAttribute="trailing" secondItem="C9u-ds-ein" secondAttribute="trailing" id="dg4-3N-OYg"/>
                                                 <constraint firstItem="deW-nt-NRA" firstAttribute="leading" secondItem="OWZ-JQ-FY2" secondAttribute="trailing" constant="8" symbolic="YES" id="eQQ-nW-WcB"/>
@@ -313,6 +344,7 @@
                                                 <constraint firstItem="OWZ-JQ-FY2" firstAttribute="firstBaseline" secondItem="deW-nt-NRA" secondAttribute="firstBaseline" id="uZc-Lp-WMe"/>
                                                 <constraint firstItem="OWZ-JQ-FY2" firstAttribute="bottom" secondItem="DDM-Xj-8So" secondAttribute="bottom" id="vnB-pY-vBW"/>
                                                 <constraint firstItem="DDM-Xj-8So" firstAttribute="leading" secondItem="deW-nt-NRA" secondAttribute="trailing" constant="8" symbolic="YES" id="wee-qy-daw"/>
+                                                <constraint firstItem="Eg5-fS-kYO" firstAttribute="leading" secondItem="Wh9-w6-4Jf" secondAttribute="leading" constant="17" id="yZj-iW-9UQ"/>
                                                 <constraint firstAttribute="trailing" secondItem="9xt-cY-pHl" secondAttribute="trailing" constant="17" id="z0P-or-jPe"/>
                                             </constraints>
                                         </view>
