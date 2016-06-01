@@ -78,8 +78,13 @@
     }
     if( self.lastUpdateLabel ){
         SUUpdater *updater = [SUUpdater updaterForBundle: [NSBundle bundleForClass: [self class]]];
-        NSString *lastUpdate = [NSDateFormatter localizedStringFromDate: updater.lastUpdateCheckDate dateStyle: NSDateFormatterShortStyle timeStyle: NSDateFormatterShortStyle];
-        self.lastUpdateLabel.stringValue = [NSString stringWithFormat: @"Last check: %@", lastUpdate];
+        if( updater.lastUpdateCheckDate ){
+            NSString *lastUpdate = [NSDateFormatter localizedStringFromDate: updater.lastUpdateCheckDate dateStyle: NSDateFormatterShortStyle timeStyle: NSDateFormatterShortStyle];
+            self.lastUpdateLabel.stringValue = [NSString stringWithFormat: @"Last check: %@", lastUpdate];
+        }
+        else {
+            self.lastUpdateLabel.stringValue = @"Last check: never";
+        }
     }
 }
 
