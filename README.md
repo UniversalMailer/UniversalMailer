@@ -36,9 +36,9 @@ Copyright and License
 Copyright (C) 2016 noware under [GPLv3](LICENSE). All rights reserved.
 
 
-[1]: http://universalmailer.github.io/UniversalMailer/
-[2]: http://universalmailer.github.io/UniversalMailer/download.html
-[3]: http://universalmailer.github.io/UniversalMailer/whatsnew.html
-[4]: http://universalmailer.github.io/UniversalMailer/usage.html
-[5]: http://universalmailer.github.io/UniversalMailer/faq.html
+[1]: https://universalmailer.github.io/UniversalMailer/
+[2]: https://universalmailer.github.io/UniversalMailer/download.html
+[3]: https://universalmailer.github.io/UniversalMailer/whatsnew.html
+[4]: https://universalmailer.github.io/UniversalMailer/usage.html
+[5]: https://universalmailer.github.io/UniversalMailer/faq.html
 [6]: https://github.com/UniversalMailer/UniversalMailer/issues
