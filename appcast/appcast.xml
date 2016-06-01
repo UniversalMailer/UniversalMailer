@@ -6,7 +6,7 @@
         <description>Most recent changes with links to updates.</description>
         <language>en</language>
         <item>
-            <title>Version 3.0 (1 bug fix)</title>
+            <title>Version 3.0 build 5 (1 bug fix)</title>
 						<description><![CDATA[
 								<h2>Bug fixing</h2>
 								<ul>
@@ -14,7 +14,7 @@
 								</ul>
 						]]>
 						</description>
-            <pubDate>Wed, 01 Jun 2016 23:50:00 +0200</pubDate>
+            <pubDate>Wed, 01 Jun 2016 23:59:00 +0200</pubDate>
 						<sparkle:version>5</sparkle:version>
 						<sparkle:shortVersionString>3.0 (build 5)</sparkle:shortVersionString>
 						<link>https://universalmailer.github.io/UniversalMailer/download.html</link>
