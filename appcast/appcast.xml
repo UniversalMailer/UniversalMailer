@@ -6,16 +6,16 @@
         <description>Most recent changes with links to updates.</description>
         <language>en</language>
         <item>
-            <title>Version 3.0 (1 new feature)</title>
+            <title>Version 3.0 (1 bug fix)</title>
 						<description><![CDATA[
-								<h2>New Features</h2>
+								<h2>Bug fixing</h2>
 								<ul>
-										<li>Added Sparkle.framework for automatic update checks</li>
+										<li>Resolved an issue that prevented last check label update on preference panel</li>
 								</ul>
 						]]>
 						</description>
             <pubDate>Wed, 01 Jun 2016 23:45:00 +0200</pubDate>
-						<sparkle:version>3.0 (build 4)</sparkle:version>
+						<sparkle:version>3.0 (build 5)</sparkle:version>
 						<link>https://universalmailer.github.io/UniversalMailer/download.html</link>
         </item>
     </channel>
