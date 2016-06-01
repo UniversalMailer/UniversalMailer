@@ -1,10 +1,8 @@
 UniversalMailer 3.0
 ===================
 
-<h3><a href='http://universalmailer.github.io/UniversalMailer/'>UniversalMailer homepage</a></h3>
-
-UniversalMailer is a plugin for Mail.app that aims at setting a default font for outgoing emails and fixing issues
-with some clients (i.e. MS Exchange/Outlook) about layout. It also removes those unwanted ATT0001 files from your
+<a href='[1]'>UniversalMailer</a> is a plugin for Mail.app that aims at setting a default font for outgoing emails and fixing issues
+with attachments (i.e. MS Exchange/Outlook). It also removes those annoying ATT0001 files from your
 emails.
 
 This new 3.0 version of the plugin is meant to be used on OS X 10.11 ONLY and is not backward compatible.
@@ -23,3 +21,6 @@ If that describes your frustrations, give UniversalMailer a try and see if it ca
 
 <h2>Copyright and License</h2>
 Copyright (C) 2016 noware under [GPLv3](LICENSE).
+
+
+[1]: http://universalmailer.github.io/UniversalMailer/
