@@ -100,6 +100,20 @@
 					<a href="https://smallcubed.com/mpm/" alt="Mail Plugin Manager">Mail Plugin Manager</a>,
 					it will help you manage Mail.app's plugins.
 					</p>
+				  <p>
+          If you still can't see the plugin, you can run a few commands from Terminal.app (you can find
+          it under /Applications/Utilities) to ensure that everything is correctly set up. Some of those
+          commands might ask you for a password: enter your login password followed by the enter key.
+          Please note that there won't be any echo to the screen when you type the password and, if
+          you never used 'sudo' before, the system will warn you about its usage: it's all ok, the
+          commands listed here won't do anything harmful to your computer and you can safely enter
+          the password!
+          </p>
+          <code class="prettyprint">&gt; defaults write com.apple.mail EnableBundles -bool YES<br/>
+              &gt; defaults write com.apple.mail BundleCompatibilityVersion -int 3<br/>
+              &gt; sudo defaults write com.apple.mail EnableBundles -bool YES<br/>
+              &gt; sudo defaults write com.apple.mail BundleCompatibilityVersion -int 3
+          </code>	
 
 					<h3>After I launch Mail.app an alert complains about the plugin not being compatible</h3>
 					<p>
