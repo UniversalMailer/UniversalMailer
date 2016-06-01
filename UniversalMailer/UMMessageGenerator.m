@@ -16,6 +16,10 @@
 - (BOOL)signsOutput;
 @end
 
+@interface UMMessageGenerator ()
+- (id)newMessageWithHtmlString: (NSString*)string plainTextAlternative: (NSMutableAttributedString*)html otherHtmlStringsAndAttachments: (id)other headers: (id)headers;
+@end
+
 @implementation UMMessageGenerator
 
 - (id)UMnewMessageWithAttributedString: (NSMutableAttributedString*)string headers: (id)headers {
@@ -24,8 +28,9 @@
     id ret = nil;
 
     UMLog(@"%s - always send rich text email: %d", __PRETTY_FUNCTION__, alwaysSendRich);
-    if( alwaysSendRich )
-        ret = [self UMnewMessageWithHtmlString: [NSString stringWithFormat: @"<html><head></head><body>%@</body></html>", string] html: string other: nil headers: headers];
+    if( alwaysSendRich ){
+        ret = [self newMessageWithHtmlString: [NSString stringWithFormat: @"<html><head></head><body>%@</body></html>", string.string] plainTextAlternative: string otherHtmlStringsAndAttachments: nil headers: headers];
+    }
     else
         ret = [self UMnewMessageWithAttributedString: string headers: headers];
     
