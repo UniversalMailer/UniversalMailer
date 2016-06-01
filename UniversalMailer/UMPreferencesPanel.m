@@ -8,7 +8,6 @@
 
 #import "UMPreferencesPanel.h"
 
-#import <Sparkle/Sparkle.h>
 #import "UMConstants.h"
 
 @interface UMPreferencesPanel ()
@@ -117,8 +116,23 @@
 
 - (IBAction)checkForUpdatePressed:(id)sender {
     SUUpdater *updater = [SUUpdater updaterForBundle: [NSBundle bundleForClass: [self class]]];
+    updater.delegate = self;
     [updater checkForUpdates: sender];
 }
+
+#pragma mark -
+#pragma mark SUUpdaterDelegate methods
+
+- (void)updater: (SUUpdater*)updater didFindValidUpdate: (SUAppcastItem*)update {
+    NSString *lastUpdate = [NSDateFormatter localizedStringFromDate: updater.lastUpdateCheckDate dateStyle: NSDateFormatterShortStyle timeStyle: NSDateFormatterShortStyle];
+    self.lastUpdateLabel.stringValue = [NSString stringWithFormat: @"Last check: %@", lastUpdate];
+}
+
+- (void)updaterDidNotFindUpdate: (SUUpdater*)updater {
+    NSString *lastUpdate = [NSDateFormatter localizedStringFromDate: updater.lastUpdateCheckDate dateStyle: NSDateFormatterShortStyle timeStyle: NSDateFormatterShortStyle];
+    self.lastUpdateLabel.stringValue = [NSString stringWithFormat: @"Last check: %@", lastUpdate];
+}
+
 
 #pragma mark -
 #pragma mark Action handlers

@@ -8,6 +8,8 @@
 
 #import <Cocoa/Cocoa.h>
 
+#import <Sparkle/Sparkle.h>
+
 // Dummy declaration to silence compiler errors
 @interface NSPreferencesModule: NSObject {
 IBOutlet NSBox *_preferencesView;
@@ -17,6 +19,6 @@ IBOutlet NSBox *_preferencesView;
 - (void)addPreferenceNamed: (NSString*)name owner: (id)owner;
 @end
 
-@interface UMPreferencesPanel : NSPreferencesModule <NSWindowDelegate>
+@interface UMPreferencesPanel : NSPreferencesModule <NSWindowDelegate, SUUpdaterDelegate>
 
 @end
