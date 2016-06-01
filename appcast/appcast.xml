@@ -6,13 +6,17 @@
         <description>Most recent changes with links to updates.</description>
         <language>en</language>
         <item>
-            <title>Version 2.0 (1 new feature)</title>
-            <sparkle:releaseNotesLink>
-								https://universalmailer.github.io/UniversalMailer/whatsnew.html
-            </sparkle:releaseNotesLink>
+            <title>Version 3.0 (1 new feature)</title>
+						<description><![CDATA[
+								<h2>New Features</h2>
+								<ul>
+										<li>Added Sparkle.framework for automatic update checks</li>
+								</ul>
+						]]>
+						</description>
             <pubDate>Wed, 01 Jun 2016 23:13:00 +0200</pubDate>
-						<enclosure url="https://universalmailer.github.io/UniversalMailer/zips/UniversalMailer-v3b3.zip" sparkle:version="2.0" length="1200009" type="application/octet-stream" sparkle:dsaSignature="MCwCFGgULMzi5VdtePWp1tEepZb75LW3AhRQ95icDzS0Khe2UDpv4YSlkV0M6w==" />
-            <sparkle:minimumSystemVersion>10.11</sparkle:minimumSystemVersion>
+						<sparkle:version>3.0</sparkle:version>
+						<link>https://universalmailer.github.io/UniversalMailer/zips/UniversalMailer-v3b3.zip</link>
         </item>
     </channel>
 </rss>
