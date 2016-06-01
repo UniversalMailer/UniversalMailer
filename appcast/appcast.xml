@@ -15,8 +15,8 @@
 						]]>
 						</description>
             <pubDate>Wed, 01 Jun 2016 23:13:00 +0200</pubDate>
-						<sparkle:version>3.0</sparkle:version>
-						<link>https://universalmailer.github.io/UniversalMailer/zips/UniversalMailer-v3b3.zip</link>
+						<sparkle:version>3</sparkle:version>
+						<link>https://universalmailer.github.io/UniversalMailer/download.html</link>
         </item>
     </channel>
 </rss>
