@@ -1,25 +1,44 @@
 UniversalMailer 3.0
-===================
+-------------------
 
-<h3><a href='http://universalmailer.github.io/UniversalMailer/'>UniversalMailer homepage</a></h3>
+[UniversalMailer][1] is a Mail.app plugin that aims at setting the default font for outgoing emails and fixing issues
+with attachments (especially when passing through MS Exchange/Outlook). It also removes those annoying ATT0001 files from your emails, bringing mail composing to the 21st century :)
 
-UniversalMailer is a plugin for Mail.app that aims at setting a default font for outgoing emails and fixing issues
-with some clients (i.e. MS Exchange/Outlook) about layout. It also removes those unwanted ATT0001 files from your
-emails.
+**|  [Home page][1] | [Download][2] | [What's new][3] | [Installation & Usage][4] | [FAQ][5] |**
 
-This new 3.0 version of the plugin is meant to be used on OS X 10.11 ONLY and is not backward compatible.
-Download version 2.x or 1.x from <a href='http://universalmailer.github.io/UniversalMailer/download.html'>here</a> if
-you are on an older version of OS X.
+Do I need it?
+-------------
 
-<h2>Do I need it?</h2>
 UniversalMailer will make your day if any of these sound familiar to you:
 * Your sent email contains unwanted ATT00001.htm or ATT0001.txt attachments
-* Your sent email can't be read as a whole, it is split in several ATT000x files
-* You inline images in your emails but your recipients can't see them as you expected
-* You want your email to have a specific font but are tired of selecting all the text and choosing a font
-* Your sent emails are hard to read because they are displayed with a too small font on some email clients
+* Your recipients can see only part of your message and they have to open ATT000x attachments for the rest
+* You want control over attachments and image inlining
+* You want your email to have a specific font but are tired of manually select it
+* Your sent emails are hard to read because of an out of control font size
 
-If that describes your frustrations, give UniversalMailer a try and see if it can simplify your workflow!
+If any of that describes your frustrations, give UniversalMailer a try and see if it can simplify your workflow!
 
-<h2>Copyright and License</h2>
-Copyright (C) 2016 noware under [GPLv3](LICENSE).
+Reporting issues
+------
+
+The plugin is not perfect: it might shows some quirks from time to time. If you think you encountered a bug you can use the [issue tracker][6] here on GitHub to report it. While issues are well organized and ordered, be sure to follow these simple rules in favour of quicker bug fixing:
+
+* be sure to read existing issues to avoid duplicates
+* provide as much information as you can, you can enable logging in the plugin preference panel to log what's happening
+* if you can reproduce the problem, specify as much information as possible on how to replicate it (plugin version, your language, the plugin preferences, whether you included attachments, what kind of attachments etc.)
+* when you create an issue, tag it with the 'bug' tag
+
+The [issue tracker][6] is also a good place to ask for new features, just tag them as 'enhancement'.
+
+Copyright and License
+---------------------
+
+Copyright (C) 2016 noware under [GPLv3](LICENSE). All rights reserved.
+
+
+[1]: https://universalmailer.github.io/UniversalMailer/
+[2]: https://universalmailer.github.io/UniversalMailer/download.html
+[3]: https://universalmailer.github.io/UniversalMailer/whatsnew.html
+[4]: https://universalmailer.github.io/UniversalMailer/usage.html
+[5]: https://universalmailer.github.io/UniversalMailer/faq.html
+[6]: https://github.com/UniversalMailer/UniversalMailer/issues
