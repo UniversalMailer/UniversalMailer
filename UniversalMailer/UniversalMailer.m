@@ -9,6 +9,7 @@
 #import "UniversalMailer.h"
 
 #import <Cocoa/Cocoa.h>
+#import <Sparkle/Sparkle.h>
 #import <objc/runtime.h>
 
 #import "UMConstants.h"
@@ -29,6 +30,10 @@
     [super initialize];
     
     UMLog(@"UniversalMailer loaded!");
+    
+    if( [[NSUserDefaults standardUserDefaults] boolForKey: UMMailFilterEnabled] ){
+        [SUUpdater updaterForBundle: [NSBundle bundleForClass: [self class]]];
+    }
     
     NSData *colorData = [NSArchiver archivedDataWithRootObject: [[NSColor blackColor] colorUsingColorSpaceName: NSCalibratedRGBColorSpace]];
     NSDictionary *defaults = @{

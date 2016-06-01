@@ -37,6 +37,9 @@
 		8156AB881CF82FE800E5C26B /* btn_donate_SM.gif in Resources */ = {isa = PBXBuildFile; fileRef = 8156AB871CF82FE800E5C26B /* btn_donate_SM.gif */; };
 		81DEBB0D1CF839460057850F /* UniversalMailerIcon.png in Resources */ = {isa = PBXBuildFile; fileRef = 81DEBB0C1CF839460057850F /* UniversalMailerIcon.png */; };
 		81DEBB1F1CF84CD90057850F /* UMLog.m in Sources */ = {isa = PBXBuildFile; fileRef = 81DEBB1E1CF84CD90057850F /* UMLog.m */; };
+		81F974BB1CFF83A900E35C15 /* Sparkle.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 81F974BA1CFF83A900E35C15 /* Sparkle.framework */; };
+		81F974BD1CFF83EC00E35C15 /* Sparkle.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = 81F974BA1CFF83A900E35C15 /* Sparkle.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		81F974BF1CFF85BE00E35C15 /* dsa_pub.pem in Resources */ = {isa = PBXBuildFile; fileRef = 81F974BE1CFF85BE00E35C15 /* dsa_pub.pem */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -48,6 +51,19 @@
 			remoteInfo = UniversalMailer;
 		};
 /* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		81F974BC1CFF83D300E35C15 /* CopyFiles */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				81F974BD1CFF83EC00E35C15 /* Sparkle.framework in CopyFiles */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
 		8118B6611CF5B32C005A24CA /* UMConstants.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = UMConstants.h; sourceTree = "<group>"; };
@@ -79,6 +95,8 @@
 		81DEBB0C1CF839460057850F /* UniversalMailerIcon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = UniversalMailerIcon.png; sourceTree = "<group>"; };
 		81DEBB1D1CF84A2D0057850F /* UMLog.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = UMLog.h; sourceTree = "<group>"; };
 		81DEBB1E1CF84CD90057850F /* UMLog.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UMLog.m; sourceTree = "<group>"; };
+		81F974BA1CFF83A900E35C15 /* Sparkle.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Sparkle.framework; sourceTree = "<group>"; };
+		81F974BE1CFF85BE00E35C15 /* dsa_pub.pem */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = dsa_pub.pem; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -86,6 +104,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				81F974BB1CFF83A900E35C15 /* Sparkle.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -141,6 +160,8 @@
 		811DDBA31CF45D4800DC3EA7 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				81F974BE1CFF85BE00E35C15 /* dsa_pub.pem */,
+				81F974BA1CFF83A900E35C15 /* Sparkle.framework */,
 				811DDB8B1CF45A2400DC3EA7 /* Info.plist */,
 				81DEBB0C1CF839460057850F /* UniversalMailerIcon.png */,
 				8156AB871CF82FE800E5C26B /* btn_donate_SM.gif */,
@@ -201,6 +222,7 @@
 				811DDB841CF45A2400DC3EA7 /* Sources */,
 				811DDB851CF45A2400DC3EA7 /* Frameworks */,
 				811DDB861CF45A2400DC3EA7 /* Resources */,
+				81F974BC1CFF83D300E35C15 /* CopyFiles */,
 			);
 			buildRules = (
 			);
@@ -251,6 +273,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				81F974BF1CFF85BE00E35C15 /* dsa_pub.pem in Resources */,
 				8156AB881CF82FE800E5C26B /* btn_donate_SM.gif in Resources */,
 				811DDBA51CF45D5900DC3EA7 /* UniversalMailer.icns in Resources */,
 				81DEBB0D1CF839460057850F /* UniversalMailerIcon.png in Resources */,
@@ -405,6 +428,7 @@
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(SYSTEM_LIBRARY_DIR)/PrivateFrameworks",
+					"$(PROJECT_DIR)/UniversalMailer",
 				);
 				INFOPLIST_FILE = UniversalMailer/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Bundles";
@@ -427,6 +451,7 @@
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(SYSTEM_LIBRARY_DIR)/PrivateFrameworks",
+					"$(PROJECT_DIR)/UniversalMailer",
 				);
 				INFOPLIST_FILE = UniversalMailer/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Bundles";
