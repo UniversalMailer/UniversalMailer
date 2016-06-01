@@ -15,6 +15,7 @@
                 <outlet property="fontNAInfoLabel" destination="Eg5-fS-kYO" id="Oec-mF-njU"/>
                 <outlet property="fontPreviewLabel" destination="OWZ-JQ-FY2" id="fQK-df-FgI"/>
                 <outlet property="injectedCSSLabel" destination="zzo-K2-H3j" id="i6i-Gp-JBV"/>
+                <outlet property="lastUpdateLabel" destination="iDe-wS-bh0" id="12i-Nz-XW0"/>
                 <outlet property="logWarningLabel" destination="CG5-55-7Ge" id="YeX-Gq-5Rs"/>
                 <outlet property="versionLabel" destination="heP-2h-a11" id="xmn-9c-IVC"/>
             </connections>
@@ -297,6 +298,11 @@
                                                         <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
                                                     </textFieldCell>
                                                     <connections>
+                                                        <binding destination="Lfg-hO-0La" name="hidden" keyPath="values.UMMailFilterEnabled" id="3pB-Gc-e3B">
+                                                            <dictionary key="options">
+                                                                <string key="NSValueTransformerName">NSNegateBoolean</string>
+                                                            </dictionary>
+                                                        </binding>
                                                         <binding destination="Lfg-hO-0La" name="hidden2" keyPath="values.UMOverrideInjectedCSS" previousBinding="3pB-Gc-e3B" id="Igu-6M-YgS">
                                                             <dictionary key="options">
                                                                 <integer key="NSMultipleValuesPlaceholder" value="-1"/>
@@ -306,12 +312,33 @@
                                                                 <string key="NSValueTransformerName">NSNegateBoolean</string>
                                                             </dictionary>
                                                         </binding>
-                                                        <binding destination="Lfg-hO-0La" name="hidden" keyPath="values.UMMailFilterEnabled" id="3pB-Gc-e3B">
-                                                            <dictionary key="options">
-                                                                <string key="NSValueTransformerName">NSNegateBoolean</string>
-                                                            </dictionary>
-                                                        </binding>
                                                     </connections>
+                                                </textField>
+                                                <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="0CA-eI-B2w">
+                                                    <rect key="frame" x="11" y="10" width="149" height="32"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="21" id="NYg-c8-xY7"/>
+                                                        <constraint firstAttribute="width" constant="137" id="qa2-0E-oLw"/>
+                                                    </constraints>
+                                                    <buttonCell key="cell" type="push" title="Check for updates..." bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="Kih-7L-e4t">
+                                                        <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                                                        <font key="font" metaFont="system"/>
+                                                    </buttonCell>
+                                                    <connections>
+                                                        <action selector="checkForUpdatePressed:" target="-2" id="4vd-MC-h9m"/>
+                                                    </connections>
+                                                </button>
+                                                <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="iDe-wS-bh0">
+                                                    <rect key="frame" x="160" y="19" width="247" height="17"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="17" id="913-fj-IqM"/>
+                                                        <constraint firstAttribute="width" constant="243" id="Mvt-Mp-D6V"/>
+                                                    </constraints>
+                                                    <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" alignment="right" id="DyC-r6-RHd">
+                                                        <font key="font" metaFont="system"/>
+                                                        <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
+                                                        <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                                                    </textFieldCell>
                                                 </textField>
                                             </subviews>
                                             <constraints>
@@ -324,9 +351,11 @@
                                                 <constraint firstItem="qOb-6P-Mwo" firstAttribute="baseline" secondItem="OWZ-JQ-FY2" secondAttribute="baseline" id="AdC-ZS-Uqi"/>
                                                 <constraint firstItem="9xt-cY-pHl" firstAttribute="leading" secondItem="C9u-ds-ein" secondAttribute="leading" id="CFl-xI-QUC"/>
                                                 <constraint firstItem="756-B6-kru" firstAttribute="trailing" secondItem="rSN-Bx-vom" secondAttribute="trailing" id="GBC-DE-k9q"/>
+                                                <constraint firstItem="0CA-eI-B2w" firstAttribute="leading" secondItem="Wh9-w6-4Jf" secondAttribute="leading" constant="17" id="J2J-fZ-tOR"/>
                                                 <constraint firstItem="rSN-Bx-vom" firstAttribute="trailing" secondItem="DDM-Xj-8So" secondAttribute="trailing" id="M5l-no-sb4"/>
                                                 <constraint firstItem="OWZ-JQ-FY2" firstAttribute="top" secondItem="DDM-Xj-8So" secondAttribute="top" id="Ome-d1-qgh"/>
                                                 <constraint firstItem="rSN-Bx-vom" firstAttribute="top" secondItem="756-B6-kru" secondAttribute="bottom" constant="43" id="Svs-e4-JVf"/>
+                                                <constraint firstAttribute="bottom" secondItem="iDe-wS-bh0" secondAttribute="bottom" constant="19" id="WJy-4p-HWf"/>
                                                 <constraint firstItem="tZ3-VF-AEM" firstAttribute="trailing" secondItem="756-B6-kru" secondAttribute="trailing" id="YZf-Rd-h1W"/>
                                                 <constraint firstAttribute="trailing" secondItem="Eg5-fS-kYO" secondAttribute="trailing" constant="17" id="Yma-pH-Fod"/>
                                                 <constraint firstItem="deW-nt-NRA" firstAttribute="centerY" secondItem="DDM-Xj-8So" secondAttribute="centerY" id="aYf-hN-6NR"/>
@@ -337,10 +366,12 @@
                                                 <constraint firstItem="OWZ-JQ-FY2" firstAttribute="top" secondItem="rSN-Bx-vom" secondAttribute="bottom" constant="11" id="kW6-uE-OQO"/>
                                                 <constraint firstItem="deW-nt-NRA" firstAttribute="baseline" secondItem="OWZ-JQ-FY2" secondAttribute="firstBaseline" id="l2d-S7-RFP"/>
                                                 <constraint firstItem="tZ3-VF-AEM" firstAttribute="leading" secondItem="756-B6-kru" secondAttribute="leading" id="l7g-oQ-elu"/>
+                                                <constraint firstAttribute="bottom" secondItem="0CA-eI-B2w" secondAttribute="bottom" constant="17" id="lG0-sW-4Br"/>
                                                 <constraint firstItem="9xt-cY-pHl" firstAttribute="top" secondItem="Wh9-w6-4Jf" secondAttribute="top" constant="16" id="n1s-4Q-0B8"/>
                                                 <constraint firstItem="C9u-ds-ein" firstAttribute="leading" secondItem="tZ3-VF-AEM" secondAttribute="leading" id="nKi-FX-SLN"/>
                                                 <constraint firstItem="C9u-ds-ein" firstAttribute="top" secondItem="9xt-cY-pHl" secondAttribute="bottom" constant="25" id="ovp-kr-mNW"/>
                                                 <constraint firstItem="rSN-Bx-vom" firstAttribute="top" secondItem="tZ3-VF-AEM" secondAttribute="bottom" constant="66" id="pPg-a1-S4D"/>
+                                                <constraint firstAttribute="trailing" secondItem="iDe-wS-bh0" secondAttribute="trailing" constant="17" id="tf4-Yk-jlc"/>
                                                 <constraint firstItem="OWZ-JQ-FY2" firstAttribute="firstBaseline" secondItem="deW-nt-NRA" secondAttribute="firstBaseline" id="uZc-Lp-WMe"/>
                                                 <constraint firstItem="OWZ-JQ-FY2" firstAttribute="bottom" secondItem="DDM-Xj-8So" secondAttribute="bottom" id="vnB-pY-vBW"/>
                                                 <constraint firstItem="DDM-Xj-8So" firstAttribute="leading" secondItem="deW-nt-NRA" secondAttribute="trailing" constant="8" symbolic="YES" id="wee-qy-daw"/>

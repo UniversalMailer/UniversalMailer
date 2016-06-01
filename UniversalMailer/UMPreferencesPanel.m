@@ -8,6 +8,7 @@
 
 #import "UMPreferencesPanel.h"
 
+#import <Sparkle/Sparkle.h>
 #import "UMConstants.h"
 
 @interface UMPreferencesPanel ()
@@ -18,6 +19,7 @@
 @property (weak) IBOutlet NSTextField *logFilePathLabel;
 @property (unsafe_unretained) IBOutlet NSTextView *injectedCSSLabel;
 @property (weak) IBOutlet NSTextField *fontNAInfoLabel;
+@property (weak) IBOutlet NSTextField *lastUpdateLabel;
 @end
 
 @implementation UMPreferencesPanel
@@ -75,6 +77,11 @@
         else
             self.injectedCSSLabel.string = injectedCSS;
     }
+    if( self.lastUpdateLabel ){
+        SUUpdater *updater = [SUUpdater updaterForBundle: [NSBundle bundleForClass: [self class]]];
+        NSString *lastUpdate = [NSDateFormatter localizedStringFromDate: updater.lastUpdateCheckDate dateStyle: NSDateFormatterShortStyle timeStyle: NSDateFormatterShortStyle];
+        self.lastUpdateLabel.stringValue = [NSString stringWithFormat: @"Last check: %@", lastUpdate];
+    }
 }
 
 - (IBAction)donatePressed:(id)sender {
@@ -106,6 +113,11 @@
     else {
         [self.injectedCSSLabel setTextColor: [NSColor disabledControlTextColor]];
     }
+}
+
+- (IBAction)checkForUpdatePressed:(id)sender {
+    SUUpdater *updater = [SUUpdater updaterForBundle: [NSBundle bundleForClass: [self class]]];
+    [updater checkForUpdates: sender];
 }
 
 #pragma mark -
