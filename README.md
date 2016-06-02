@@ -6,6 +6,7 @@ with attachments (especially when passing through MS Exchange/Outlook). It also 
 
 **|  [Home page][1] | [Download][2] | [What's new][3] | [Installation & Usage][4] | [FAQ][5] |**
 
+[![Build Status](https://travis-ci.org/UniversalMailer/UniversalMailer.svg?branch=master)](https://travis-ci.org/UniversalMailer/UniversalMailer)
 [![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg?style=flat-square)](http://makeapullrequest.com)
 
 Do I need it?
