@@ -6,17 +6,17 @@
         <description>Most recent changes with links to updates.</description>
         <language>en</language>
         <item>
-            <title>Version 3.0 build 6 (1 bug fix)</title>
+            <title>Version 3.0 build 7 (1 new feature)</title>
 						<description><![CDATA[
-								<h2>Bug fixing</h2>
+								<h2>New feature</h2>
 								<ul>
-										<li>Fixed minor bugs</li>
+										<li>Added a framework to anonymously track user activity (you can opt out if you wish)</li>
 								</ul>
 						]]>
 						</description>
-            <pubDate>Wed, 02 Jun 2016 00:05:00 +0200</pubDate>
-						<sparkle:version>6</sparkle:version>
-						<sparkle:shortVersionString>3.0 (build 6)</sparkle:shortVersionString>
+            <pubDate>Wed, 02 Jun 2016 19:30:00 +0200</pubDate>
+						<sparkle:version>7</sparkle:version>
+						<sparkle:shortVersionString>3.0 (build 7)</sparkle:shortVersionString>
 						<link>https://universalmailer.github.io/UniversalMailer/download.html</link>
         </item>
     </channel>
