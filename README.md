@@ -35,6 +35,8 @@ Copyright and License
 
 Copyright (C) 2016 noware under [GPLv3](LICENSE). All rights reserved.
 
+UniversalMailer uses Sparkle.framework to check for updates, check Sparkle project [website][7] for license and other information.
+
 
 [1]: https://universalmailer.github.io/UniversalMailer/
 [2]: https://universalmailer.github.io/UniversalMailer/download.html
@@ -42,3 +44,4 @@ Copyright (C) 2016 noware under [GPLv3](LICENSE). All rights reserved.
 [4]: https://universalmailer.github.io/UniversalMailer/usage.html
 [5]: https://universalmailer.github.io/UniversalMailer/faq.html
 [6]: https://github.com/UniversalMailer/UniversalMailer/issues
+[7]: https://sparkle-project.org
