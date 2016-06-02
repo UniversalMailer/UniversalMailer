@@ -40,6 +40,8 @@
 		81F974BB1CFF83A900E35C15 /* Sparkle.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 81F974BA1CFF83A900E35C15 /* Sparkle.framework */; };
 		81F974BD1CFF83EC00E35C15 /* Sparkle.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = 81F974BA1CFF83A900E35C15 /* Sparkle.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		81F974BF1CFF85BE00E35C15 /* dsa_pub.pem in Resources */ = {isa = PBXBuildFile; fileRef = 81F974BE1CFF85BE00E35C15 /* dsa_pub.pem */; };
+		81F974C21D00638300E35C15 /* GoogleAnalyticsTracker.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 81F974C11D00638300E35C15 /* GoogleAnalyticsTracker.framework */; };
+		81F974C31D00639D00E35C15 /* GoogleAnalyticsTracker.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = 81F974C11D00638300E35C15 /* GoogleAnalyticsTracker.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -59,6 +61,7 @@
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
+				81F974C31D00639D00E35C15 /* GoogleAnalyticsTracker.framework in CopyFiles */,
 				81F974BD1CFF83EC00E35C15 /* Sparkle.framework in CopyFiles */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -97,6 +100,7 @@
 		81DEBB1E1CF84CD90057850F /* UMLog.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UMLog.m; sourceTree = "<group>"; };
 		81F974BA1CFF83A900E35C15 /* Sparkle.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Sparkle.framework; sourceTree = "<group>"; };
 		81F974BE1CFF85BE00E35C15 /* dsa_pub.pem */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = dsa_pub.pem; sourceTree = "<group>"; };
+		81F974C11D00638300E35C15 /* GoogleAnalyticsTracker.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = GoogleAnalyticsTracker.framework; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -104,6 +108,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				81F974C21D00638300E35C15 /* GoogleAnalyticsTracker.framework in Frameworks */,
 				81F974BB1CFF83A900E35C15 /* Sparkle.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -161,6 +166,7 @@
 			isa = PBXGroup;
 			children = (
 				81F974BE1CFF85BE00E35C15 /* dsa_pub.pem */,
+				81F974C11D00638300E35C15 /* GoogleAnalyticsTracker.framework */,
 				81F974BA1CFF83A900E35C15 /* Sparkle.framework */,
 				811DDB8B1CF45A2400DC3EA7 /* Info.plist */,
 				81DEBB0C1CF839460057850F /* UniversalMailerIcon.png */,

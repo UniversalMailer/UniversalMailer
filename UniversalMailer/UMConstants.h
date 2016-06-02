@@ -23,6 +23,10 @@
 #define UMOutgoingFontName @"UMOutgoingFontName"
 #define UMOutgoingFontSize @"UMOutgoingFontSize"
 #define UMOutgoingFontColor @"UMOutgoingFontColor"
+
+#define UMSendUsageStats @"UMSendUsageStats"
+
+#define UMFirstInstallation @"UMFirstInstallation"
 // ----
 
 #define UMBoundaryAlphabet @"_abcdefABCDEF0123456789"

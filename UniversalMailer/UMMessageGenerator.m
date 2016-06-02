@@ -8,6 +8,7 @@
 
 #import "UMMessageGenerator.h"
 
+#import <GoogleAnalyticsTracker/GoogleAnalyticsTracker.h>
 #import "UMConstants.h"
 #import "UMLog.h"
 #import "UMFilter.h"
@@ -31,8 +32,16 @@
     if( alwaysSendRich ){
         ret = [self newMessageWithHtmlString: [NSString stringWithFormat: @"<html><head></head><body>%@</body></html>", string.string] plainTextAlternative: string otherHtmlStringsAndAttachments: nil headers: headers];
     }
-    else
+    else {
+        if( [[NSUserDefaults standardUserDefaults] boolForKey: UMSendUsageStats] ){
+            [MPGoogleAnalyticsTracker trackEventOfCategory: @"Message"
+                                                    action: @"New Message"
+                                                     label: @"Plain Text"
+                                                     value: @0];
+        }
+        
         ret = [self UMnewMessageWithAttributedString: string headers: headers];
+    }
     
     return  ret;
 }
@@ -47,6 +56,13 @@
     if( [self respondsToSelector: @selector(signsOutput)] && [dummy signsOutput] )
         gpgMailDetected = YES;
 
+    if( [[NSUserDefaults standardUserDefaults] boolForKey: UMSendUsageStats] ){
+        [MPGoogleAnalyticsTracker trackEventOfCategory: @"Message"
+                                                action: @"New Message"
+                                                 label: @"Rich Text"
+                                                 value: @0];
+    }
+    
     if( !gpgMailDetected && [ret valueForKey: @"_rawData"] ){
         UMLog(@"%s - original data: [%@]", __PRETTY_FUNCTION__, [[NSString alloc] initWithData: [ret valueForKey: @"_rawData"] encoding: NSUTF8StringEncoding]);
         UMFilter *filter = [[UMFilter alloc] initWithData: [ret valueForKey: @"_rawData"]];
