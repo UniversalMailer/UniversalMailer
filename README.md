@@ -36,6 +36,7 @@ Copyright and License
 Copyright (C) 2016 noware under [GPLv3](LICENSE). All rights reserved.
 
 UniversalMailer uses Sparkle.framework to check for updates, check Sparkle project [website][7] for license and other information.
+The Google Analytics Tracker framework is released under MIT license. See [website][8] for more information.
 
 
 [1]: https://universalmailer.github.io/UniversalMailer/
@@ -45,3 +46,4 @@ UniversalMailer uses Sparkle.framework to check for updates, check Sparkle proje
 [5]: https://universalmailer.github.io/UniversalMailer/faq.html
 [6]: https://github.com/UniversalMailer/UniversalMailer/issues
 [7]: https://sparkle-project.org
+[8]: https://github.com/MacPaw/Google-Analytics-for-OS-X
