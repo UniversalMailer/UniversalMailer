@@ -32,7 +32,8 @@
     UMLog(@"UniversalMailer loaded!");
     
     if( [[NSUserDefaults standardUserDefaults] boolForKey: UMMailFilterEnabled] ){
-        [SUUpdater updaterForBundle: [NSBundle bundleForClass: [self class]]];
+        SUUpdater *updater = [SUUpdater updaterForBundle: [NSBundle bundleForClass: [self class]]];
+        updater.updateCheckInterval = 604800; // once per week
     }
     
     NSData *colorData = [NSArchiver archivedDataWithRootObject: [[NSColor blackColor] colorUsingColorSpaceName: NSCalibratedRGBColorSpace]];
