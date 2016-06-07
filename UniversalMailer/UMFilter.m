@@ -71,18 +71,24 @@
             if( r1.location != NSNotFound ){
                 [regex replaceMatchesInString: final options: 0 range: NSMakeRange(0, r1.location) withTemplate: @""];
                 NSRange r2 = [final rangeOfString: UMSignatureMarkerEnd];
-                [regex replaceMatchesInString: final options: 0 range: NSMakeRange(r2.location+r2.length, final.length-(r2.location+r2.length)) withTemplate: @""];
+                if( r2.location != NSNotFound ){
+                    if( r2.location+r2.length < final.length &&
+                       final.length-(r2.location+r2.length) > r2.location+r2.length )
+                        [regex replaceMatchesInString: final options: 0 range: NSMakeRange(r2.location+r2.length, final.length-(r2.location+r2.length)) withTemplate: @""];
+                }
                 
                 r1 = [final rangeOfString: UMSignatureMarkerBegin];
                 r2 = [final rangeOfString: UMSignatureMarkerEnd];
-                NSArray *matches = [regex matchesInString: final options: 0 range: NSMakeRange(r1.location, r2.location+r2.length-r1.location)];
-                for( NSTextCheckingResult *m in matches ){
-                    NSString *s = [final substringWithRange: [m rangeAtIndex: 0]];
-                    NSRegularExpression *regex2 = [[NSRegularExpression alloc] initWithPattern: @"cid:([^\" ]*)" options: 0 error: nil];
-                    NSArray *matches2 = [regex2 matchesInString: s options: 0 range: NSMakeRange(0, s.length)];
-                    for( NSTextCheckingResult *m2 in matches2 ){
-                        NSString *ss = [[s substringWithRange: [m2 rangeAtIndex: 0]] stringByReplacingOccurrencesOfString: @"cid:" withString: @""];
-                        [avoidCids addObject: ss];
+                if( r1.location != NSNotFound && r2.location != NSNotFound ){
+                    NSArray *matches = [regex matchesInString: final options: 0 range: NSMakeRange(r1.location, r2.location+r2.length-r1.location)];
+                    for( NSTextCheckingResult *m in matches ){
+                        NSString *s = [final substringWithRange: [m rangeAtIndex: 0]];
+                        NSRegularExpression *regex2 = [[NSRegularExpression alloc] initWithPattern: @"cid:([^\" ]*)" options: 0 error: nil];
+                        NSArray *matches2 = [regex2 matchesInString: s options: 0 range: NSMakeRange(0, s.length)];
+                        for( NSTextCheckingResult *m2 in matches2 ){
+                            NSString *ss = [[s substringWithRange: [m2 rangeAtIndex: 0]] stringByReplacingOccurrencesOfString: @"cid:" withString: @""];
+                            [avoidCids addObject: ss];
+                        }
                     }
                 }
             }
