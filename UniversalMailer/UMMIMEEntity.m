@@ -71,7 +71,7 @@
             }
         }
         else {
-            if( r.location == NSNotFound ){
+            if( r.location == NSNotFound || (!avoidAttachments && self.contentDisposition.length > 0) ){
                 [array addObject: self];
             }
         }

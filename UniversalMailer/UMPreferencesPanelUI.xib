@@ -170,6 +170,7 @@
                                                         <font key="font" metaFont="system"/>
                                                     </buttonCell>
                                                     <connections>
+                                                        <binding destination="Lfg-hO-0La" name="enabled" keyPath="values.UMMailFilterEnabled" id="0lI-FL-wDU"/>
                                                         <binding destination="Lfg-hO-0La" name="enabled2" keyPath="values.UMSendUsageStats" previousBinding="0lI-FL-wDU" id="kFB-wU-kj9">
                                                             <dictionary key="options">
                                                                 <integer key="NSMultipleValuesPlaceholder" value="-1"/>
@@ -178,7 +179,6 @@
                                                                 <integer key="NSNullPlaceholder" value="-1"/>
                                                             </dictionary>
                                                         </binding>
-                                                        <binding destination="Lfg-hO-0La" name="enabled" keyPath="values.UMMailFilterEnabled" id="0lI-FL-wDU"/>
                                                         <binding destination="Lfg-hO-0La" name="value" keyPath="values.UMSendUsageStats" id="uPX-ZF-EoS"/>
                                                     </connections>
                                                 </button>
