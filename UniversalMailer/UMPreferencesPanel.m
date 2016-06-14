@@ -24,7 +24,7 @@
 @implementation UMPreferencesPanel
 
 - (id)preferencesNibName {
-    return @"UMPreferencesPanelUI.nib";
+    return @"UMPreferencesPanelUI";
 }
 
 - (id)imageForPreferenceNamed:(id)fp8 {

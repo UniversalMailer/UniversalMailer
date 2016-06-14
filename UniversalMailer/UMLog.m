@@ -21,7 +21,7 @@
         outString = [[NSString alloc] initWithFormat: format arguments: args];
         va_end(args);
         
-        NSLog(@"%@", outString);
+        NSLog(@"[UniversalMailer] - %@", outString);
     }
 }
 
