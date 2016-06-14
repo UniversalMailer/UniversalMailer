@@ -6,17 +6,19 @@
         <description>Most recent changes with links to updates.</description>
         <language>en</language>
         <item>
-            <title>Version 3.0 build 9 (1 bug fixing)</title>
+            <title>Version 3.0 build 10 (3 bugs fixed)</title>
 						<description><![CDATA[
 								<h2>Bug fixing</h2>
 								<ul>
-										<li>Resolved issue #66 (missing plain text attachments)</li>
+										<li><b>Added support for macOS Sierra!</b></li>
+										<li>added prefix to log system</li>
+										<li>removed wrong enable binding for send stats</li>
 								</ul>
 						]]>
 						</description>
-            <pubDate>Wed, 13 Jun 2016 09:00:00 +0200</pubDate>
-						<sparkle:version>9</sparkle:version>
-						<sparkle:shortVersionString>3.0 (build 9)</sparkle:shortVersionString>
+            <pubDate>Wed, 14 Jun 2016 21:45:00 +0200</pubDate>
+						<sparkle:version>10</sparkle:version>
+						<sparkle:shortVersionString>3.0 (build 10)</sparkle:shortVersionString>
 						<link>https://universalmailer.github.io/UniversalMailer/download.html</link>
         </item>
     </channel>
