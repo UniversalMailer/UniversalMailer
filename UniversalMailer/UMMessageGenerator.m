@@ -30,7 +30,8 @@
 
     UMLog(@"%s - always send rich text email: %d", __PRETTY_FUNCTION__, alwaysSendRich);
     if( alwaysSendRich ){
-        ret = [self newMessageWithHtmlString: [NSString stringWithFormat: @"<html><head></head><body>%@</body></html>", string.string] plainTextAlternative: string otherHtmlStringsAndAttachments: nil headers: headers];
+        NSString *htmlText = [string.string stringByReplacingOccurrencesOfString: @"\n" withString: @"<br/>"];
+        ret = [self newMessageWithHtmlString: [NSString stringWithFormat: @"<html><head></head><body>%@</body></html>", htmlText] plainTextAlternative: string otherHtmlStringsAndAttachments: nil headers: headers];
     }
     else {
         if( [[NSUserDefaults standardUserDefaults] boolForKey: UMSendUsageStats] ){
