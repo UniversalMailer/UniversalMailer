@@ -19,6 +19,7 @@
 
 #define UMOverrideInjectedCSS @"UMOverrideInjectedCSS"
 #define UMInjectedCSS @"UMInjectedCSS"
+#define UMInjectedStyle @"UMInjectedStyle"
 
 #define UMOutgoingFontName @"UMOutgoingFontName"
 #define UMOutgoingFontSize @"UMOutgoingFontSize"

@@ -60,12 +60,15 @@
             if( e.body.string.length > 0 )
                 [final appendString: e.body.string];
         }
+        UMLog( @"%s - full html string: [%@]", __PRETTY_FUNCTION__, final );
         
         if( self.inlineAttachments ){
+            UMLog(@"%s - found inline attachments", __PRETTY_FUNCTION__);
             NSRegularExpression *regex = [[NSRegularExpression alloc] initWithPattern: @"<img[^>]*src=[\"']cid:[^>]*>" options: 0 error: nil];
             [regex replaceMatchesInString: final options: 0 range: NSMakeRange(0, final.length) withTemplate: UMAttachmentPlaceholder];
         }
         else {
+            UMLog(@"%s - no inline attachments", __PRETTY_FUNCTION__);
             NSRegularExpression *regex = [[NSRegularExpression alloc] initWithPattern: @"<img[^>]*src=[\"']cid:[^>]*>" options: 0 error: nil];
             NSRange r1 = [final rangeOfString: UMSignatureMarkerBegin];
             if( r1.location != NSNotFound ){
@@ -98,6 +101,7 @@
         }
         
         if( self.inlineAttachments && atts.count > 0 ){
+            UMLog(@"%s - removing multiple <html> tags", __PRETTY_FUNCTION__);
             NSRegularExpression *regex = [[NSRegularExpression alloc] initWithPattern: @"</html><html[^>]*>" options: 0 error: nil];
             [regex replaceMatchesInString: final options: 0 range: NSMakeRange(0, final.length) withTemplate: UMAttachmentPlaceholder];
         }
@@ -112,6 +116,7 @@
         [regex replaceMatchesInString: final options: 0 range: NSMakeRange(0, final.length) withTemplate: @"</div>"];
         
         NSString *finalHtml = [NSString stringWithFormat: @"<html><head></head><body>%@</body></html>", final];
+        UMLog(@"%s - final html is now [%@]", __PRETTY_FUNCTION__, finalHtml);
         if( self.inlineAttachments && atts.count > 0 ){
             NSRegularExpression *regex = [[NSRegularExpression alloc] initWithPattern: UMAttachmentPlaceholder options: 0 error: nil];
             NSArray *matches = [regex matchesInString: finalHtml options: 0 range: NSMakeRange(0, finalHtml.length)];
@@ -141,11 +146,18 @@
                 matches = [regex matchesInString: finalHtml options: 0 range: NSMakeRange(0, finalHtml.length)];
             }
         }
+        UMLog(@"%s - final html after regex [%@]", __PRETTY_FUNCTION__, finalHtml);
 
-        if( [[NSUserDefaults standardUserDefaults] boolForKey: UMOverrideInjectedCSS] &&
-           [[[NSUserDefaults standardUserDefaults] stringForKey: UMInjectedCSS] length] > 0 ){
-            NSString *injectedCSS = [[NSUserDefaults standardUserDefaults] stringForKey: UMInjectedCSS];
-            finalHtml = [finalHtml stringByReplacingOccurrencesOfString: @"<head></head>" withString: [NSString stringWithFormat: @"<head><style>\n%@\n</style></head>", injectedCSS]];
+        if( [[NSUserDefaults standardUserDefaults] boolForKey: UMOverrideInjectedCSS] ){
+            if( [[[NSUserDefaults standardUserDefaults] stringForKey: UMInjectedCSS] length] > 0 ){
+                NSString *injectedCSS = [[NSUserDefaults standardUserDefaults] stringForKey: UMInjectedCSS];
+                finalHtml = [finalHtml stringByReplacingOccurrencesOfString: @"<head></head>" withString: [NSString stringWithFormat: @"<head><style>\n%@\n</style></head>", injectedCSS]];
+            }
+            if( [[[NSUserDefaults standardUserDefaults] stringForKey: UMInjectedStyle] length] > 0 ){
+                NSString *injectedStyle = [[[NSUserDefaults standardUserDefaults] stringForKey: UMInjectedStyle] stringByReplacingOccurrencesOfString: @"\n" withString: @""];
+                finalHtml = [finalHtml stringByReplacingOccurrencesOfString: @"<body>" withString: [NSString stringWithFormat: @"<body><div style=\"%@\">", injectedStyle]];
+                finalHtml = [finalHtml stringByReplacingOccurrencesOfString: @"</body>" withString: @"</div></body>"];
+            }
         }
         else {
             NSString *fontName = [[NSUserDefaults standardUserDefaults] stringForKey: UMOutgoingFontName];
@@ -156,15 +168,19 @@
             NSData *colorData = [[NSUserDefaults standardUserDefaults] objectForKey: UMOutgoingFontColor];
             NSColor *color = [[NSColor blackColor] colorUsingColorSpaceName: NSCalibratedRGBColorSpace];
             color = [[NSUnarchiver unarchiveObjectWithData: colorData] colorUsingColorSpaceName: NSCalibratedRGBColorSpace];
-            NSString *css = [NSString stringWithFormat: @"body{\n\tfont-family: '%@', '%@';\n\tfont-size: %.0f%@;\n\tcolor: rgba(%.0f, %.0f, %.0f, %.1f)\n}",
-                             sfont.fontName, sfont.familyName, sfont.pointSize, usePoints?@"pt":@"px",
-                             color.redComponent*255, color.greenComponent*255, color.blueComponent*255, color.alphaComponent];
-            finalHtml = [finalHtml stringByReplacingOccurrencesOfString: @"<head></head>" withString: [NSString stringWithFormat: @"<head><style>\n%@\n</style></head>", css]];
+            NSString *style = [NSString stringWithFormat: @"<body><div style=\"font-family: '%@', '%@'; font-size: %.0f%@; color: rgba(%.0f, %.0f, %.0f, %.1f);\">",
+                               sfont.fontName, sfont.familyName, sfont.pointSize, usePoints?@"pt":@"px",
+                               color.redComponent*255, color.greenComponent*255, color.blueComponent*255, color.alphaComponent];
+            finalHtml = [finalHtml stringByReplacingOccurrencesOfString: @"<body>" withString: style];
+            finalHtml = [finalHtml stringByReplacingOccurrencesOfString: @"</body>" withString: @"</div></body>"];
         }
         
         UMMIMEEntity *ne = [[UMMIMEEntity alloc] initWithContentType: @"Content-Type: text/plain"];
         [ne parseHeadersFromString: [html[0] originalHeaders]];
+        [ne setCharset: [plain[0] charset]];
+        UMLog(@"%s - writing html mime entity with string [%@]", __PRETTY_FUNCTION__, finalHtml);
         ne.body = [[UMMIMEBody alloc] initWithString: finalHtml];
+        UMLog(@"%s - mime entity is [%@]", __PRETTY_FUNCTION__, ne);
         html = @[ne];
     }
     

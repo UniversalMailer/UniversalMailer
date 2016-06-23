@@ -15,6 +15,7 @@
                 <outlet property="fontNAInfoLabel" destination="Eg5-fS-kYO" id="Oec-mF-njU"/>
                 <outlet property="fontPreviewLabel" destination="OWZ-JQ-FY2" id="fQK-df-FgI"/>
                 <outlet property="injectedCSSLabel" destination="zzo-K2-H3j" id="i6i-Gp-JBV"/>
+                <outlet property="injectedStyle" destination="QAp-K3-HXw" id="zYD-PA-e7a"/>
                 <outlet property="lastUpdateLabel" destination="iDe-wS-bh0" id="12i-Nz-XW0"/>
                 <outlet property="logWarningLabel" destination="CG5-55-7Ge" id="YeX-Gq-5Rs"/>
                 <outlet property="versionLabel" destination="heP-2h-a11" id="xmn-9c-IVC"/>
@@ -305,7 +306,7 @@
                                                         </binding>
                                                     </connections>
                                                 </colorWell>
-                                                <button fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="xIa-CV-3gw">
+                                                <button translatesAutoresizingMaskIntoConstraints="NO" id="xIa-CV-3gw">
                                                     <rect key="frame" x="15" y="223" width="392" height="28"/>
                                                     <buttonCell key="cell" type="check" title="Use points instead of pixels" bezelStyle="regularSquare" imagePosition="left" state="on" inset="2" id="nAE-He-eNd">
                                                         <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
@@ -375,6 +376,7 @@
                                                 <constraint firstItem="tZ3-VF-AEM" firstAttribute="top" secondItem="C9u-ds-ein" secondAttribute="bottom" constant="2" id="6TM-qS-B72"/>
                                                 <constraint firstItem="C9u-ds-ein" firstAttribute="trailing" secondItem="tZ3-VF-AEM" secondAttribute="trailing" id="7oR-Rb-B2W"/>
                                                 <constraint firstItem="OTh-GP-lAd" firstAttribute="leading" secondItem="Wh9-w6-4Jf" secondAttribute="leading" constant="17" id="80l-7e-eQ0"/>
+                                                <constraint firstItem="xIa-CV-3gw" firstAttribute="leading" secondItem="756-B6-kru" secondAttribute="leading" id="8OE-26-SjD"/>
                                                 <constraint firstItem="Eg5-fS-kYO" firstAttribute="top" secondItem="DDM-Xj-8So" secondAttribute="bottom" constant="8" id="8ex-lm-Fh1"/>
                                                 <constraint firstItem="rSN-Bx-vom" firstAttribute="leading" secondItem="qOb-6P-Mwo" secondAttribute="leading" id="97l-4S-qnC"/>
                                                 <constraint firstItem="5lE-gb-DLM" firstAttribute="leading" secondItem="Wh9-w6-4Jf" secondAttribute="leading" constant="17" id="9YV-od-Cjg"/>
@@ -383,12 +385,14 @@
                                                 <constraint firstItem="qOb-6P-Mwo" firstAttribute="baseline" secondItem="OWZ-JQ-FY2" secondAttribute="baseline" id="AdC-ZS-Uqi"/>
                                                 <constraint firstItem="9xt-cY-pHl" firstAttribute="leading" secondItem="C9u-ds-ein" secondAttribute="leading" id="CFl-xI-QUC"/>
                                                 <constraint firstItem="756-B6-kru" firstAttribute="trailing" secondItem="rSN-Bx-vom" secondAttribute="trailing" id="GBC-DE-k9q"/>
+                                                <constraint firstItem="rSN-Bx-vom" firstAttribute="top" secondItem="xIa-CV-3gw" secondAttribute="bottom" constant="11" id="GQJ-x4-cpI"/>
                                                 <constraint firstItem="0CA-eI-B2w" firstAttribute="leading" secondItem="Wh9-w6-4Jf" secondAttribute="leading" constant="17" id="J2J-fZ-tOR"/>
                                                 <constraint firstItem="rSN-Bx-vom" firstAttribute="trailing" secondItem="DDM-Xj-8So" secondAttribute="trailing" id="M5l-no-sb4"/>
                                                 <constraint firstItem="OWZ-JQ-FY2" firstAttribute="top" secondItem="DDM-Xj-8So" secondAttribute="top" id="Ome-d1-qgh"/>
                                                 <constraint firstItem="rSN-Bx-vom" firstAttribute="top" secondItem="756-B6-kru" secondAttribute="bottom" constant="35" id="Svs-e4-JVf"/>
                                                 <constraint firstItem="5lE-gb-DLM" firstAttribute="top" secondItem="Eg5-fS-kYO" secondAttribute="bottom" constant="8" id="TyU-A0-ZQV"/>
                                                 <constraint firstAttribute="bottom" secondItem="iDe-wS-bh0" secondAttribute="bottom" constant="19" id="WJy-4p-HWf"/>
+                                                <constraint firstItem="xIa-CV-3gw" firstAttribute="trailing" secondItem="756-B6-kru" secondAttribute="trailing" id="Wzd-Cu-djM"/>
                                                 <constraint firstItem="tZ3-VF-AEM" firstAttribute="trailing" secondItem="756-B6-kru" secondAttribute="trailing" id="YZf-Rd-h1W"/>
                                                 <constraint firstAttribute="trailing" secondItem="Eg5-fS-kYO" secondAttribute="trailing" constant="17" id="Yma-pH-Fod"/>
                                                 <constraint firstItem="OTh-GP-lAd" firstAttribute="top" secondItem="5lE-gb-DLM" secondAttribute="bottom" constant="4" id="Z3W-58-B2O"/>
@@ -396,6 +400,7 @@
                                                 <constraint firstItem="9xt-cY-pHl" firstAttribute="trailing" secondItem="C9u-ds-ein" secondAttribute="trailing" id="dg4-3N-OYg"/>
                                                 <constraint firstAttribute="trailing" secondItem="5lE-gb-DLM" secondAttribute="trailing" constant="17" id="dhj-ti-Ha9"/>
                                                 <constraint firstItem="deW-nt-NRA" firstAttribute="leading" secondItem="OWZ-JQ-FY2" secondAttribute="trailing" constant="8" symbolic="YES" id="eQQ-nW-WcB"/>
+                                                <constraint firstItem="xIa-CV-3gw" firstAttribute="top" secondItem="756-B6-kru" secondAttribute="bottom" id="fSd-1z-YId"/>
                                                 <constraint firstItem="OWZ-JQ-FY2" firstAttribute="leading" secondItem="qOb-6P-Mwo" secondAttribute="trailing" id="i7y-ol-2P6"/>
                                                 <constraint firstItem="9xt-cY-pHl" firstAttribute="leading" secondItem="Wh9-w6-4Jf" secondAttribute="leading" constant="17" id="jZZ-q7-Mx0"/>
                                                 <constraint firstItem="OWZ-JQ-FY2" firstAttribute="top" secondItem="rSN-Bx-vom" secondAttribute="bottom" constant="11" id="kW6-uE-OQO"/>
@@ -420,25 +425,6 @@
                                             <rect key="frame" x="10" y="33" width="422" height="365"/>
                                             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                             <subviews>
-                                                <textField verticalHuggingPriority="750" horizontalCompressionResistancePriority="250" translatesAutoresizingMaskIntoConstraints="NO" id="Zsk-9p-BDd">
-                                                    <rect key="frame" x="15" y="17" width="392" height="69"/>
-                                                    <constraints>
-                                                        <constraint firstAttribute="height" constant="69" id="xIw-iO-M4R"/>
-                                                    </constraints>
-                                                    <textFieldCell key="cell" controlSize="mini" sendsActionOnEndEditing="YES" id="oDN-kV-fLF">
-                                                        <font key="font" metaFont="system"/>
-                                                        <string key="title">This is the CSS that will be injected by UniversalMailer on outgoing emails. If you're not sure on how to cope with CSS, don't use this: you might screw really bad your emails!</string>
-                                                        <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
-                                                        <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
-                                                    </textFieldCell>
-                                                    <connections>
-                                                        <binding destination="Lfg-hO-0La" name="hidden" keyPath="values.UMMailFilterEnabled" id="a24-0b-ULH">
-                                                            <dictionary key="options">
-                                                                <string key="NSValueTransformerName">NSNegateBoolean</string>
-                                                            </dictionary>
-                                                        </binding>
-                                                    </connections>
-                                                </textField>
                                                 <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="xux-Cd-GCl">
                                                     <rect key="frame" x="15" y="307" width="392" height="17"/>
                                                     <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="Injected CSS" id="SGY-Zh-CCf">
@@ -452,7 +438,7 @@
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="23" id="V3v-Ax-wb9"/>
                                                     </constraints>
-                                                    <buttonCell key="cell" type="check" title="Override UniversalMailer settings with CSS" bezelStyle="regularSquare" imagePosition="left" state="on" inset="2" id="p7g-xu-LRG">
+                                                    <buttonCell key="cell" type="check" title="Override UniversalMailer style with following CSS &amp; style" bezelStyle="regularSquare" imagePosition="left" state="on" inset="2" id="p7g-xu-LRG">
                                                         <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
                                                         <font key="font" metaFont="system"/>
                                                     </buttonCell>
@@ -463,19 +449,19 @@
                                                     </connections>
                                                 </button>
                                                 <scrollView horizontalLineScroll="10" horizontalPageScroll="10" verticalLineScroll="10" verticalPageScroll="10" hasHorizontalScroller="NO" usesPredominantAxisScrolling="NO" translatesAutoresizingMaskIntoConstraints="NO" id="z0R-ZC-FAb">
-                                                    <rect key="frame" x="17" y="94" width="388" height="205"/>
+                                                    <rect key="frame" x="17" y="207" width="388" height="92"/>
                                                     <clipView key="contentView" id="HAn-Cz-nnw">
-                                                        <rect key="frame" x="1" y="1" width="386" height="203"/>
-                                                        <autoresizingMask key="autoresizingMask"/>
+                                                        <rect key="frame" x="1" y="1" width="386" height="90"/>
+                                                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                                         <subviews>
                                                             <textView importsGraphics="NO" richText="NO" findStyle="panel" continuousSpellChecking="YES" allowsUndo="YES" usesRuler="YES" usesFontPanel="YES" verticallyResizable="YES" allowsNonContiguousLayout="YES" quoteSubstitution="YES" dashSubstitution="YES" smartInsertDelete="YES" id="zzo-K2-H3j">
-                                                                <rect key="frame" x="0.0" y="0.0" width="386" height="203"/>
+                                                                <rect key="frame" x="0.0" y="0.0" width="386" height="90"/>
                                                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                                                <size key="minSize" width="386" height="203"/>
+                                                                <size key="minSize" width="386" height="90"/>
                                                                 <size key="maxSize" width="463" height="10000000"/>
                                                                 <color key="insertionPointColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
-                                                                <size key="minSize" width="386" height="203"/>
+                                                                <size key="minSize" width="386" height="90"/>
                                                                 <size key="maxSize" width="463" height="10000000"/>
                                                                 <connections>
                                                                     <binding destination="Lfg-hO-0La" name="attributedString" keyPath="values.UMInjectedCSS" id="A1g-AY-TkF">
@@ -495,25 +481,89 @@
                                                         <autoresizingMask key="autoresizingMask"/>
                                                     </scroller>
                                                     <scroller key="verticalScroller" verticalHuggingPriority="750" horizontal="NO" id="X8M-M5-7dB">
-                                                        <rect key="frame" x="371" y="1" width="16" height="203"/>
+                                                        <rect key="frame" x="371" y="1" width="16" height="90"/>
                                                         <autoresizingMask key="autoresizingMask"/>
                                                     </scroller>
                                                 </scrollView>
+                                                <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="68f-km-3U2">
+                                                    <rect key="frame" x="15" y="182" width="392" height="17"/>
+                                                    <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="Injected style" id="jEB-2N-QOu">
+                                                        <font key="font" metaFont="systemBold"/>
+                                                        <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
+                                                        <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                                                    </textFieldCell>
+                                                </textField>
+                                                <scrollView horizontalLineScroll="10" horizontalPageScroll="10" verticalLineScroll="10" verticalPageScroll="10" hasHorizontalScroller="NO" usesPredominantAxisScrolling="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2Qf-J7-GeC">
+                                                    <rect key="frame" x="17" y="128" width="388" height="46"/>
+                                                    <clipView key="contentView" id="Ess-8f-QlJ">
+                                                        <rect key="frame" x="1" y="1" width="386" height="44"/>
+                                                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                                        <subviews>
+                                                            <textView importsGraphics="NO" findStyle="panel" continuousSpellChecking="YES" allowsUndo="YES" usesRuler="YES" usesFontPanel="YES" verticallyResizable="YES" allowsNonContiguousLayout="YES" quoteSubstitution="YES" dashSubstitution="YES" smartInsertDelete="YES" id="QAp-K3-HXw">
+                                                                <rect key="frame" x="0.0" y="0.0" width="386" height="44"/>
+                                                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                                <size key="minSize" width="386" height="44"/>
+                                                                <size key="maxSize" width="463" height="10000000"/>
+                                                                <color key="insertionPointColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
+                                                                <size key="minSize" width="386" height="44"/>
+                                                                <size key="maxSize" width="463" height="10000000"/>
+                                                                <connections>
+                                                                    <binding destination="Lfg-hO-0La" name="attributedString" keyPath="values.UMInjectedStyle" id="rfK-Pf-d3K">
+                                                                        <dictionary key="options">
+                                                                            <bool key="NSContinuouslyUpdatesValue" value="YES"/>
+                                                                            <string key="NSValueTransformerName">UMAttributedStringToStringTransformer</string>
+                                                                        </dictionary>
+                                                                    </binding>
+                                                                    <binding destination="Lfg-hO-0La" name="editable" keyPath="values.UMOverrideInjectedCSS" id="k1l-BU-8Nj"/>
+                                                                </connections>
+                                                            </textView>
+                                                        </subviews>
+                                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                    </clipView>
+                                                    <scroller key="horizontalScroller" hidden="YES" verticalHuggingPriority="750" doubleValue="1" horizontal="YES" id="OqO-KF-25C">
+                                                        <rect key="frame" x="-100" y="-100" width="87" height="18"/>
+                                                        <autoresizingMask key="autoresizingMask"/>
+                                                    </scroller>
+                                                    <scroller key="verticalScroller" verticalHuggingPriority="750" doubleValue="1" horizontal="NO" id="WPm-8J-wPM">
+                                                        <rect key="frame" x="371" y="1" width="16" height="44"/>
+                                                        <autoresizingMask key="autoresizingMask"/>
+                                                    </scroller>
+                                                </scrollView>
+                                                <textField verticalHuggingPriority="750" horizontalCompressionResistancePriority="250" translatesAutoresizingMaskIntoConstraints="NO" id="pwm-nH-avx">
+                                                    <rect key="frame" x="16" y="2" width="390" height="118"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="118" id="ch8-qq-SMC"/>
+                                                    </constraints>
+                                                    <textFieldCell key="cell" sendsActionOnEndEditing="YES" id="ypI-OU-wit">
+                                                        <font key="font" metaFont="system"/>
+                                                        <string key="title">CSS and style will be injected into the &lt;body&gt; and outer &lt;div&gt;'s style property, respectively. The outer &lt;div&gt; embraces all the text you see in your email.  WARNING: don't use this section unless you know what you're doing. Your emails can easily be broken!</string>
+                                                        <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
+                                                        <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                                                    </textFieldCell>
+                                                </textField>
                                             </subviews>
                                             <constraints>
                                                 <constraint firstItem="xux-Cd-GCl" firstAttribute="top" secondItem="AC9-fR-2Ul" secondAttribute="bottom" constant="8" symbolic="YES" id="0b5-zJ-SQY"/>
                                                 <constraint firstItem="AC9-fR-2Ul" firstAttribute="top" secondItem="pEm-zt-Kuc" secondAttribute="top" constant="10" id="AlR-k6-c1Z"/>
                                                 <constraint firstItem="AC9-fR-2Ul" firstAttribute="leading" secondItem="pEm-zt-Kuc" secondAttribute="leading" constant="17" id="BRl-Bu-c5P"/>
-                                                <constraint firstItem="Zsk-9p-BDd" firstAttribute="top" secondItem="z0R-ZC-FAb" secondAttribute="bottom" constant="8" symbolic="YES" id="Ogp-uB-mLY"/>
+                                                <constraint firstAttribute="trailing" secondItem="68f-km-3U2" secondAttribute="trailing" constant="17" id="BfE-yE-eDX"/>
+                                                <constraint firstItem="pwm-nH-avx" firstAttribute="leading" secondItem="pEm-zt-Kuc" secondAttribute="leading" constant="18" id="E3B-Jl-LyI"/>
+                                                <constraint firstAttribute="trailing" secondItem="pwm-nH-avx" secondAttribute="trailing" constant="18" id="Hr7-96-2Wa"/>
+                                                <constraint firstItem="68f-km-3U2" firstAttribute="top" secondItem="z0R-ZC-FAb" secondAttribute="bottom" constant="8" id="IUG-5C-0az"/>
                                                 <constraint firstItem="AC9-fR-2Ul" firstAttribute="leading" secondItem="xux-Cd-GCl" secondAttribute="leading" id="OwB-jv-BKU"/>
+                                                <constraint firstItem="2Qf-J7-GeC" firstAttribute="top" secondItem="68f-km-3U2" secondAttribute="bottom" constant="8" id="PTu-2D-TnH"/>
                                                 <constraint firstItem="AC9-fR-2Ul" firstAttribute="trailing" secondItem="xux-Cd-GCl" secondAttribute="trailing" id="Qst-t4-apf"/>
-                                                <constraint firstItem="z0R-ZC-FAb" firstAttribute="trailing" secondItem="Zsk-9p-BDd" secondAttribute="trailing" id="TVt-Wh-wBN"/>
                                                 <constraint firstAttribute="trailing" secondItem="AC9-fR-2Ul" secondAttribute="trailing" constant="17" id="agZ-KG-xoc"/>
+                                                <constraint firstAttribute="trailing" secondItem="2Qf-J7-GeC" secondAttribute="trailing" constant="17" id="awC-yu-cAO"/>
                                                 <constraint firstItem="xux-Cd-GCl" firstAttribute="leading" secondItem="z0R-ZC-FAb" secondAttribute="leading" id="b9n-oa-H0V"/>
                                                 <constraint firstItem="z0R-ZC-FAb" firstAttribute="top" secondItem="xux-Cd-GCl" secondAttribute="bottom" constant="8" symbolic="YES" id="bG1-Vo-71i"/>
-                                                <constraint firstItem="z0R-ZC-FAb" firstAttribute="leading" secondItem="Zsk-9p-BDd" secondAttribute="leading" id="nQ1-3X-H5M"/>
+                                                <constraint firstItem="68f-km-3U2" firstAttribute="top" secondItem="pEm-zt-Kuc" secondAttribute="top" constant="166" id="ig1-BD-3bX"/>
+                                                <constraint firstItem="2Qf-J7-GeC" firstAttribute="leading" secondItem="pEm-zt-Kuc" secondAttribute="leading" constant="17" id="j3G-zt-DjH"/>
+                                                <constraint firstItem="68f-km-3U2" firstAttribute="leading" secondItem="pEm-zt-Kuc" secondAttribute="leading" constant="17" id="sDy-LB-smB"/>
+                                                <constraint firstItem="pwm-nH-avx" firstAttribute="top" secondItem="2Qf-J7-GeC" secondAttribute="bottom" constant="8" id="uoh-vF-EBv"/>
                                                 <constraint firstItem="xux-Cd-GCl" firstAttribute="trailing" secondItem="z0R-ZC-FAb" secondAttribute="trailing" id="wPG-vQ-GXQ"/>
-                                                <constraint firstAttribute="bottom" secondItem="Zsk-9p-BDd" secondAttribute="bottom" constant="17" id="z8K-ON-ZY8"/>
+                                                <constraint firstAttribute="bottom" secondItem="pwm-nH-avx" secondAttribute="bottom" constant="2" id="zG1-jK-vt7"/>
                                             </constraints>
                                         </view>
                                     </tabViewItem>

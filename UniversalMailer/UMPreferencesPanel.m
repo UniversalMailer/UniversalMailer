@@ -19,6 +19,7 @@
 @property (unsafe_unretained) IBOutlet NSTextView *injectedCSSLabel;
 @property (weak) IBOutlet NSTextField *fontNAInfoLabel;
 @property (weak) IBOutlet NSTextField *lastUpdateLabel;
+@property (unsafe_unretained) IBOutlet NSTextView *injectedStyle;
 @end
 
 @implementation UMPreferencesPanel
@@ -75,6 +76,13 @@
             [self.injectedCSSLabel setTextColor: [NSColor disabledControlTextColor]];
         else
             self.injectedCSSLabel.string = injectedCSS;
+    }
+    if( self.injectedStyle ){
+        NSString *injectedStyle = [[NSUserDefaults standardUserDefaults] objectForKey: UMInjectedStyle];
+        if( injectedStyle.length < 1 )
+            [self.injectedStyle setTextColor: [NSColor disabledControlTextColor]];
+        else
+            self.injectedStyle.string = injectedStyle;
     }
     if( self.lastUpdateLabel ){
         SUUpdater *updater = [SUUpdater updaterForBundle: [NSBundle bundleForClass: [self class]]];
