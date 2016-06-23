@@ -6,19 +6,21 @@
         <description>Most recent changes with links to updates.</description>
         <language>en</language>
         <item>
-            <title>Version 3.0 build 10 (3 bugs fixed)</title>
+            <title>Version 3.0 build 11 (1 bug fixed, 1 new feature)</title>
 						<description><![CDATA[
+								<h2>New features</h2>
+								<ul>
+										<li>You can now either specify a CSS for the entire email body or a inline style for the containing <div> tag.</li>
+								</ul>
 								<h2>Bug fixing</h2>
 								<ul>
-										<li><b>Added support for macOS Sierra!</b></li>
-										<li>added prefix to log system</li>
-										<li>removed wrong enable binding for send stats</li>
+										<li>fixed an issue that removed line breaks on text only emails</li>
 								</ul>
 						]]>
 						</description>
-            <pubDate>Wed, 14 Jun 2016 21:45:00 +0200</pubDate>
-						<sparkle:version>10</sparkle:version>
-						<sparkle:shortVersionString>3.0 (build 10)</sparkle:shortVersionString>
+            <pubDate>Wed, 23 Jun 2016 22:05:00 +0200</pubDate>
+						<sparkle:version>11</sparkle:version>
+						<sparkle:shortVersionString>3.0 (build 11)</sparkle:shortVersionString>
 						<link>https://universalmailer.github.io/UniversalMailer/download.html</link>
         </item>
     </channel>
