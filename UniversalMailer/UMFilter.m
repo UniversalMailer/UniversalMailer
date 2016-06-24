@@ -177,8 +177,8 @@
         
         UMMIMEEntity *ne = [[UMMIMEEntity alloc] initWithContentType: @"Content-Type: text/plain"];
         [ne parseHeadersFromString: [html[0] originalHeaders]];
-        if( plain.count > 0 )
-            [ne setCharset: [plain[0] charset]];
+        if( html.count > 1 )
+            [ne setCharset: @"utf-8"];
         UMLog(@"%s - writing html mime entity with string [%@]", __PRETTY_FUNCTION__, finalHtml);
         ne.body = [[UMMIMEBody alloc] initWithString: finalHtml];
         UMLog(@"%s - mime entity is [%@]", __PRETTY_FUNCTION__, ne);
