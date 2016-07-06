@@ -6,17 +6,17 @@
         <description>Most recent changes with links to updates.</description>
         <language>en</language>
         <item>
-            <title>Version 3.0 build 12 (1 bug fixed)</title>
+            <title>Version 3.0 build 13 (1 bug fixed)</title>
 						<description><![CDATA[
 								<h2>Bug fixing</h2>
 								<ul>
-										<li>fixed an issue with character sets</li>
+										<li>added compatibility for macOS Sierra DP2</li>
 								</ul>
 						]]>
 						</description>
-            <pubDate>Wed, 24 Jun 2016 17:33:00 +0200</pubDate>
-						<sparkle:version>12</sparkle:version>
-						<sparkle:shortVersionString>3.0 (build 12)</sparkle:shortVersionString>
+            <pubDate>Wed, 6 Jul 2016 21:20:00 +0200</pubDate>
+						<sparkle:version>13</sparkle:version>
+						<sparkle:shortVersionString>3.0 (build 13)</sparkle:shortVersionString>
 						<link>https://universalmailer.github.io/UniversalMailer/download.html</link>
         </item>
     </channel>
