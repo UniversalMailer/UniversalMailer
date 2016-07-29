@@ -16,10 +16,10 @@
 @property (weak) IBOutlet NSColorWell *fontColorWell;
 @property (weak) IBOutlet NSTextField *versionLabel;
 @property (weak) IBOutlet NSTextField *logFilePathLabel;
-@property (unsafe_unretained) IBOutlet NSTextView *injectedCSSLabel;
+@property (unsafe_unretained) IBOutlet UMTextView *injectedCSSLabel;
 @property (weak) IBOutlet NSTextField *fontNAInfoLabel;
 @property (weak) IBOutlet NSTextField *lastUpdateLabel;
-@property (unsafe_unretained) IBOutlet NSTextView *injectedStyle;
+@property (unsafe_unretained) IBOutlet UMTextView *injectedStyle;
 @end
 
 @implementation UMPreferencesPanel
@@ -71,6 +71,7 @@
         self.versionLabel.stringValue = [NSString stringWithFormat: @"Version: %@ (build %@)", shortVersion, build];
     }
     if( self.injectedCSSLabel ){
+        self.injectedCSSLabel.umDelegate = self;
         NSString *injectedCSS = [[NSUserDefaults standardUserDefaults] objectForKey: UMInjectedCSS];
         if( injectedCSS.length < 1 )
             [self.injectedCSSLabel setTextColor: [NSColor disabledControlTextColor]];
@@ -78,6 +79,7 @@
             self.injectedCSSLabel.string = injectedCSS;
     }
     if( self.injectedStyle ){
+        self.injectedStyle.umDelegate = self;
         NSString *injectedStyle = [[NSUserDefaults standardUserDefaults] objectForKey: UMInjectedStyle];
         if( injectedStyle.length < 1 )
             [self.injectedStyle setTextColor: [NSColor disabledControlTextColor]];
@@ -194,6 +196,22 @@
     f.size.width = oldWidth;
     self.fontPreviewLabel.frame = f;
     [self.fontPreviewLabel setNeedsLayout: YES];
+}
+
+#pragma mark -
+#pragma mark UMTextViewDelegate methods
+
+- (void)textChanged: (UMTextView*)textView {
+    if( textView.string ){
+        if( textView == self.injectedStyle ){
+            [[NSUserDefaults standardUserDefaults] setObject: textView.string forKey: UMInjectedStyle];
+            [[NSUserDefaults standardUserDefaults] synchronize];
+        }
+        else if( textView == self.injectedCSSLabel ){
+            [[NSUserDefaults standardUserDefaults] setObject: textView.string forKey: UMInjectedCSS];
+            [[NSUserDefaults standardUserDefaults] synchronize];
+        }
+    }
 }
 
 @end

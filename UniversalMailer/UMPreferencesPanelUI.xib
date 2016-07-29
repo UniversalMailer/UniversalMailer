@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.Cocoa.XIB" version="3.0" toolsVersion="10117" systemVersion="16A201w" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES" customObjectInstantitationMethod="direct">
+<document type="com.apple.InterfaceBuilder3.Cocoa.XIB" version="3.0" toolsVersion="10117" systemVersion="16A254g" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES" customObjectInstantitationMethod="direct">
     <dependencies>
         <deployment identifier="macosx"/>
         <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="10117"/>
@@ -448,43 +448,6 @@
                                                         <binding destination="Lfg-hO-0La" name="value" keyPath="values.UMOverrideInjectedCSS" id="WOA-AK-ja9"/>
                                                     </connections>
                                                 </button>
-                                                <scrollView horizontalLineScroll="10" horizontalPageScroll="10" verticalLineScroll="10" verticalPageScroll="10" hasHorizontalScroller="NO" usesPredominantAxisScrolling="NO" translatesAutoresizingMaskIntoConstraints="NO" id="z0R-ZC-FAb">
-                                                    <rect key="frame" x="17" y="207" width="388" height="92"/>
-                                                    <clipView key="contentView" id="HAn-Cz-nnw">
-                                                        <rect key="frame" x="1" y="1" width="386" height="90"/>
-                                                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                                                        <subviews>
-                                                            <textView importsGraphics="NO" richText="NO" findStyle="panel" continuousSpellChecking="YES" allowsUndo="YES" usesRuler="YES" usesFontPanel="YES" verticallyResizable="YES" allowsNonContiguousLayout="YES" quoteSubstitution="YES" dashSubstitution="YES" smartInsertDelete="YES" id="zzo-K2-H3j">
-                                                                <rect key="frame" x="0.0" y="0.0" width="386" height="90"/>
-                                                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                                                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                                                <size key="minSize" width="386" height="90"/>
-                                                                <size key="maxSize" width="463" height="10000000"/>
-                                                                <color key="insertionPointColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
-                                                                <size key="minSize" width="386" height="90"/>
-                                                                <size key="maxSize" width="463" height="10000000"/>
-                                                                <connections>
-                                                                    <binding destination="Lfg-hO-0La" name="attributedString" keyPath="values.UMInjectedCSS" id="A1g-AY-TkF">
-                                                                        <dictionary key="options">
-                                                                            <bool key="NSContinuouslyUpdatesValue" value="YES"/>
-                                                                            <string key="NSValueTransformerName">UMAttributedStringToStringTransformer</string>
-                                                                        </dictionary>
-                                                                    </binding>
-                                                                    <binding destination="Lfg-hO-0La" name="editable" keyPath="values.UMOverrideInjectedCSS" id="DYp-yr-6wT"/>
-                                                                </connections>
-                                                            </textView>
-                                                        </subviews>
-                                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                                    </clipView>
-                                                    <scroller key="horizontalScroller" hidden="YES" verticalHuggingPriority="750" doubleValue="1" horizontal="YES" id="bWu-eg-FbB">
-                                                        <rect key="frame" x="-100" y="-100" width="87" height="18"/>
-                                                        <autoresizingMask key="autoresizingMask"/>
-                                                    </scroller>
-                                                    <scroller key="verticalScroller" verticalHuggingPriority="750" horizontal="NO" id="X8M-M5-7dB">
-                                                        <rect key="frame" x="371" y="1" width="16" height="90"/>
-                                                        <autoresizingMask key="autoresizingMask"/>
-                                                    </scroller>
-                                                </scrollView>
                                                 <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="68f-km-3U2">
                                                     <rect key="frame" x="15" y="182" width="392" height="17"/>
                                                     <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="Injected style" id="jEB-2N-QOu">
@@ -499,7 +462,7 @@
                                                         <rect key="frame" x="1" y="1" width="386" height="44"/>
                                                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                                         <subviews>
-                                                            <textView importsGraphics="NO" findStyle="panel" continuousSpellChecking="YES" allowsUndo="YES" usesRuler="YES" usesFontPanel="YES" verticallyResizable="YES" allowsNonContiguousLayout="YES" quoteSubstitution="YES" dashSubstitution="YES" smartInsertDelete="YES" id="QAp-K3-HXw">
+                                                            <textView importsGraphics="NO" findStyle="panel" continuousSpellChecking="YES" allowsUndo="YES" usesRuler="YES" usesFontPanel="YES" verticallyResizable="YES" allowsNonContiguousLayout="YES" quoteSubstitution="YES" dashSubstitution="YES" smartInsertDelete="YES" id="QAp-K3-HXw" customClass="UMTextView">
                                                                 <rect key="frame" x="0.0" y="0.0" width="386" height="44"/>
                                                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -509,12 +472,6 @@
                                                                 <size key="minSize" width="386" height="44"/>
                                                                 <size key="maxSize" width="463" height="10000000"/>
                                                                 <connections>
-                                                                    <binding destination="Lfg-hO-0La" name="attributedString" keyPath="values.UMInjectedStyle" id="rfK-Pf-d3K">
-                                                                        <dictionary key="options">
-                                                                            <bool key="NSContinuouslyUpdatesValue" value="YES"/>
-                                                                            <string key="NSValueTransformerName">UMAttributedStringToStringTransformer</string>
-                                                                        </dictionary>
-                                                                    </binding>
                                                                     <binding destination="Lfg-hO-0La" name="editable" keyPath="values.UMOverrideInjectedCSS" id="k1l-BU-8Nj"/>
                                                                 </connections>
                                                             </textView>
@@ -542,6 +499,37 @@
                                                         <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
                                                     </textFieldCell>
                                                 </textField>
+                                                <scrollView horizontalLineScroll="10" horizontalPageScroll="10" verticalLineScroll="10" verticalPageScroll="10" hasHorizontalScroller="NO" usesPredominantAxisScrolling="NO" translatesAutoresizingMaskIntoConstraints="NO" id="z0R-ZC-FAb">
+                                                    <rect key="frame" x="17" y="207" width="388" height="92"/>
+                                                    <clipView key="contentView" id="HAn-Cz-nnw">
+                                                        <rect key="frame" x="1" y="1" width="386" height="90"/>
+                                                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                                        <subviews>
+                                                            <textView importsGraphics="NO" richText="NO" findStyle="panel" continuousSpellChecking="YES" allowsUndo="YES" usesRuler="YES" usesFontPanel="YES" verticallyResizable="YES" allowsNonContiguousLayout="YES" quoteSubstitution="YES" dashSubstitution="YES" smartInsertDelete="YES" id="zzo-K2-H3j" customClass="UMTextView">
+                                                                <rect key="frame" x="0.0" y="0.0" width="386" height="90"/>
+                                                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                                <size key="minSize" width="386" height="90"/>
+                                                                <size key="maxSize" width="463" height="10000000"/>
+                                                                <color key="insertionPointColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
+                                                                <size key="minSize" width="386" height="90"/>
+                                                                <size key="maxSize" width="463" height="10000000"/>
+                                                                <connections>
+                                                                    <binding destination="Lfg-hO-0La" name="editable" keyPath="values.UMOverrideInjectedCSS" id="DYp-yr-6wT"/>
+                                                                </connections>
+                                                            </textView>
+                                                        </subviews>
+                                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                    </clipView>
+                                                    <scroller key="horizontalScroller" hidden="YES" verticalHuggingPriority="750" doubleValue="1" horizontal="YES" id="bWu-eg-FbB">
+                                                        <rect key="frame" x="-100" y="-100" width="87" height="18"/>
+                                                        <autoresizingMask key="autoresizingMask"/>
+                                                    </scroller>
+                                                    <scroller key="verticalScroller" verticalHuggingPriority="750" horizontal="NO" id="X8M-M5-7dB">
+                                                        <rect key="frame" x="371" y="1" width="16" height="90"/>
+                                                        <autoresizingMask key="autoresizingMask"/>
+                                                    </scroller>
+                                                </scrollView>
                                             </subviews>
                                             <constraints>
                                                 <constraint firstItem="xux-Cd-GCl" firstAttribute="top" secondItem="AC9-fR-2Ul" secondAttribute="bottom" constant="8" symbolic="YES" id="0b5-zJ-SQY"/>

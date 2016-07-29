@@ -41,6 +41,7 @@
 		8156AB811CF82FA300E5C26B /* UMPreferencesPanelUI.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8156AB7F1CF82FA300E5C26B /* UMPreferencesPanelUI.xib */; };
 		8156AB861CF82FCF00E5C26B /* UMAttributedStringToStringTransformer.m in Sources */ = {isa = PBXBuildFile; fileRef = 8156AB851CF82FCF00E5C26B /* UMAttributedStringToStringTransformer.m */; };
 		8156AB881CF82FE800E5C26B /* btn_donate_SM.gif in Resources */ = {isa = PBXBuildFile; fileRef = 8156AB871CF82FE800E5C26B /* btn_donate_SM.gif */; };
+		818DD3CA1D4BB75900BCAFE0 /* UMTextView.m in Sources */ = {isa = PBXBuildFile; fileRef = 818DD3C91D4BB75900BCAFE0 /* UMTextView.m */; };
 		81DEBB0D1CF839460057850F /* UniversalMailerIcon.png in Resources */ = {isa = PBXBuildFile; fileRef = 81DEBB0C1CF839460057850F /* UniversalMailerIcon.png */; };
 		81DEBB1F1CF84CD90057850F /* UMLog.m in Sources */ = {isa = PBXBuildFile; fileRef = 81DEBB1E1CF84CD90057850F /* UMLog.m */; };
 		81F974BB1CFF83A900E35C15 /* Sparkle.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 81F974BA1CFF83A900E35C15 /* Sparkle.framework */; };
@@ -112,6 +113,8 @@
 		8156AB841CF82FCF00E5C26B /* UMAttributedStringToStringTransformer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UMAttributedStringToStringTransformer.h; sourceTree = "<group>"; };
 		8156AB851CF82FCF00E5C26B /* UMAttributedStringToStringTransformer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UMAttributedStringToStringTransformer.m; sourceTree = "<group>"; };
 		8156AB871CF82FE800E5C26B /* btn_donate_SM.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = btn_donate_SM.gif; sourceTree = "<group>"; };
+		818DD3C81D4BB75900BCAFE0 /* UMTextView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UMTextView.h; sourceTree = "<group>"; };
+		818DD3C91D4BB75900BCAFE0 /* UMTextView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UMTextView.m; sourceTree = "<group>"; };
 		81DEBB0C1CF839460057850F /* UniversalMailerIcon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = UniversalMailerIcon.png; sourceTree = "<group>"; };
 		81DEBB1D1CF84A2D0057850F /* UMLog.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = UMLog.h; sourceTree = "<group>"; };
 		81DEBB1E1CF84CD90057850F /* UMLog.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UMLog.m; sourceTree = "<group>"; };
@@ -226,6 +229,7 @@
 		8156AB821CF82FAD00E5C26B /* Preferences */ = {
 			isa = PBXGroup;
 			children = (
+				818DD3C71D4BB74700BCAFE0 /* Views */,
 				8156AB831CF82FC100E5C26B /* Value Transformers */,
 				8156AB7D1CF82FA300E5C26B /* UMPreferencesPanel.h */,
 				8156AB7E1CF82FA300E5C26B /* UMPreferencesPanel.m */,
@@ -241,6 +245,15 @@
 				8156AB851CF82FCF00E5C26B /* UMAttributedStringToStringTransformer.m */,
 			);
 			name = "Value Transformers";
+			sourceTree = "<group>";
+		};
+		818DD3C71D4BB74700BCAFE0 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				818DD3C81D4BB75900BCAFE0 /* UMTextView.h */,
+				818DD3C91D4BB75900BCAFE0 /* UMTextView.m */,
+			);
+			name = Views;
 			sourceTree = "<group>";
 		};
 		81DEBB1C1CF84A070057850F /* Utilities */ = {
@@ -371,6 +384,7 @@
 				8156AB861CF82FCF00E5C26B /* UMAttributedStringToStringTransformer.m in Sources */,
 				811DDBB61CF4858700DC3EA7 /* NSString+UMExtensions.m in Sources */,
 				811DDBB31CF4817500DC3EA7 /* UMMIMEEntity.m in Sources */,
+				818DD3CA1D4BB75900BCAFE0 /* UMTextView.m in Sources */,
 				81DEBB1F1CF84CD90057850F /* UMLog.m in Sources */,
 				811DDBA21CF45C1300DC3EA7 /* NSObject+UMExtensions.m in Sources */,
 				8118B6641CF5B49B005A24CA /* UMFilter.m in Sources */,
@@ -612,6 +626,7 @@
 				8126B4FA1D4B389700875BE5 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

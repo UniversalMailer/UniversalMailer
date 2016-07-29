@@ -9,6 +9,7 @@
 #import <Cocoa/Cocoa.h>
 
 #import <Sparkle/Sparkle.h>
+#import "UMTextView.h"
 
 // Dummy declaration to silence compiler errors
 @interface NSPreferencesModule: NSObject {
@@ -19,6 +20,6 @@ IBOutlet NSBox *_preferencesView;
 - (void)addPreferenceNamed: (NSString*)name owner: (id)owner;
 @end
 
-@interface UMPreferencesPanel : NSPreferencesModule <NSWindowDelegate, SUUpdaterDelegate>
+@interface UMPreferencesPanel : NSPreferencesModule <NSWindowDelegate, SUUpdaterDelegate, UMTextViewDelegate>
 
 @end
