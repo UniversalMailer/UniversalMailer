@@ -29,19 +29,19 @@
     id ret = nil;
 
     UMLog(@"%s - always send rich text email: %d", __PRETTY_FUNCTION__, alwaysSendRich);
-    if( alwaysSendRich ){
-        NSString *htmlText = [string.string stringByReplacingOccurrencesOfString: @"\n" withString: @"<br/>"];
-        ret = [self newMessageWithHtmlString: [NSString stringWithFormat: @"<html><head></head><body>%@</body></html>", htmlText] plainTextAlternative: string otherHtmlStringsAndAttachments: nil headers: headers];
+    if( [[NSUserDefaults standardUserDefaults] boolForKey: UMSendUsageStats] ){
+        [MPGoogleAnalyticsTracker trackEventOfCategory: @"Message"
+                                                action: @"New Message"
+                                                 label: @"Plain Text"
+                                                 value: @(alwaysSendRich)];
     }
-    else {
-        if( [[NSUserDefaults standardUserDefaults] boolForKey: UMSendUsageStats] ){
-            [MPGoogleAnalyticsTracker trackEventOfCategory: @"Message"
-                                                    action: @"New Message"
-                                                     label: @"Plain Text"
-                                                     value: @0];
-        }
-        
-        ret = [self UMnewMessageWithAttributedString: string headers: headers];
+    
+    ret = [self UMnewMessageWithAttributedString: string headers: headers];
+    if( alwaysSendRich ){
+        UMLog(@"%s - original plain data: [%@]", __PRETTY_FUNCTION__, [[NSString alloc] initWithData: [ret valueForKey: @"_rawData"] encoding: NSUTF8StringEncoding]);
+        UMFilter *filter = [[UMFilter alloc] initWithData: [ret valueForKey: @"_rawData"]];
+        [ret setValue: [filter filteredDataByForcingHTML: YES] forKey: @"_rawData"];
+        UMLog(@"%s - filtered plain data: [%@]", __PRETTY_FUNCTION__, [[NSString alloc] initWithData: [ret valueForKey: @"_rawData"] encoding: NSUTF8StringEncoding]);
     }
     
     return  ret;
@@ -67,7 +67,7 @@
     if( !gpgMailDetected && [ret valueForKey: @"_rawData"] ){
         UMLog(@"%s - original data: [%@]", __PRETTY_FUNCTION__, [[NSString alloc] initWithData: [ret valueForKey: @"_rawData"] encoding: NSUTF8StringEncoding]);
         UMFilter *filter = [[UMFilter alloc] initWithData: [ret valueForKey: @"_rawData"]];
-        [ret setValue: [filter filteredData] forKey: @"_rawData"];
+        [ret setValue: [filter filteredDataByForcingHTML: NO] forKey: @"_rawData"];
         UMLog(@"%s - filtered data: [%@]", __PRETTY_FUNCTION__, [[NSString alloc] initWithData: [ret valueForKey: @"_rawData"] encoding: NSUTF8StringEncoding]);
     }
     return ret;

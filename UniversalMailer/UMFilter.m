@@ -30,7 +30,7 @@
     return self;
 }
 
-- (NSData*)filteredData {
+- (NSData*)filteredDataByForcingHTML: (BOOL)forceHTML {
     UMMIMEEntity *entity = [[UMMIMEEntity alloc] initWithData: self.data];
     NSArray *plain = [entity findSubentitiesOfType: @"text/plain" avoidAttachments: YES invertMatches: NO];
     NSArray *html = [entity findSubentitiesOfType: @"text/html" avoidAttachments: YES invertMatches: NO];
@@ -45,15 +45,32 @@
     if( plain.count > 1 ){
         NSMutableString *final = [@"" mutableCopy];
         for( UMMIMEEntity *e in plain ){
-            if( e.body.string.length > 0 )
+            if( e.body.string.length > 0 ){
+                UMLog(@"%s - appending body [%@]", __PRETTY_FUNCTION__, e.body.string);
                 [final appendString: e.body.string];
+            }
         }
         
         UMMIMEEntity *ne = [[UMMIMEEntity alloc] initWithContentType: @"Content-Type: text/plain"];
         [ne parseHeadersFromString: [plain[0] originalHeaders]];
         ne.body = [[UMMIMEBody alloc] initWithString: final];
         plain = @[ne];
+        
     }
+    
+    if( forceHTML && plain.count > 0 ){
+        UMMIMEEntity *p = plain[0];
+        UMMIMEEntity *ne = [[UMMIMEEntity alloc] initWithContentType: @"Content-Type: text/html"];
+        [ne parseHeadersFromString: p.originalHeaders];
+        ne.contentType = @"text/html";
+        
+        NSString *body = [p.body.string stringByReplacingOccurrencesOfString: @"\n" withString: @"<br/>"];
+        UMLog(@"%s - html body [%@]", __PRETTY_FUNCTION__, body);
+        NSString *htmlBody = [NSString stringWithFormat: @"<html><head></head><body>%@</body></html>", body];
+        ne.body = [[UMMIMEBody alloc] initWithString: htmlBody];
+        html = @[ne];
+    }
+    
     if( html.count > 0 ){
         NSMutableString *final = [@"" mutableCopy];
         for( UMMIMEEntity *e in html ){

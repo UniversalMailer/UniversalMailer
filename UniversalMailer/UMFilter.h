@@ -12,6 +12,6 @@
 @property (nonatomic) BOOL inlineAttachments;
 
 - (id)initWithData: (NSData*)data;
-- (NSData*)filteredData;
+- (NSData*)filteredDataByForcingHTML: (BOOL)forceHTML;
 
 @end

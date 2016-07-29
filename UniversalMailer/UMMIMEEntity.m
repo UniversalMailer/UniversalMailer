@@ -9,6 +9,7 @@
 #import "UMMIMEEntity.h"
 
 #import "UMConstants.h"
+#import "UMLog.h"
 #import "NSString+UMExtensions.h"
 
 @implementation UMMIMEBody
@@ -145,10 +146,13 @@
 }
 
 - (void)setCharset: (NSString*)charset {
+    UMLog(@"%s", __PRETTY_FUNCTION__);
     if( [self.headers[@"Content-Type"] length] > 0 ){
         self.originalHeaders = [self.originalHeaders stringByReplacingOccurrencesOfString: [NSString stringWithFormat: @"charset=\"%@\"", self.charset] withString: [NSString stringWithFormat: @"charset=\"%@\"", charset]];
         NSString *ct = self.headers[@"Content-Type"];
         ct = [ct stringByReplacingOccurrencesOfString: self.charset withString: charset];
+        UMLog(@"Original Content-Type: [%@]", self.headers[@"Content-Type"]);
+        UMLog(@"New Content-Type: [%@]", ct);
         self.headers[@"Content-Type"] = ct;
     }
 }
@@ -299,7 +303,13 @@
     NSRange r = [string rangeOfString: @"\n\n"];
     if( r.location != NSNotFound ){
         NSString *h = [string substringToIndex: r.location];
-        NSString *b = [[string substringFromIndex: r.location+r.length] stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceAndNewlineCharacterSet]];
+        NSString *b = [string substringFromIndex: r.location+r.length];
+        
+        NSRegularExpression *regex = [NSRegularExpression regularExpressionWithPattern: @"\n$" options: 0L error: nil];
+        b = [regex stringByReplacingMatchesInString: b options: 0L range: NSMakeRange(0, b.length) withTemplate: @""];
+        regex = [NSRegularExpression regularExpressionWithPattern: @"^\n\n" options: 0L error: nil];
+        b = [regex stringByReplacingMatchesInString: b options: 0L range: NSMakeRange(0, b.length) withTemplate: @""];
+        
         [self parseHeadersFromString: h];
         if( self.boundary ){
             self.body = [self _parseBodyFromString: b];
@@ -343,7 +353,8 @@
     NSMutableArray *entities = [@[] mutableCopy];
     if( self.boundary ){
         for( NSString *b in [string componentsSeparatedByString: [NSString stringWithFormat: @"--%@", self.boundary]] ){
-            NSString *bb = [b stringByTrimmingCharactersInSet: [NSCharacterSet whitespaceAndNewlineCharacterSet]];
+            NSRegularExpression *regex = [[NSRegularExpression alloc] initWithPattern: @"^[ \t\n\r]+" options: 0 error: nil];
+            NSString *bb = [regex stringByReplacingMatchesInString: b options: 0 range: NSMakeRange(0, b.length) withTemplate: @""];
             if( bb.length > 0 && ![bb isEqualToString: @"--"] ){
                 [entities addObject:[[UMMIMEEntity alloc] initWithString: bb]];
             }

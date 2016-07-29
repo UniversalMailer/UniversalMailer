@@ -31,6 +31,12 @@
 		811DDBAF1CF4613300DC3EA7 /* UMSharedPreferences.m in Sources */ = {isa = PBXBuildFile; fileRef = 811DDBAE1CF4613300DC3EA7 /* UMSharedPreferences.m */; };
 		811DDBB31CF4817500DC3EA7 /* UMMIMEEntity.m in Sources */ = {isa = PBXBuildFile; fileRef = 811DDBB21CF4817500DC3EA7 /* UMMIMEEntity.m */; };
 		811DDBB61CF4858700DC3EA7 /* NSString+UMExtensions.m in Sources */ = {isa = PBXBuildFile; fileRef = 811DDBB51CF4858700DC3EA7 /* NSString+UMExtensions.m */; };
+		8126B4F81D4B389700875BE5 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 8126B4F71D4B389700875BE5 /* main.m */; };
+		8126B4FC1D4B38A900875BE5 /* UMLog.m in Sources */ = {isa = PBXBuildFile; fileRef = 81DEBB1E1CF84CD90057850F /* UMLog.m */; };
+		8126B4FD1D4B38AC00875BE5 /* UMMIMEEntity.m in Sources */ = {isa = PBXBuildFile; fileRef = 811DDBB21CF4817500DC3EA7 /* UMMIMEEntity.m */; };
+		8126B4FE1D4B38AE00875BE5 /* UMFilter.m in Sources */ = {isa = PBXBuildFile; fileRef = 8118B6631CF5B49B005A24CA /* UMFilter.m */; };
+		8126B4FF1D4B38C700875BE5 /* NSObject+UMExtensions.m in Sources */ = {isa = PBXBuildFile; fileRef = 811DDBA11CF45C1300DC3EA7 /* NSObject+UMExtensions.m */; };
+		8126B5001D4B38C900875BE5 /* NSString+UMExtensions.m in Sources */ = {isa = PBXBuildFile; fileRef = 811DDBB51CF4858700DC3EA7 /* NSString+UMExtensions.m */; };
 		8156AB801CF82FA300E5C26B /* UMPreferencesPanel.m in Sources */ = {isa = PBXBuildFile; fileRef = 8156AB7E1CF82FA300E5C26B /* UMPreferencesPanel.m */; };
 		8156AB811CF82FA300E5C26B /* UMPreferencesPanelUI.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8156AB7F1CF82FA300E5C26B /* UMPreferencesPanelUI.xib */; };
 		8156AB861CF82FCF00E5C26B /* UMAttributedStringToStringTransformer.m in Sources */ = {isa = PBXBuildFile; fileRef = 8156AB851CF82FCF00E5C26B /* UMAttributedStringToStringTransformer.m */; };
@@ -55,6 +61,15 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXCopyFilesBuildPhase section */
+		8126B4F31D4B389700875BE5 /* CopyFiles */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = /usr/share/man/man1/;
+			dstSubfolderSpec = 0;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 1;
+		};
 		81F974BC1CFF83D300E35C15 /* CopyFiles */ = {
 			isa = PBXCopyFilesBuildPhase;
 			buildActionMask = 2147483647;
@@ -89,6 +104,8 @@
 		811DDBB21CF4817500DC3EA7 /* UMMIMEEntity.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UMMIMEEntity.m; sourceTree = "<group>"; };
 		811DDBB41CF4858700DC3EA7 /* NSString+UMExtensions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+UMExtensions.h"; sourceTree = "<group>"; };
 		811DDBB51CF4858700DC3EA7 /* NSString+UMExtensions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+UMExtensions.m"; sourceTree = "<group>"; };
+		8126B4F51D4B389700875BE5 /* UMTestBench */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = UMTestBench; sourceTree = BUILT_PRODUCTS_DIR; };
+		8126B4F71D4B389700875BE5 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		8156AB7D1CF82FA300E5C26B /* UMPreferencesPanel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UMPreferencesPanel.h; sourceTree = "<group>"; };
 		8156AB7E1CF82FA300E5C26B /* UMPreferencesPanel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UMPreferencesPanel.m; sourceTree = "<group>"; };
 		8156AB7F1CF82FA300E5C26B /* UMPreferencesPanelUI.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = UMPreferencesPanelUI.xib; sourceTree = "<group>"; };
@@ -113,6 +130,13 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		8126B4F21D4B389700875BE5 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
@@ -120,6 +144,7 @@
 			isa = PBXGroup;
 			children = (
 				811DDB8A1CF45A2400DC3EA7 /* UniversalMailer */,
+				8126B4F61D4B389700875BE5 /* UMTestBench */,
 				811DDB891CF45A2400DC3EA7 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -128,6 +153,7 @@
 			isa = PBXGroup;
 			children = (
 				811DDB881CF45A2400DC3EA7 /* UniversalMailer.mailbundle */,
+				8126B4F51D4B389700875BE5 /* UMTestBench */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -189,6 +215,14 @@
 			name = "Swizzled objects";
 			sourceTree = "<group>";
 		};
+		8126B4F61D4B389700875BE5 /* UMTestBench */ = {
+			isa = PBXGroup;
+			children = (
+				8126B4F71D4B389700875BE5 /* main.m */,
+			);
+			path = UMTestBench;
+			sourceTree = "<group>";
+		};
 		8156AB821CF82FAD00E5C26B /* Preferences */ = {
 			isa = PBXGroup;
 			children = (
@@ -239,6 +273,23 @@
 			productReference = 811DDB881CF45A2400DC3EA7 /* UniversalMailer.mailbundle */;
 			productType = "com.apple.product-type.bundle";
 		};
+		8126B4F41D4B389700875BE5 /* UMTestBench */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 8126B4FB1D4B389700875BE5 /* Build configuration list for PBXNativeTarget "UMTestBench" */;
+			buildPhases = (
+				8126B4F11D4B389700875BE5 /* Sources */,
+				8126B4F21D4B389700875BE5 /* Frameworks */,
+				8126B4F31D4B389700875BE5 /* CopyFiles */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = UMTestBench;
+			productName = UMTestBench;
+			productReference = 8126B4F51D4B389700875BE5 /* UMTestBench */;
+			productType = "com.apple.product-type.tool";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -252,6 +303,9 @@
 						CreatedOnToolsVersion = 7.3.1;
 					};
 					811DDB941CF45AF400DC3EA7 = {
+						CreatedOnToolsVersion = 7.3.1;
+					};
+					8126B4F41D4B389700875BE5 = {
 						CreatedOnToolsVersion = 7.3.1;
 					};
 				};
@@ -270,6 +324,7 @@
 			targets = (
 				811DDB871CF45A2400DC3EA7 /* UniversalMailer */,
 				811DDB941CF45AF400DC3EA7 /* Installer */,
+				8126B4F41D4B389700875BE5 /* UMTestBench */,
 			);
 		};
 /* End PBXProject section */
@@ -322,6 +377,19 @@
 				8156AB801CF82FA300E5C26B /* UMPreferencesPanel.m in Sources */,
 				811DDBAF1CF4613300DC3EA7 /* UMSharedPreferences.m in Sources */,
 				811DDBA91CF45DA800DC3EA7 /* UMMessageGenerator.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		8126B4F11D4B389700875BE5 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				8126B4FC1D4B38A900875BE5 /* UMLog.m in Sources */,
+				8126B4FE1D4B38AE00875BE5 /* UMFilter.m in Sources */,
+				8126B4F81D4B389700875BE5 /* main.m in Sources */,
+				8126B4FF1D4B38C700875BE5 /* NSObject+UMExtensions.m in Sources */,
+				8126B4FD1D4B38AC00875BE5 /* UMMIMEEntity.m in Sources */,
+				8126B5001D4B38C900875BE5 /* NSString+UMExtensions.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -487,6 +555,26 @@
 			};
 			name = Release;
 		};
+		8126B4F91D4B389700875BE5 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "-";
+				MACOSX_DEPLOYMENT_TARGET = 10.12;
+				OTHER_LDFLAGS = "";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		8126B4FA1D4B389700875BE5 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "-";
+				MACOSX_DEPLOYMENT_TARGET = 10.12;
+				OTHER_LDFLAGS = "";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -516,6 +604,14 @@
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
+		};
+		8126B4FB1D4B389700875BE5 /* Build configuration list for PBXNativeTarget "UMTestBench" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				8126B4F91D4B389700875BE5 /* Debug */,
+				8126B4FA1D4B389700875BE5 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
 		};
 /* End XCConfigurationList section */
 	};
