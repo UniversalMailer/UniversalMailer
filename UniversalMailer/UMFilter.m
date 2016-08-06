@@ -40,6 +40,8 @@
     UMLog(@"%s - html[%@]", __PRETTY_FUNCTION__, html);
     UMLog(@"%s - atts[%@]", __PRETTY_FUNCTION__, atts);
     
+    NSString *propagateHeaders = nil;
+    
     NSMutableArray *avoidCids = [@[] mutableCopy];
     
     if( plain.count > 1 ){
@@ -60,9 +62,15 @@
     
     if( forceHTML && plain.count > 0 ){
         UMMIMEEntity *p = plain[0];
+        if( [p.originalHeaders containsString: @"From:"] )
+            propagateHeaders = [p originalHeaders];
         UMMIMEEntity *ne = [[UMMIMEEntity alloc] initWithContentType: @"Content-Type: text/html"];
-        [ne parseHeadersFromString: p.originalHeaders];
-        ne.contentType = @"text/html";
+        ne.contentTransferEncoding = p.contentTransferEncoding;
+        
+        UMLog(@"%s - plain text headers [%@]", __PRETTY_FUNCTION__, p.headers);
+        UMLog(@"%s - html text headers [%@]", __PRETTY_FUNCTION__, ne.headers);
+
+        [p parseHeadersFromString: [NSString stringWithFormat: @"Content-Type: text/plain;\nContent-Transfer-Encoding: %@", p.contentTransferEncoding?p.contentTransferEncoding:@"7bit"]];
         
         NSString *body = [p.body.string stringByReplacingOccurrencesOfString: @"\n" withString: @"<br/>"];
         UMLog(@"%s - html body [%@]", __PRETTY_FUNCTION__, body);
@@ -241,7 +249,10 @@
             mid = alts;
         }
         ret = [[UMMIMEEntity alloc] initWithContentType: @"Content-Type: multipart/mixed"];
-        [ret parseHeadersFromString: entity.originalHeaders];
+        if( propagateHeaders )
+            [ret parseHeadersFromString: propagateHeaders];
+        else
+            [ret parseHeadersFromString: entity.originalHeaders];
         ret.contentType = @"multipart/mixed";
         ret.body = [[UMMIMEBody alloc] initWithSubentities: [@[mid] arrayByAddingObjectsFromArray: attachments]];
     }
@@ -249,10 +260,17 @@
         UMLog(@"%s - multipart/related path", __PRETTY_FUNCTION__);
         NSArray *alle = [attachments arrayByAddingObjectsFromArray: inlines];
         UMMIMEEntity *ne = [[UMMIMEEntity alloc] initWithContentType: @"Content-Type: multipart/related"];
-        [ne parseHeadersFromString: entity.originalHeaders];
+        
+        UMLog(@"%s - pre headers: [%@]", __PRETTY_FUNCTION__, ne.originalHeaders);
+        if( propagateHeaders )
+            [ne parseHeadersFromString: propagateHeaders];
+        else
+            [ne parseHeadersFromString: entity.originalHeaders];
         ne.contentType = @"multipart/related";
         [ne setContentTypeParameterWithKey: @"type" value: @"multipart/alternative"];
+        UMLog(@"%s - entity headers: [%@]", __PRETTY_FUNCTION__, ne.originalHeaders);
         ne.body = [[UMMIMEBody alloc] initWithSubentities: [@[alts] arrayByAddingObjectsFromArray: alle]];
+        UMLog(@"%s - entity headers after body has been set: [%@]", __PRETTY_FUNCTION__, ne.originalHeaders);
         ret = ne;
     }
     

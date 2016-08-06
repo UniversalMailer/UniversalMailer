@@ -215,6 +215,9 @@
         self.originalHeaders = [self.originalHeaders stringByReplacingOccurrencesOfString: [NSString stringWithFormat: @"Content-Transfer-Encoding: %@", self.contentTransferEncoding] withString: [NSString stringWithFormat: @"Content-Transfer-Encoding: %@", contentTransferEncoding]];
         self.headers[@"Content-Transfer-Encoding"] = contentTransferEncoding;
     }
+    else {
+        self.headers[@"Content-Transfer-Encoding"] = contentTransferEncoding;
+    }
 }
 
 - (NSString*)boundary {
@@ -242,7 +245,28 @@
             ct = [ct stringByReplacingOccurrencesOfString: self.boundary withString: boundary];
         }
         else {
-            self.originalHeaders = [self.originalHeaders stringByAppendingFormat: @";\n\tboundary=\"%@\"", boundary];
+            NSRange r = [self.originalHeaders rangeOfString: @"Content-Type"];
+            NSInteger i = 0;
+            for( i = r.location+r.length; i<self.originalHeaders.length; i++ ){
+                if( [self.originalHeaders characterAtIndex: i] == '\n' ){
+                    if( [self.originalHeaders characterAtIndex: i+1] == '\t' ||
+                       [self.originalHeaders characterAtIndex: i+1] == ' ' ){
+                        i+=2;
+                    }
+                    else {
+                        i++;
+                        break;
+                    }
+                }
+            }
+            NSString *pb = [self.originalHeaders substringToIndex: r.location];
+            NSString *pm = nil;
+            if( [self.originalHeaders characterAtIndex: i-1] == '\n' )
+                pm = [self.originalHeaders substringWithRange: NSMakeRange(r.location, (i-1)-r.location)];
+            else
+                pm = [self.originalHeaders substringWithRange: NSMakeRange(r.location, i-r.location)];
+            NSString *pa = [self.originalHeaders substringFromIndex: i];
+            self.originalHeaders = [NSString stringWithFormat: @"%@%@;\n\tboundary=\"%@\"\n%@", pb, pm, boundary, pa];
             ct = [ct stringByAppendingFormat: @";\n\tboundary=\"%@\"", boundary];
         }
         self.headers[@"Content-Type"] = ct;
