@@ -6,18 +6,18 @@
         <description>Most recent changes with links to updates.</description>
         <language>en</language>
         <item>
-            <title>Version 3.0 build 14 (2 bugs fixed)</title>
+            <title>Version 3.0 build 15 (2 bugs fixed)</title>
 						<description><![CDATA[
 								<h2>Bug fixing</h2>
 								<ul>
-										<li>resolved an issue that prevented editing of CSS and custom styles inside preference panel</li>
-										<li>resolved an issue that produced bad formatted emails when turning plain text only emails to rich text</li>
+										<li>minor tweak for GB2312 charset encoding</li>
+										<li>improved plugin exclusion when detecting S/MIME emails</li>
 								</ul>
 						]]>
 						</description>
-            <pubDate>Wed, 7 Aug 2016 16:45:00 +0200</pubDate>
-						<sparkle:version>14</sparkle:version>
-						<sparkle:shortVersionString>3.0 (build 14)</sparkle:shortVersionString>
+            <pubDate>Wed, 6 Oct 2016 16:30:00 +0200</pubDate>
+						<sparkle:version>15</sparkle:version>
+						<sparkle:shortVersionString>3.0 (build 15)</sparkle:shortVersionString>
 						<link>https://universalmailer.github.io/UniversalMailer/download.html</link>
         </item>
     </channel>
