@@ -46,7 +46,7 @@
         {"big5-hkscs", kCFStringEncodingBig5_HKSCS_1999, YES},
         {"euc-kr", kCFStringEncodingEUC_KR, YES},
         {"ks_c_5601-1987", kCFStringEncodingEUC_KR, YES},
-        {"gb2312", kCFStringEncodingHZ_GB_2312, YES},
+        {"gb2312", kCFStringEncodingGB_18030_2000, YES},
         {"shift_jis", kCFStringEncodingShiftJIS, YES},
         {"windows-1250", NSWindowsCP1250StringEncoding, NO},
         {"windows-1251", NSWindowsCP1251StringEncoding, NO},

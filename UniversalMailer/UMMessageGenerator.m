@@ -37,7 +37,13 @@
     }
     
     ret = [self UMnewMessageWithAttributedString: string headers: headers];
-    if( alwaysSendRich ){
+    
+    BOOL gpgMailDetected = NO;
+    DummyObject *dummy = (id)self;
+    if( [self respondsToSelector: @selector(signsOutput)] && [dummy signsOutput] )
+        gpgMailDetected = YES;
+
+    if( !gpgMailDetected && alwaysSendRich ){
         UMLog(@"%s - original plain data: [%@]", __PRETTY_FUNCTION__, [[NSString alloc] initWithData: [ret valueForKey: @"_rawData"] encoding: NSUTF8StringEncoding]);
         UMFilter *filter = [[UMFilter alloc] initWithData: [ret valueForKey: @"_rawData"]];
         [ret setValue: [filter filteredDataByForcingHTML: YES] forKey: @"_rawData"];
