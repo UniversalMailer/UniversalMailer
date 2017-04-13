@@ -40,8 +40,14 @@
     
     BOOL gpgMailDetected = NO;
     DummyObject *dummy = (id)self;
-    if( [self respondsToSelector: @selector(signsOutput)] && [dummy signsOutput] )
+    if( [self respondsToSelector: @selector(signsOutput)] && [dummy signsOutput] ){
+        UMLog(@"%s - GPGMail detected using signsOutput method", __PRETTY_FUNCTION__);
         gpgMailDetected = YES;
+    }
+    if( [self valueForKey: @"encryptionCertificates"] ){
+        UMLog(@"%s - GPGMail detected using encryptionCertificates method [%@]", __PRETTY_FUNCTION__, [self valueForKey: @"encryptionCertificates"]);
+        gpgMailDetected = YES;
+    }
 
     if( !gpgMailDetected && alwaysSendRich ){
         UMLog(@"%s - original plain data: [%@]", __PRETTY_FUNCTION__, [[NSString alloc] initWithData: [ret valueForKey: @"_rawData"] encoding: NSUTF8StringEncoding]);
@@ -62,6 +68,11 @@
     DummyObject *dummy = (id)self;
     if( [self respondsToSelector: @selector(signsOutput)] && [dummy signsOutput] )
         gpgMailDetected = YES;
+
+    if( [self valueForKey: @"encryptionCertificates"] ){
+        UMLog(@"%s - GPGMail detected using encryptionCertificates method [%@]", __PRETTY_FUNCTION__, [self valueForKey: @"encryptionCertificates"]);
+        gpgMailDetected = YES;
+    }
 
     if( [[NSUserDefaults standardUserDefaults] boolForKey: UMSendUsageStats] ){
         [MPGoogleAnalyticsTracker trackEventOfCategory: @"Message"
