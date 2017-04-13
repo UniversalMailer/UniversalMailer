@@ -3,7 +3,7 @@
 //  UMTestBench
 //
 //  Created by luca on 29/07/2016.
-//  Copyright © 2016 noware. All rights reserved.
+//  Copyright © 2017 noware. All rights reserved.
 //
 
 #import <Foundation/Foundation.h>

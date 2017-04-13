@@ -1,11 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.Cocoa.XIB" version="3.0" toolsVersion="10117" systemVersion="16A254g" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES" customObjectInstantitationMethod="direct">
+<document type="com.apple.InterfaceBuilder3.Cocoa.XIB" version="3.0" toolsVersion="12118" systemVersion="16E195" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES" customObjectInstantitationMethod="direct">
     <dependencies>
         <deployment identifier="macosx"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="10117"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="12118"/>
         <capability name="Alignment constraints to the first baseline" minToolsVersion="6.0"/>
         <capability name="Alignment constraints with different attributes" minToolsVersion="5.1"/>
         <capability name="box content view" minToolsVersion="7.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+        <capability name="system font weights other than Regular or Bold" minToolsVersion="7.0"/>
     </dependencies>
     <objects>
         <customObject id="-2" userLabel="File's Owner" customClass="UMPreferencesPanel">
@@ -27,20 +29,20 @@
             <rect key="frame" x="0.0" y="0.0" width="661" height="483"/>
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
             <subviews>
-                <box autoresizesSubviews="NO" title="Box" boxType="custom" borderType="none" titlePosition="noTitle" translatesAutoresizingMaskIntoConstraints="NO" id="Kq7-xF-rvo">
+                <box autoresizesSubviews="NO" boxType="custom" borderType="none" title="Box" titlePosition="noTitle" translatesAutoresizingMaskIntoConstraints="NO" id="Kq7-xF-rvo">
                     <rect key="frame" x="0.0" y="0.0" width="661" height="483"/>
                     <view key="contentView" id="ajC-dt-YaN">
                         <rect key="frame" x="0.0" y="0.0" width="661" height="483"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="bdG-Au-Tfz">
+                            <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" allowsCharacterPickerTouchBarItem="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bdG-Au-Tfz">
                                 <rect key="frame" x="18" y="10" width="625" height="42"/>
                                 <constraints>
                                     <constraint firstAttribute="height" relation="lessThanOrEqual" constant="42" id="0eN-XR-xID"/>
                                     <constraint firstAttribute="height" constant="42" id="6RW-k3-WfC"/>
                                     <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="42" id="JKC-1H-9gW"/>
                                 </constraints>
-                                <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" alignment="center" title="Copyright © 2016 noware. All rights reserved. This program comes with no warranties, use at your own risk." allowsEditingTextAttributes="YES" id="ikH-sp-cEN">
+                                <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" alignment="center" title="Copyright © 2017 noware. All rights reserved. This program comes with no warranties, use at your own risk." allowsEditingTextAttributes="YES" id="ikH-sp-cEN">
                                     <font key="font" metaFont="system"/>
                                     <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
                                     <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
@@ -56,17 +58,14 @@
                                 </constraints>
                                 <imageCell key="cell" refusesFirstResponder="YES" alignment="left" imageScaling="proportionallyDown" image="UniversalMailer" id="R4o-P3-oOp"/>
                             </imageView>
-                            <box horizontalHuggingPriority="750" title="Box" boxType="separator" titlePosition="noTitle" translatesAutoresizingMaskIntoConstraints="NO" id="8Ey-NB-jMM">
+                            <box horizontalHuggingPriority="750" boxType="separator" translatesAutoresizingMaskIntoConstraints="NO" id="8Ey-NB-jMM">
                                 <rect key="frame" x="190" y="68" width="5" height="395"/>
                                 <constraints>
                                     <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="1" id="35q-Kc-Fc3"/>
                                     <constraint firstAttribute="width" constant="1" id="ewH-MD-nPZ"/>
                                 </constraints>
-                                <color key="borderColor" white="0.0" alpha="0.41999999999999998" colorSpace="calibratedWhite"/>
-                                <color key="fillColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
-                                <font key="titleFont" metaFont="system"/>
                             </box>
-                            <textField verticalHuggingPriority="750" horizontalCompressionResistancePriority="250" translatesAutoresizingMaskIntoConstraints="NO" id="grH-7a-P90">
+                            <textField verticalHuggingPriority="750" horizontalCompressionResistancePriority="250" allowsCharacterPickerTouchBarItem="NO" translatesAutoresizingMaskIntoConstraints="NO" id="grH-7a-P90">
                                 <rect key="frame" x="18" y="123" width="152" height="77"/>
                                 <constraints>
                                     <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="77" id="HnT-zi-bqL"/>
@@ -95,7 +94,7 @@
                                     <action selector="donatePressed:" target="-2" id="Pkf-GA-qL9"/>
                                 </connections>
                             </button>
-                            <textField verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="rbg-65-fkh">
+                            <textField verticalHuggingPriority="750" allowsCharacterPickerTouchBarItem="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rbg-65-fkh">
                                 <rect key="frame" x="18" y="280" width="168" height="27"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="164" id="A7R-T5-fJO"/>
@@ -108,7 +107,7 @@
                                     <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
                                 </textFieldCell>
                             </textField>
-                            <textField verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="heP-2h-a11">
+                            <textField verticalHuggingPriority="750" allowsCharacterPickerTouchBarItem="NO" translatesAutoresizingMaskIntoConstraints="NO" id="heP-2h-a11">
                                 <rect key="frame" x="18" y="264" width="168" height="18"/>
                                 <constraints>
                                     <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="18" id="DOP-8D-4Jv"/>
@@ -190,7 +189,7 @@
                                                         <binding destination="Lfg-hO-0La" name="enabled" keyPath="values.UMMailFilterEnabled" id="ZGq-VF-14f"/>
                                                     </connections>
                                                 </button>
-                                                <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="C9u-ds-ein">
+                                                <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" allowsCharacterPickerTouchBarItem="NO" translatesAutoresizingMaskIntoConstraints="NO" id="C9u-ds-ein">
                                                     <rect key="frame" x="15" y="298" width="392" height="17"/>
                                                     <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="Email appearance" id="2T9-R4-2PM">
                                                         <font key="font" metaFont="systemBold"/>
@@ -201,7 +200,7 @@
                                                         <binding destination="Lfg-hO-0La" name="enabled" keyPath="values.UMMailFilterEnabled" id="EQH-6I-bRC"/>
                                                     </connections>
                                                 </textField>
-                                                <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="rSN-Bx-vom">
+                                                <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" allowsCharacterPickerTouchBarItem="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rSN-Bx-vom">
                                                     <rect key="frame" x="15" y="197" width="392" height="17"/>
                                                     <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="Outgoing font preferences" id="ehV-cC-XnL">
                                                         <font key="font" metaFont="systemBold"/>
@@ -212,7 +211,7 @@
                                                         <binding destination="Lfg-hO-0La" name="enabled" keyPath="values.UMMailFilterEnabled" id="rdf-xN-V0W"/>
                                                     </connections>
                                                 </textField>
-                                                <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="5lE-gb-DLM">
+                                                <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" allowsCharacterPickerTouchBarItem="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5lE-gb-DLM">
                                                     <rect key="frame" x="15" y="85" width="392" height="17"/>
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="17" id="fcS-YO-3bc"/>
@@ -226,7 +225,7 @@
                                                         <binding destination="Lfg-hO-0La" name="enabled" keyPath="values.UMMailFilterEnabled" id="ggP-Lp-Ruq"/>
                                                     </connections>
                                                 </textField>
-                                                <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="qOb-6P-Mwo">
+                                                <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" allowsCharacterPickerTouchBarItem="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qOb-6P-Mwo">
                                                     <rect key="frame" x="15" y="166" width="85" height="17"/>
                                                     <constraints>
                                                         <constraint firstAttribute="width" constant="81" id="FHG-Co-d65"/>
@@ -240,7 +239,7 @@
                                                         <binding destination="Lfg-hO-0La" name="enabled" keyPath="values.UMMailFilterEnabled" id="vn3-XC-NBL"/>
                                                     </connections>
                                                 </textField>
-                                                <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="OWZ-JQ-FY2">
+                                                <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" allowsCharacterPickerTouchBarItem="NO" translatesAutoresizingMaskIntoConstraints="NO" id="OWZ-JQ-FY2">
                                                     <rect key="frame" x="98" y="163" width="165" height="23"/>
                                                     <textFieldCell key="cell" lineBreakMode="truncatingMiddle" sendsActionOnEndEditing="YES" borderStyle="bezel" alignment="center" title="System Regular" id="MiF-Hh-QGQ">
                                                         <font key="font" metaFont="system"/>
@@ -317,7 +316,7 @@
                                                         <binding destination="Lfg-hO-0La" name="value" keyPath="values.UMUsePointsInsteadOfPixels" id="k7j-iA-EGK"/>
                                                     </connections>
                                                 </button>
-                                                <textField verticalHuggingPriority="750" horizontalCompressionResistancePriority="250" translatesAutoresizingMaskIntoConstraints="NO" id="Eg5-fS-kYO">
+                                                <textField verticalHuggingPriority="750" horizontalCompressionResistancePriority="250" allowsCharacterPickerTouchBarItem="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Eg5-fS-kYO">
                                                     <rect key="frame" x="15" y="110" width="392" height="45"/>
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="45" id="83j-nF-kpY"/>
@@ -358,7 +357,7 @@
                                                         <action selector="checkForUpdatePressed:" target="-2" id="4vd-MC-h9m"/>
                                                     </connections>
                                                 </button>
-                                                <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="iDe-wS-bh0">
+                                                <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" allowsCharacterPickerTouchBarItem="NO" translatesAutoresizingMaskIntoConstraints="NO" id="iDe-wS-bh0">
                                                     <rect key="frame" x="160" y="19" width="247" height="17"/>
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="17" id="913-fj-IqM"/>
@@ -425,7 +424,7 @@
                                             <rect key="frame" x="10" y="33" width="422" height="365"/>
                                             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                             <subviews>
-                                                <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="xux-Cd-GCl">
+                                                <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" allowsCharacterPickerTouchBarItem="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xux-Cd-GCl">
                                                     <rect key="frame" x="15" y="307" width="392" height="17"/>
                                                     <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="Injected CSS" id="SGY-Zh-CCf">
                                                         <font key="font" metaFont="systemBold"/>
@@ -448,7 +447,7 @@
                                                         <binding destination="Lfg-hO-0La" name="value" keyPath="values.UMOverrideInjectedCSS" id="WOA-AK-ja9"/>
                                                     </connections>
                                                 </button>
-                                                <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="68f-km-3U2">
+                                                <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" allowsCharacterPickerTouchBarItem="NO" translatesAutoresizingMaskIntoConstraints="NO" id="68f-km-3U2">
                                                     <rect key="frame" x="15" y="182" width="392" height="17"/>
                                                     <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="Injected style" id="jEB-2N-QOu">
                                                         <font key="font" metaFont="systemBold"/>
@@ -460,17 +459,15 @@
                                                     <rect key="frame" x="17" y="128" width="388" height="46"/>
                                                     <clipView key="contentView" id="Ess-8f-QlJ">
                                                         <rect key="frame" x="1" y="1" width="386" height="44"/>
-                                                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                                        <autoresizingMask key="autoresizingMask"/>
                                                         <subviews>
-                                                            <textView importsGraphics="NO" findStyle="panel" continuousSpellChecking="YES" allowsUndo="YES" usesRuler="YES" usesFontPanel="YES" verticallyResizable="YES" allowsNonContiguousLayout="YES" quoteSubstitution="YES" dashSubstitution="YES" smartInsertDelete="YES" id="QAp-K3-HXw" customClass="UMTextView">
+                                                            <textView importsGraphics="NO" usesFontPanel="YES" findStyle="panel" continuousSpellChecking="YES" allowsUndo="YES" usesRuler="YES" allowsNonContiguousLayout="YES" quoteSubstitution="YES" dashSubstitution="YES" smartInsertDelete="YES" id="QAp-K3-HXw" customClass="UMTextView">
                                                                 <rect key="frame" x="0.0" y="0.0" width="386" height="44"/>
                                                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                                 <size key="minSize" width="386" height="44"/>
                                                                 <size key="maxSize" width="463" height="10000000"/>
                                                                 <color key="insertionPointColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
-                                                                <size key="minSize" width="386" height="44"/>
-                                                                <size key="maxSize" width="463" height="10000000"/>
                                                                 <connections>
                                                                     <binding destination="Lfg-hO-0La" name="editable" keyPath="values.UMOverrideInjectedCSS" id="k1l-BU-8Nj"/>
                                                                 </connections>
@@ -487,7 +484,7 @@
                                                         <autoresizingMask key="autoresizingMask"/>
                                                     </scroller>
                                                 </scrollView>
-                                                <textField verticalHuggingPriority="750" horizontalCompressionResistancePriority="250" translatesAutoresizingMaskIntoConstraints="NO" id="pwm-nH-avx">
+                                                <textField verticalHuggingPriority="750" horizontalCompressionResistancePriority="250" allowsCharacterPickerTouchBarItem="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pwm-nH-avx">
                                                     <rect key="frame" x="16" y="2" width="390" height="118"/>
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="118" id="ch8-qq-SMC"/>
@@ -503,17 +500,15 @@
                                                     <rect key="frame" x="17" y="207" width="388" height="92"/>
                                                     <clipView key="contentView" id="HAn-Cz-nnw">
                                                         <rect key="frame" x="1" y="1" width="386" height="90"/>
-                                                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                                        <autoresizingMask key="autoresizingMask"/>
                                                         <subviews>
-                                                            <textView importsGraphics="NO" richText="NO" findStyle="panel" continuousSpellChecking="YES" allowsUndo="YES" usesRuler="YES" usesFontPanel="YES" verticallyResizable="YES" allowsNonContiguousLayout="YES" quoteSubstitution="YES" dashSubstitution="YES" smartInsertDelete="YES" id="zzo-K2-H3j" customClass="UMTextView">
+                                                            <textView importsGraphics="NO" richText="NO" usesFontPanel="YES" findStyle="panel" continuousSpellChecking="YES" allowsUndo="YES" usesRuler="YES" allowsNonContiguousLayout="YES" quoteSubstitution="YES" dashSubstitution="YES" smartInsertDelete="YES" id="zzo-K2-H3j" customClass="UMTextView">
                                                                 <rect key="frame" x="0.0" y="0.0" width="386" height="90"/>
                                                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                                 <size key="minSize" width="386" height="90"/>
                                                                 <size key="maxSize" width="463" height="10000000"/>
                                                                 <color key="insertionPointColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
-                                                                <size key="minSize" width="386" height="90"/>
-                                                                <size key="maxSize" width="463" height="10000000"/>
                                                                 <connections>
                                                                     <binding destination="Lfg-hO-0La" name="editable" keyPath="values.UMOverrideInjectedCSS" id="DYp-yr-6wT"/>
                                                                 </connections>
@@ -574,7 +569,7 @@
                                                         <binding destination="Lfg-hO-0La" name="enabled" keyPath="values.UMMailFilterEnabled" id="ybm-3v-Nf3"/>
                                                     </connections>
                                                 </button>
-                                                <textField verticalHuggingPriority="750" horizontalCompressionResistancePriority="250" translatesAutoresizingMaskIntoConstraints="NO" id="CG5-55-7Ge">
+                                                <textField verticalHuggingPriority="750" horizontalCompressionResistancePriority="250" allowsCharacterPickerTouchBarItem="NO" translatesAutoresizingMaskIntoConstraints="NO" id="CG5-55-7Ge">
                                                     <rect key="frame" x="15" y="17" width="402" height="92"/>
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="92" id="YPt-Wc-Ui2"/>
@@ -630,8 +625,6 @@
                         <constraint firstAttribute="height" constant="483" id="PYF-vj-2m7"/>
                         <constraint firstAttribute="width" constant="661" id="aJf-hc-wBs"/>
                     </constraints>
-                    <color key="borderColor" white="0.0" alpha="0.41999999999999998" colorSpace="calibratedWhite"/>
-                    <color key="fillColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                 </box>
             </subviews>
             <constraints>
