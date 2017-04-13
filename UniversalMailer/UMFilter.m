@@ -44,7 +44,10 @@
     
     NSMutableArray *avoidCids = [@[] mutableCopy];
     
+    BOOL foundAnyText = NO;
+    
     if( plain.count > 1 ){
+        foundAnyText = YES;
         NSMutableString *final = [@"" mutableCopy];
         for( UMMIMEEntity *e in plain ){
             if( e.body.string.length > 0 ){
@@ -61,6 +64,7 @@
     }
     
     if( forceHTML && plain.count > 0 ){
+        foundAnyText = YES;
         UMMIMEEntity *p = plain[0];
         if( [p.originalHeaders containsString: @"From:"] )
             propagateHeaders = [p originalHeaders];
@@ -80,6 +84,7 @@
     }
     
     if( html.count > 0 ){
+        foundAnyText = YES;
         NSMutableString *final = [@"" mutableCopy];
         for( UMMIMEEntity *e in html ){
             if( e.body.string.length > 0 )
@@ -208,6 +213,12 @@
         ne.body = [[UMMIMEBody alloc] initWithString: finalHtml];
         UMLog(@"%s - mime entity is [%@]", __PRETTY_FUNCTION__, ne);
         html = @[ne];
+    }
+    
+    if( !foundAnyText ){
+        UMMIMEEntity *ne = [[UMMIMEEntity alloc] initWithContentType: @"Content-Type: text/plain"];
+        ne.body = [[UMMIMEBody alloc] initWithString: @"\n"];
+        plain = @[ne];
     }
     
     UMMIMEEntity *alts = [[UMMIMEEntity alloc] initWithContentType: @"Content-Type: multipart/alternative"];
