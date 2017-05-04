@@ -6,18 +6,17 @@
         <description>Most recent changes with links to updates.</description>
         <language>en</language>
         <item>
-            <title>Version 3.0 build 16 (2 bugs fixed)</title>
+            <title>Version 3.0 build 17 (1 bug fixed)</title>
 						<description><![CDATA[
 								<h2>Bug fixing</h2>
 								<ul>
-										<li>fixed a problem with emails containing only attachments</li>
-										<li>improved plugin exclusion when detecting S/MIME emails</li>
+										<li>fixed a crash on OSX 10.11</li>
 								</ul>
 						]]>
 						</description>
-            <pubDate>Thu, 13 Apr 2017 09:30:00 +0200</pubDate>
-						<sparkle:version>16</sparkle:version>
-						<sparkle:shortVersionString>3.0 (build 16)</sparkle:shortVersionString>
+            <pubDate>Thu, 4 May 2017 15:30:00 +0200</pubDate>
+						<sparkle:version>17</sparkle:version>
+						<sparkle:shortVersionString>3.0 (build 17)</sparkle:shortVersionString>
 						<link>https://universalmailer.github.io/UniversalMailer/download.html</link>
         </item>
     </channel>
