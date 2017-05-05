@@ -44,7 +44,7 @@
         UMLog(@"%s - GPGMail detected using signsOutput method", __PRETTY_FUNCTION__);
         gpgMailDetected = YES;
     }
-    if( [self valueForKey: @"encryptionCertificates"] ){
+    if( [self respondsToSelector: NSSelectorFromString(@"encryptionCertificates")] && [self valueForKey: @"encryptionCertificates"] ){
         UMLog(@"%s - GPGMail detected using encryptionCertificates method [%@]", __PRETTY_FUNCTION__, [self valueForKey: @"encryptionCertificates"]);
         gpgMailDetected = YES;
     }
