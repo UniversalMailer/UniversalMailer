@@ -79,10 +79,12 @@ uuid1=$(defaults read "$plistMail" "PluginCompatibilityUUID")
 uuid2=$(defaults read "$plistFramework" "PluginCompatibilityUUID")
 
 if [[ -n "$uuid1" ]] && ! grep -q $uuid1 "${plistBundle}.plist" ;then
+	defaults write "$plistBundle" "Supported10.13PluginCompatibilityUUIDs" -array-add "$uuid1"
 	defaults write "$plistBundle" "Supported10.12PluginCompatibilityUUIDs" -array-add "$uuid1"
 	defaults write "$plistBundle" "SupportedPluginCompatibilityUUIDs" -array-add "$uuid1"
 fi
 if [[ -n "$uuid2" ]] && ! grep -q $uuid2 "${plistBundle}.plist" ;then
+	defaults write "$plistBundle" "Supported10.13PluginCompatibilityUUIDs" -array-add "$uuid2"
 	defaults write "$plistBundle" "Supported10.12PluginCompatibilityUUIDs" -array-add "$uuid2"
 	defaults write "$plistBundle" "SupportedPluginCompatibilityUUIDs" -array-add "$uuid2"
 fi
