@@ -6,17 +6,17 @@
         <description>Most recent changes with links to updates.</description>
         <language>en</language>
         <item>
-            <title>Version 3.0 build 18 (1 bug fixed)</title>
+            <title>Version 3.0 build 19 (1 bug fixed)</title>
 						<description><![CDATA[
 								<h2>Bug fixing</h2>
 								<ul>
-										<li>fixed a crash on OSX 10.11</li>
+										<li>extended compatibility to macOS High Sierra (still experimental)</li>
 								</ul>
 						]]>
 						</description>
-            <pubDate>Fri, 5 May 2017 08:50:00 +0200</pubDate>
-						<sparkle:version>18</sparkle:version>
-						<sparkle:shortVersionString>3.0 (build 18)</sparkle:shortVersionString>
+            <pubDate>Fri, 19 Jun 2017 14:50:00 +0200</pubDate>
+						<sparkle:version>19</sparkle:version>
+						<sparkle:shortVersionString>3.0 (build 19)</sparkle:shortVersionString>
 						<link>https://universalmailer.github.io/UniversalMailer/download.html</link>
         </item>
     </channel>
