@@ -276,6 +276,7 @@
 				811DDB851CF45A2400DC3EA7 /* Frameworks */,
 				811DDB861CF45A2400DC3EA7 /* Resources */,
 				81F974BC1CFF83D300E35C15 /* CopyFiles */,
+				3A07526A264E601E005296FF /* ShellScript */,
 			);
 			buildRules = (
 			);
@@ -358,6 +359,23 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
+		3A07526A264E601E005296FF /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "# Script for inserting into Info.plist the UUIDs\n# required for Mail Plugins compatibility check\n\nINFO=\"${BUILT_PRODUCTS_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/../Info.plist\"\n\ndefaults write \"$INFO\" Supported10.15PluginCompatibilityUUIDs -array-add 'A4343FAF-AE18-40D0-8A16-DFAE481AF9C1' '6EEA38FB-1A0B-469B-BB35-4C2E0EEA9053'\ndefaults write \"$INFO\" Supported11.0PluginCompatibilityUUIDs -array-add 'D985F0E4-3BBC-4B95-BBA1-12056AC4A531'\ndefaults write \"$INFO\" Supported11.1PluginCompatibilityUUIDs -array-add 'D985F0E4-3BBC-4B95-BBA1-12056AC4A531'\ndefaults write \"$INFO\" Supported11.2PluginCompatibilityUUIDs -array-add 'D985F0E4-3BBC-4B95-BBA1-12056AC4A531'\ndefaults write \"$INFO\" Supported11.3PluginCompatibilityUUIDs -array-add 'D985F0E4-3BBC-4B95-BBA1-12056AC4A531'\n";
+		};
 		811DDB981CF45B0000DC3EA7 /* Installer */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -370,7 +388,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "if [[ $CONFIGURATION != \"Debug\" ]]; then\npkgbuild --root \"$BUILT_PRODUCTS_DIR/UniversalMailer.mailbundle/\" --scripts \"$SRCROOT/installation_scripts/\" --identifier it.noware.universalmailer.pkg --install-location \"/tmp/UM-installation-tmp/UniversalMailer.mailbundle\" \"$BUILT_PRODUCTS_DIR/UniversalMailer.pkg\"\nopen \"$BUILT_PRODUCTS_DIR\"\nelse\necho \"warning: installer not generated with Debug configuration\"\nfi";
+			shellScript = "if [[ $CONFIGURATION != \"Debug\" ]]; then\npkgbuild --root \"$BUILT_PRODUCTS_DIR/UniversalMailer.mailbundle/\" --scripts \"$SRCROOT/installation_scripts/\" --identifier it.noware.universalmailer.pkg --install-location \"/tmp/UM-installation-tmp/UniversalMailer.mailbundle\" \"$BUILT_PRODUCTS_DIR/UniversalMailer.pkg\"\nopen \"$BUILT_PRODUCTS_DIR\"\nelse\necho \"warning: installer not generated with Debug configuration\"\nfi\n";
 		};
 /* End PBXShellScriptBuildPhase section */
 
