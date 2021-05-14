@@ -1,1 +1,28 @@
+# Based upon https://github.com/github/gitignore
+
+# macOS
 .DS_Store
+.Trashes
+
+## User settings
+xcuserdata/
+
+# Xcode
+build/
+Build/
+DerivedData/
+*~.nib
+
+## Obj-C/Swift specific
+*.hmap
+
+## App packaging
+*.ipa
+*.dSYM.zip
+*.dSYM
+
+# SwiftPM
+.build/
+
+# Jetbrains
+.idea
