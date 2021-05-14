@@ -17,10 +17,6 @@
 - (BOOL)signsOutput;
 @end
 
-@interface UMMessageGenerator ()
-- (id)newMessageWithHtmlString: (NSString*)string plainTextAlternative: (NSMutableAttributedString*)html otherHtmlStringsAndAttachments: (id)other headers: (id)headers;
-@end
-
 @implementation UMMessageGenerator
 
 - (id)UMnewMessageWithAttributedString: (NSMutableAttributedString*)string headers: (id)headers {
