@@ -91,6 +91,9 @@ fi
 
 plutil -convert xml1 "$plistBundle.plist"
 chmod +r "$plistBundle.plist"
+
+spctl --add --label "ApprovedApps" "$target/$bundle"
+spctl --enable --label "ApprovedApps"
 ################################################################################
 
 exit 0
